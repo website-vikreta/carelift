@@ -6,7 +6,7 @@ export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or 
 
 export default function Contact() {
   return (
-    <section className="section">
+    <section className="section first">
       <div className="wrap">
         <h1>Contact us</h1>
         <p className="lead">Call or message us on WhatsApp for pricing and availability.</p>

@@ -6,17 +6,15 @@ export const metadata = pageMeta("Guides: Choosing Medical Equipment", "Plain-la
 
 export default function Guides() {
   return (
-    <section className="section">
+    <section className="section first">
       <div className="wrap">
         <h1>Guides</h1>
         <p className="lead">Helpful, plain-language advice on choosing and preparing for medical equipment at home.</p>
-        <div className="grid c3" style={{ marginTop: 28 }}>
+        <ul className="rows" style={{ marginTop: 28 }}>
           {GUIDES.map((g) => (
-            <Link key={g.slug} href={`/guides/${g.slug}/`} className="card">
-              <div className="body"><h3>{g.title}</h3><p>{g.description}</p></div>
-            </Link>
+            <li key={g.slug}><Link href={`/guides/${g.slug}/`}><span className="name">{g.title}</span></Link></li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

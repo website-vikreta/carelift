@@ -8,7 +8,7 @@ export function Footer() {
         <div className="footer-grid">
           <div>
             <h3>{SITE.name}</h3>
-            <p>Medical equipment rental delivered across {SITE.state}.</p>
+            <p>Medical equipment rental in Greensboro, Winston-Salem and nearby.</p>
             <p>
               <a href={SITE.phoneHref}>{SITE.phone}</a>
               {SITE.address && (<><br />{SITE.address.street}, {SITE.address.city}, NC {SITE.address.zip}</>)}

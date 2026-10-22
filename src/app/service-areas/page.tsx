@@ -8,12 +8,12 @@ export const metadata = pageMeta("Medical Equipment Rental Service Areas: Greens
 export default function Areas() {
   return (
     <>
-      <section className="section">
+      <section className="section first">
         <div className="wrap">
           <h1>Where we deliver</h1>
           <p className="lead">We deliver, set up and collect medical equipment in Guilford County and Forsyth County. More areas coming soon.</p>
-          <ul className="pills" style={{ marginTop: 28 }}>
-            {COUNTIES.map((c) => <li key={c.slug}><Link href={`/service-areas/${c.slug}/`}>{c.name} County</Link></li>)}
+          <ul className="rows" style={{ marginTop: 28 }}>
+            {COUNTIES.map((c) => <li key={c.slug}><Link href={`/service-areas/${c.slug}/`}><span className="name">{c.name} County</span><span className="desc">{c.cities}</span></Link></li>)}
           </ul>
         </div>
       </section>

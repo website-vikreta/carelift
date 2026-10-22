@@ -22,3 +22,11 @@ traffic and the site supports it. Strategy and design kit: `docs/design-kit-and-
 - Placeholders awaiting real data: street address (`addressConfirmed: false` keeps it out of JSON-LD), Google Business Profile URL (`gbpUrl`), images (add Unsplash photos to `src/lib/images.ts`; missing ones fall back to `Placeholder`), legal pages, About copy, per-county local copy.
 - Design tokens are CSS variables in `src/app/globals.css`. Mobile-first; tap targets at least 48px; body text 18px; keep contrast AA.
 - Keep copy original; do not copy text from reference sites.
+
+## Design and performance rules
+
+- Plain, editorial, restrained: ivory page, ink text, one teal accent, hairline dividers. No card grids with shadows, no uppercase eyebrow labels, no pill chips, no gradient placeholder boxes, no stat or trust badges we cannot back up.
+- Fonts: Fraunces (latin, weight axis only) self-hosted via `next/font/local` for headings; system font stack for body. No other web fonts.
+- Photos: `Photo` renders nothing when no image is configured, so layouts must work without one. Always give width/height (it does), keep the hero image `priority`, everything else lazy.
+- Keep client JS minimal (only the mobile menu). No animation libraries, no analytics scripts without asking.
+- Target Lighthouse mobile 90+ on every page; check after adding sections or scripts.

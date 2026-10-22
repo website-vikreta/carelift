@@ -1,18 +1,13 @@
-import { SITE, waLink } from "@/lib/site";
-import Link from "next/link";
-import { WhatsAppIcon } from "./ContactButtons";
+import { SITE } from "@/lib/site";
+import { ContactButtons } from "./ContactButtons";
 
 export function CtaBand() {
   return (
-    <section className="section cta-band">
+    <section className="contact-strip">
       <div className="wrap">
-        <h2>Need equipment in Greensboro or Winston-Salem?</h2>
-        <p className="lead">Call for pricing and availability. We will help you choose the right item.</p>
-        <div className="btn-row">
-          <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
-          <a className="btn wa" href={waLink()} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> WhatsApp us</a>
-        </div>
-        <p className="form-link">Prefer a form? <Link href="/get-a-quote/">Request a callback</Link></p>
+        <h2>Call or message us</h2>
+        <p>Tell us what you need and your ZIP code and we will confirm availability and pricing. {SITE.hours}.</p>
+        <ContactButtons />
       </div>
     </section>
   );

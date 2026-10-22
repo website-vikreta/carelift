@@ -4,7 +4,7 @@ export const metadata = pageMeta("Terms of Rental", "Terms of Rental for CareLif
 
 export default function Page() {
   return (
-    <section className="section">
+    <section className="section first">
       <div className="wrap">
         <h1>Terms of Rental</h1>
         {/* TODO: replace with reviewed legal text before launch. */}

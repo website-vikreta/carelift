@@ -6,8 +6,7 @@ import { WhatsAppIcon } from "./ContactButtons";
 
 const LINKS = [
   ["/rentals/", "Rentals"],
-  ["/who-we-serve/", "Who we serve"],
-  ["/service-areas/", "Service areas"],
+  ["/service-areas/", "Where we deliver"],
   ["/how-renting-works/", "How it works"],
   ["/guides/", "Guides"],
   ["/contact/", "Contact"],

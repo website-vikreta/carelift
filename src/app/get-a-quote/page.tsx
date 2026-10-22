@@ -7,7 +7,7 @@ export const metadata = pageMeta("Request a Medical Equipment Rental Quote", "Te
 
 export default function Quote() {
   return (
-    <section className="section">
+    <section className="section first">
       <div className="wrap" style={{ maxWidth: 640 }}>
         <h1>Request a quote</h1>
         <p className="lead">Prefer to talk now? The fastest way to reach us is to call or message us on WhatsApp.</p>

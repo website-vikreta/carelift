@@ -7,7 +7,7 @@ export const metadata = pageMeta("About CareLift Medical Equipment", "A medical 
 export default function About() {
   return (
     <>
-      <section className="section">
+      <section className="section first">
         <div className="wrap">
           <h1>About {SITE.name}</h1>
           {/* TODO: replace with the real story, team and credentials once provided. */}

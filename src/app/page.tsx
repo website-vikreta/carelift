@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { CATEGORIES, FAQS, SITE } from "@/lib/site";
-import { Photo } from "@/components/Photo";
 import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
-import { JsonLd } from "@/components/JsonLd";
+import { Photo } from "@/components/Photo";
 
 export default function Home() {
   return (
@@ -11,75 +10,60 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <p className="eyebrow">Greensboro & Winston-Salem medical equipment rental</p>
-            <h1>Coming home from hospital? We will get the right equipment ready.</h1>
-            <p className="lead">
-              Hospital beds, wheelchairs, lift chairs and more, delivered, set up and collected in Greensboro, Winston-Salem and nearby. Call for pricing.
-            </p>
+            <h1>Medical equipment rental in Greensboro and Winston-Salem</h1>
+            <p className="lead">Hospital beds, lift chairs, wheelchairs and more. We deliver, set up and collect. Call us for pricing.</p>
             <ContactButtons />
+            <p className="small hero-note">Serving {SITE.areaText}. Open {SITE.hours}.</p>
           </div>
-          <Photo id="hero" label="Hero: lift chair or hospital bed in a bright home" priority />
+          <Photo id="hero" priority />
         </div>
       </section>
-
-      <div className="wrap trust">
-        <div><strong>Guilford &amp; Forsyth</strong>Delivery across both counties</div>
-        <div><strong>Set up for you</strong>Delivered and demonstrated</div>
-        <div><strong>Sanitised</strong>Cleaned after every rental</div>
-        <div><strong>Hospitals welcome</strong>Home and facility rentals</div>
-      </div>
 
       <section className="section">
         <div className="wrap">
-          <p className="eyebrow">Rentals</p>
-          <h2>What are you looking for?</h2>
-          <div className="grid c3">
+          <h2>What we rent</h2>
+          <ul className="rows">
             {CATEGORIES.map((c) => (
-              <Link key={c.slug} href={`/rentals/${c.slug}/`} className="card">
-                <Photo id={`cat-${c.slug}`} label={c.name} wide />
-                <div className="body"><h3>{c.name}</h3><p>{c.tagline}</p></div>
-              </Link>
+              <li key={c.slug}>
+                <Link href={`/rentals/${c.slug}/`}>
+                  <span className="name">{c.name}</span>
+                  <span className="desc">{c.tagline}</span>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      <section className="section alt">
+      <section className="section">
         <div className="wrap">
-          <p className="eyebrow">How it works</p>
-          <h2>Three simple steps</h2>
+          <h2>How renting works</h2>
           <ol className="steps">
-            <li><h3>Call or request a quote</h3><p>Tell us what you need and your ZIP code. We confirm availability and pricing.</p></li>
-            <li><h3>We deliver and set up</h3><p>Our team brings the equipment, sets it up and shows you how to use it.</p></li>
-            <li><h3>We collect it</h3><p>When you are finished, we pick it up. No long-term commitment.</p></li>
+            <li><h3>Call or message us</h3><p>Tell us what you need, for how long, and where it is going.</p></li>
+            <li><h3>We deliver and set up</h3><p>We bring the equipment, set it up and show you how it works.</p></li>
+            <li><h3>We collect it</h3><p>When you are done, we pick it up. No long-term commitment.</p></li>
           </ol>
         </div>
       </section>
 
       <section className="section">
-        <div className="wrap">
-          <p className="eyebrow">Who we serve</p>
-          <h2>For families, and for facilities</h2>
-          <div className="grid c2">
-            <Link href="/who-we-serve/families-and-home-care/" className="card"><div className="body"><h3>Home and family</h3><p>Recovering after surgery, caring for a parent, or arranging hospice care at home. We keep it simple and walk you through it.</p></div></Link>
-            <Link href="/who-we-serve/hospitals-and-facilities/" className="card"><div className="body"><h3>Hospitals and facilities</h3><p>Reliable rental supply for hospitals, rehab centres and care providers. Call to discuss volume and scheduling.</p></div></Link>
+        <div className="wrap cols">
+          <div>
+            <h2>Where we deliver</h2>
+            <p>Guilford County, including Greensboro and High Point, and Forsyth County, including Winston-Salem.</p>
+            <p><Link href="/service-areas/">See service areas</Link></p>
+          </div>
+          <div>
+            <h2>Common questions</h2>
+            {FAQS.slice(0, 3).map((f) => (
+              <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
+            ))}
+            <p style={{ marginTop: 16 }}><Link href="/faq/">All questions</Link></p>
           </div>
         </div>
       </section>
 
-      <section className="section alt">
-        <div className="wrap">
-          <p className="eyebrow">Questions</p>
-          <h2>Good to know</h2>
-          {FAQS.slice(0, 4).map((f) => (
-            <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
-          ))}
-          <p style={{ marginTop: 20 }}><Link href="/faq/">See all questions</Link></p>
-        </div>
-      </section>
-
       <CtaBand />
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.slice(0, 4).map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
     </>
   );
 }

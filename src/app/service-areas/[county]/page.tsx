@@ -24,14 +24,14 @@ export default async function County({ params }: { params: Promise<Params> }) {
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Home", path: "/" }, { name: "Service areas", path: "/service-areas/" }, { name: `${c.name} County`, path: `/service-areas/${c.slug}/` }])} />
-      <section className="section">
+      <section className="section first">
         <div className="wrap">
           <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <Link href="/service-areas/">Service areas</Link> / {c.name} County</nav>
           <h1>Medical equipment rental in {c.name} County, NC</h1>
           <p className="lead">{SITE.name} delivers, sets up and collects rental equipment for homes, hospitals and care facilities in {c.name} County, including {c.cities}.</p>
           {/* TODO: add unique local copy per county (delivery times, nearby hospitals/rehab centres actually served). Avoid cloning text. */}
           <h2>Available to rent in {c.name} County</h2>
-          <ul className="pills">
+          <ul className="links">
             {CATEGORIES.map((x) => <li key={x.slug}><Link href={`/rentals/${x.slug}/`}>{x.name}</Link></li>)}
           </ul>
           <ContactButtons topic={`equipment in ${c.name} County`} />

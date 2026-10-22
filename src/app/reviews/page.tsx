@@ -8,7 +8,7 @@ export const metadata = pageMeta("Customer Reviews", "Read what CareLift Medical
 export default function Reviews() {
   return (
     <>
-      <section className="section">
+      <section className="section first">
         <div className="wrap">
           <h1>Customer reviews</h1>
           <p className="lead">We are new and building our reputation one family at a time. Reviews will appear here as they come in.</p>

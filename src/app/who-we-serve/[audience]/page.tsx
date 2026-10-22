@@ -26,7 +26,7 @@ export default async function Audience({ params }: { params: Promise<Params> }) 
   return (
     <>
       <JsonLd data={breadcrumbLd([{ name: "Home", path: "/" }, { name: "Who we serve", path: "/who-we-serve/" }, { name: a.name, path: `/who-we-serve/${a.slug}/` }])} />
-      <section className="section">
+      <section className="section first">
         <div className="wrap hero-grid">
           <div>
             <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <Link href="/who-we-serve/">Who we serve</Link> / {a.name}</nav>
@@ -34,15 +34,15 @@ export default async function Audience({ params }: { params: Promise<Params> }) 
             <p className="lead">{a.intro}</p>
             <ContactButtons topic={a.name} />
           </div>
-          <Photo id={`aud-${a.slug}`} label={a.name} priority />
+          <Photo id={`aud-${a.slug}`} ratio="3:2" priority />
         </div>
       </section>
-      <section className="section alt">
+      <section className="section">
         <div className="wrap">
           <h2>What to expect</h2>
           <ul className="list">{a.points.map((p) => <li key={p}>{p}</li>)}</ul>
           <h2 style={{ marginTop: 32 }}>Popular equipment</h2>
-          <ul className="pills">{cats.map((c) => <li key={c.slug}><Link href={`/rentals/${c.slug}/`}>{c.name}</Link></li>)}</ul>
+          <ul className="links">{cats.map((c) => <li key={c.slug}><Link href={`/rentals/${c.slug}/`}>{c.name}</Link></li>)}</ul>
         </div>
       </section>
       <CtaBand />
