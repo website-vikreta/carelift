@@ -10,10 +10,10 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <p className="eyebrow">New Jersey medical equipment rental</p>
+            <p className="eyebrow">North Carolina medical equipment rental</p>
             <h1>Home from hospital tomorrow? Equipment can be in the room tonight.</h1>
             <p className="lead">
-              Hospital beds, wheelchairs, lift chairs and more, delivered, set up and collected across New Jersey. Call for pricing.
+              Hospital beds, wheelchairs, lift chairs and more, delivered, set up and collected across North Carolina. Call for pricing.
             </p>
             <div className="btn-row">
               <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
@@ -25,7 +25,7 @@ export default function Home() {
       </section>
 
       <div className="wrap trust">
-        <div><strong>All of New Jersey</strong>Delivery to every county</div>
+        <div><strong>All of North Carolina</strong>Delivery to every county</div>
         <div><strong>Set up for you</strong>Delivered and demonstrated</div>
         <div><strong>Sanitised</strong>Cleaned after every rental</div>
         <div><strong>Hospitals welcome</strong>Home and facility rentals</div>

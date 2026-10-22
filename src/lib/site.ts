@@ -5,7 +5,8 @@ export const SITE = {
   phoneHref: "tel:+13366534589",
   smsHref: "sms:+13366534589",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://carelift.example",
-  state: "New Jersey",
+  state: "North Carolina",
+  stateAbbr: "NC",
   // TODO: add street address + hours once provided; they feed the footer, Contact page and JSON-LD.
   address: null as null | { street: string; city: string; zip: string },
   hours: null as null | string,
@@ -114,16 +115,15 @@ export const CATEGORIES: Category[] = [
 ];
 
 export const COUNTIES = [
-  "Atlantic", "Bergen", "Burlington", "Camden", "Cape May", "Cumberland", "Essex", "Gloucester", "Hudson", "Hunterdon", "Mercer",
-  "Middlesex", "Monmouth", "Morris", "Ocean", "Passaic", "Salem", "Somerset", "Sussex", "Union", "Warren",
-].map((name) => ({ name, slug: `${name.toLowerCase().replace(/\s+/g, "-")}-county-nj` }));
+  "Alamance", "Alexander", "Alleghany", "Anson", "Ashe", "Avery", "Beaufort", "Bertie", "Bladen", "Brunswick", "Buncombe", "Burke", "Cabarrus", "Caldwell", "Camden", "Carteret", "Caswell", "Catawba", "Chatham", "Cherokee", "Chowan", "Clay", "Cleveland", "Columbus", "Craven", "Cumberland", "Currituck", "Dare", "Davidson", "Davie", "Duplin", "Durham", "Edgecombe", "Forsyth", "Franklin", "Gaston", "Gates", "Graham", "Granville", "Greene", "Guilford", "Halifax", "Harnett", "Haywood", "Henderson", "Hertford", "Hoke", "Hyde", "Iredell", "Jackson", "Johnston", "Jones", "Lee", "Lenoir", "Lincoln", "McDowell", "Macon", "Madison", "Martin", "Mecklenburg", "Mitchell", "Montgomery", "Moore", "Nash", "New Hanover", "Northampton", "Onslow", "Orange", "Pamlico", "Pasquotank", "Pender", "Perquimans", "Person", "Pitt", "Polk", "Randolph", "Richmond", "Robeson", "Rockingham", "Rowan", "Rutherford", "Sampson", "Scotland", "Stanly", "Stokes", "Surry", "Swain", "Transylvania", "Tyrrell", "Union", "Vance", "Wake", "Warren", "Washington", "Watauga", "Wayne", "Wilkes", "Wilson", "Yadkin", "Yancey",
+].map((name) => ({ name, slug: `${name.toLowerCase().replace(/\s+/g, "-")}-county-nc` }));
 
 export const FAQS = [
   { q: "How does renting medical equipment work?", a: "Call or request a quote. We confirm what you need, deliver and set it up, and collect it when you are finished. There is no long-term commitment." },
   { q: "How much does a rental cost?", a: "Pricing depends on the item and how long you need it. Call us for pricing and we will give you a clear quote." },
   { q: "Does insurance or Medicare cover rentals?", a: "Coverage varies by plan and by item. Call us and we will explain your options. Ask your doctor or insurer about what your plan covers." },
   { q: "Which size or model should I choose?", a: "Tell us the user's height and weight and what the equipment is for. We will recommend a model that fits." },
-  { q: "Do you deliver across New Jersey?", a: "Yes, we serve all New Jersey counties. Tell us your ZIP code and we will confirm delivery timing." },
+  { q: "Do you deliver across North Carolina?", a: "Yes, we serve all North Carolina counties. Tell us your ZIP code and we will confirm delivery timing." },
   { q: "Can you deliver to a hospital or facility?", a: "Yes. We supply hospitals, rehab centres and care facilities as well as private homes." },
   { q: "Is the equipment cleaned between rentals?", a: "Yes. Every item is inspected, cleaned and sanitised before it goes out." },
 ];

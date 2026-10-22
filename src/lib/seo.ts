@@ -19,7 +19,7 @@ export function localBusinessLd() {
     telephone: SITE.phone,
     areaServed: { "@type": "State", name: SITE.state },
     ...(SITE.address && {
-      address: { "@type": "PostalAddress", streetAddress: SITE.address.street, addressLocality: SITE.address.city, addressRegion: "NJ", postalCode: SITE.address.zip, addressCountry: "US" },
+      address: { "@type": "PostalAddress", streetAddress: SITE.address.street, addressLocality: SITE.address.city, addressRegion: "NC", postalCode: SITE.address.zip, addressCountry: "US" },
     }),
     ...(SITE.gbpUrl && { sameAs: [SITE.gbpUrl] }),
   };

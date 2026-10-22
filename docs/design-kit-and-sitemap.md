@@ -1,6 +1,6 @@
 # CareLift — Design Kit & Sitemap Proposal
 
-Medical equipment rental, New Jersey. Households and hospitals/facilities. Audience 20–60.
+Medical equipment rental, North Carolina. Households and hospitals/facilities. Audience 20–60.
 
 > **Research caveat.** keystonemedicalrentals.com and mediplushomehealth.com could not be fetched from the
 > build environment (network blocked), so nothing below is claimed about them. Review both by hand against
@@ -61,7 +61,7 @@ the audience makes this non-negotiable.
 - Product shots on warm neutral/ivory seamless backdrop, consistent angle and crop (4:5 on cards, 3:2 hero).
 - One **in-use lifestyle** image per category (equipment in a real home, not a stock hospital).
 - Delivered as AVIF/WebP with explicit width/height, `srcset`, lazy-loaded below the fold; hero image
-  preloaded. Descriptive filenames and alt text with product + use ("electric hospital bed, home rental NJ").
+  preloaded. Descriptive filenames and alt text with product + use ("electric hospital bed, home rental NC").
 - Real photos of your own inventory and delivery van outrank stock for trust and for Google image/GBP consistency.
 
 ### 2.5 Components
@@ -117,9 +117,9 @@ description, breadcrumbs, and internal links to its siblings and parent.
   /who-we-serve/post-surgery-recovery/
   /who-we-serve/hospice-and-palliative/
   /who-we-serve/hospitals-and-facilities/ B2B: volume, contracts, invoicing
-/service-areas/                           NJ coverage hub + map
-  /service-areas/{county}-county-nj/      one per county actually served
-    /service-areas/{town}-nj/             only for towns with real local detail (optional, phase 2)
+/service-areas/                           NC coverage hub + map
+  /service-areas/{county}-county-nc/      one per county actually served
+    /service-areas/{town}-nc/             only for towns with real local detail (optional, phase 2)
 /how-renting-works/                       steps, delivery, pickup, deposit, sanitation
 /pricing-and-insurance/                   rate guidance, Medicare/insurance honest explainer
 /faq/
@@ -152,7 +152,7 @@ with a persistent **Call** button.
 
 ### Page template (category / product)
 
-H1 with keyword + "Rental in New Jersey" → hero image → 2–3 sentence summary + CTA → product grid or spec table →
+H1 with keyword + "Rental in North Carolina" → hero image → 2–3 sentence summary + CTA → product grid or spec table →
 who it's for / how to choose (200–300 words) → delivery & rental terms → FAQ → related categories → nearby counties → CTA.
 
 ## 4. SEO & GBP alignment
@@ -161,7 +161,7 @@ who it's for / how to choose (200–300 words) → delivery & rental terms → F
 - **NAP consistency** across site, GBP, and citations is the single biggest trust signal; use one source of truth in code.
 - **Location pages:** one per county actually served, each with unique content (delivery times, local hospitals/rehab centres you really serve, local FAQs). Do not template-clone; duplicated copy dilutes relevance.
 - **GBP loop:** GBP "Website" link → Home; products/services in GBP link to matching category pages; add UTM tags to measure GBP clicks; mirror GBP categories in page titles.
-- **Core keywords per category:** "{item} rental {county/town} NJ", "rent a {item} near me", "short-term {item} rental".
+- **Core keywords per category:** "{item} rental {county/town} NC", "rent a {item} near me", "short-term {item} rental".
 - **Technical:** static HTML, canonical URLs, XML sitemap, clean 301 map, image sitemap, `hreflang` not needed.
 - **Compliance flags:** confirm what you can state about Medicare/insurance and any item (e.g. oxygen) needing a prescription or state licensing before publishing copy.
 
@@ -185,17 +185,17 @@ sticky call bar). Keystone is a lean single-service local brand with a warm funn
 categories, size-guidance and what's-included blocks, FAQ depth, sticky call bar. We deliberately did **not** adopt:
 published prices (policy is "call for pricing"), a cart/checkout, zoom-locking viewport, `#` social links, an empty blog,
 or duplicate category URLs. Their delivery-speed and service-contract claims are theirs; only make equivalent claims if true for CareLift.
-Compliance: oxygen and CPM pages carry a prescription note. Confirm NJ licensing/accreditation requirements for DME (respiratory especially) before launch.
+Compliance: oxygen and CPM pages carry a prescription note. Confirm NC licensing/accreditation requirements for DME (respiratory especially) before launch.
 
 ## 7. Decisions confirmed
 
-- Business: **CareLift Medical Equipment**, phone +1 (336) 653-4589, serves **all of New Jersey**. Address and hours to follow.
+- Business: **CareLift Medical Equipment**, phone +1 (336) 653-4589, is based in **North Carolina** and serves **all North Carolina counties** (100 county pages). Address and hours to follow.
 - Google Business Profile is the main traffic source; the site supports its authority.
 - **Call for pricing.** No prices shown anywhere.
 - Stock images at launch, replaced later. No existing logo or brand colours, so the palette in 2.1 stands.
 - Stack: Next.js static export, manually deployed to Netlify (config in `netlify.toml`).
 - Item list: taken from the reference sites. Current list in `src/lib/site.ts` is a draft pending those sites' real inventory.
-- Note: 336 is a North Carolina area code. For local SEO the number on the site should match the Google profile exactly; if you have an NJ number, consider using it as the primary.
+- The 336 area code (Piedmont Triad) fits an NC base; the number on the site must still match the Google profile exactly.
 
 ## 8. Remaining questions
 

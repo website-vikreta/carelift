@@ -1,7 +1,7 @@
 import { pageMeta } from "@/lib/seo";
 import { CtaBand } from "@/components/CtaBand";
 
-export const metadata = pageMeta("How Renting Medical Equipment Works", "Call, we deliver and set up, and we collect when you are done. Simple medical equipment rental across New Jersey.", "/how-renting-works/");
+export const metadata = pageMeta("How Renting Medical Equipment Works", "Call, we deliver and set up, and we collect when you are done. Simple medical equipment rental across North Carolina.", "/how-renting-works/");
 
 export default function How() {
   return (

@@ -1,6 +1,6 @@
 # CareLift Medical Equipment
 
-Static, mobile-first Next.js site (App Router, `output: "export"`) for CareLift Medical Equipment, New Jersey.
+Static, mobile-first Next.js site (App Router, `output: "export"`) for CareLift Medical Equipment, North Carolina.
 Strategy, design kit and sitemap: [`docs/design-kit-and-sitemap.md`](docs/design-kit-and-sitemap.md).
 
 ## Develop

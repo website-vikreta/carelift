@@ -11,7 +11,7 @@ export function Footer() {
             <p>Medical equipment rental delivered across {SITE.state}.</p>
             <p>
               <a href={SITE.phoneHref}>{SITE.phone}</a>
-              {SITE.address && (<><br />{SITE.address.street}, {SITE.address.city}, NJ {SITE.address.zip}</>)}
+              {SITE.address && (<><br />{SITE.address.street}, {SITE.address.city}, NC {SITE.address.zip}</>)}
               {SITE.hours && (<><br />{SITE.hours}</>)}
             </p>
           </div>

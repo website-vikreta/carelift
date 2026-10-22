@@ -11,8 +11,8 @@ import { localBusinessLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: `Medical Equipment Rental in New Jersey | ${SITE.name}`, template: `%s | ${SITE.name}` },
-  description: "Rent hospital beds, wheelchairs, lift chairs and more across New Jersey. Delivered, set up and collected. Call for pricing.",
+  title: { default: `Medical Equipment Rental in North Carolina | ${SITE.name}`, template: `%s | ${SITE.name}` },
+  description: "Rent hospital beds, wheelchairs, lift chairs and more across North Carolina. Delivered, set up and collected. Call for pricing.",
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#faf7f2" };
 

@@ -3,7 +3,7 @@ import { pageMeta } from "@/lib/seo";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 
-export const metadata = pageMeta("Medical Equipment Rental FAQ", "Answers to common questions about renting medical equipment in New Jersey.", "/faq/");
+export const metadata = pageMeta("Medical Equipment Rental FAQ", "Answers to common questions about renting medical equipment in North Carolina.", "/faq/");
 
 export default function Faq() {
   return (
