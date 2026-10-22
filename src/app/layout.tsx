@@ -11,8 +11,8 @@ import { localBusinessLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: `Medical Equipment Rental in North Carolina | ${SITE.name}`, template: `%s | ${SITE.name}` },
-  description: "Rent hospital beds, wheelchairs, lift chairs and more across North Carolina. Delivered, set up and collected. Call for pricing.",
+  title: { default: `Medical Equipment Rental in Greensboro & Winston-Salem, NC | ${SITE.name}`, template: `%s | ${SITE.name}` },
+  description: "Rent hospital beds, wheelchairs, lift chairs and more in Greensboro, Winston-Salem and nearby. Delivered, set up and collected. Call for pricing.",
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#faf7f2" };
 

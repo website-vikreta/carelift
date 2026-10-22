@@ -189,7 +189,7 @@ Compliance: oxygen and CPM pages carry a prescription note. Confirm NC licensing
 
 ## 7. Decisions confirmed
 
-- Business: **CareLift Medical Equipment**, phone +1 (336) 653-4589, is based in **North Carolina** and serves **all North Carolina counties** (100 county pages). Address and hours to follow.
+- Business: **CareLift Medical Equipment**, phone +1 (336) 653-4589, is based in **North Carolina** and launches serving **Guilford and Forsyth County** (Greensboro, Winston-Salem). More counties are added in `COUNTIES` in `src/lib/site.ts` as coverage grows; each gets a page automatically. Hours: Mon–Sat 10am–6pm, Sunday closed. Address is a placeholder until confirmed.
 - Google Business Profile is the main traffic source; the site supports its authority.
 - **Call for pricing.** No prices shown anywhere.
 - Stock images at launch, replaced later. No existing logo or brand colours, so the palette in 2.1 stands.

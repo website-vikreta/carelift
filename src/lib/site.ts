@@ -7,9 +7,12 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://carelift.example",
   state: "North Carolina",
   stateAbbr: "NC",
-  // TODO: add street address + hours once provided; they feed the footer, Contact page and JSON-LD.
-  address: null as null | { street: string; city: string; zip: string },
-  hours: null as null | string,
+  region: "Greensboro & Winston-Salem, NC",
+  areaText: "Guilford and Forsyth County",
+  // PLACEHOLDER address: replace with the real one. Kept out of structured data until addressConfirmed is true.
+  address: { street: "100 N Elm St", city: "Greensboro", zip: "27401" } as null | { street: string; city: string; zip: string },
+  addressConfirmed: false,
+  hours: "Mon–Sat 10am–6pm · Sunday closed" as null | string,
   gbpUrl: null as null | string,
 };
 
@@ -114,16 +117,18 @@ export const CATEGORIES: Category[] = [
   },
 ];
 
+// Start small; add counties here as coverage grows (each gets its own page automatically).
 export const COUNTIES = [
-  "Alamance", "Alexander", "Alleghany", "Anson", "Ashe", "Avery", "Beaufort", "Bertie", "Bladen", "Brunswick", "Buncombe", "Burke", "Cabarrus", "Caldwell", "Camden", "Carteret", "Caswell", "Catawba", "Chatham", "Cherokee", "Chowan", "Clay", "Cleveland", "Columbus", "Craven", "Cumberland", "Currituck", "Dare", "Davidson", "Davie", "Duplin", "Durham", "Edgecombe", "Forsyth", "Franklin", "Gaston", "Gates", "Graham", "Granville", "Greene", "Guilford", "Halifax", "Harnett", "Haywood", "Henderson", "Hertford", "Hoke", "Hyde", "Iredell", "Jackson", "Johnston", "Jones", "Lee", "Lenoir", "Lincoln", "McDowell", "Macon", "Madison", "Martin", "Mecklenburg", "Mitchell", "Montgomery", "Moore", "Nash", "New Hanover", "Northampton", "Onslow", "Orange", "Pamlico", "Pasquotank", "Pender", "Perquimans", "Person", "Pitt", "Polk", "Randolph", "Richmond", "Robeson", "Rockingham", "Rowan", "Rutherford", "Sampson", "Scotland", "Stanly", "Stokes", "Surry", "Swain", "Transylvania", "Tyrrell", "Union", "Vance", "Wake", "Warren", "Washington", "Watauga", "Wayne", "Wilkes", "Wilson", "Yadkin", "Yancey",
-].map((name) => ({ name, slug: `${name.toLowerCase().replace(/\s+/g, "-")}-county-nc` }));
+  { name: "Guilford", slug: "guilford-county-nc", cities: "Greensboro, High Point and nearby" },
+  { name: "Forsyth", slug: "forsyth-county-nc", cities: "Winston-Salem and nearby" },
+];
 
 export const FAQS = [
   { q: "How does renting medical equipment work?", a: "Call or request a quote. We confirm what you need, deliver and set it up, and collect it when you are finished. There is no long-term commitment." },
   { q: "How much does a rental cost?", a: "Pricing depends on the item and how long you need it. Call us for pricing and we will give you a clear quote." },
   { q: "Does insurance or Medicare cover rentals?", a: "Coverage varies by plan and by item. Call us and we will explain your options. Ask your doctor or insurer about what your plan covers." },
   { q: "Which size or model should I choose?", a: "Tell us the user's height and weight and what the equipment is for. We will recommend a model that fits." },
-  { q: "Do you deliver across North Carolina?", a: "Yes, we serve all North Carolina counties. Tell us your ZIP code and we will confirm delivery timing." },
+  { q: "Where do you deliver?", a: "We currently deliver in Guilford and Forsyth County, including Greensboro and Winston-Salem. Tell us your ZIP code and we will confirm." },
   { q: "Can you deliver to a hospital or facility?", a: "Yes. We supply hospitals, rehab centres and care facilities as well as private homes." },
   { q: "Is the equipment cleaned between rentals?", a: "Yes. Every item is inspected, cleaned and sanitised before it goes out." },
 ];

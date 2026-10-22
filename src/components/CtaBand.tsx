@@ -5,7 +5,7 @@ export function CtaBand() {
   return (
     <section className="section cta-band">
       <div className="wrap">
-        <h2>Need equipment in North Carolina?</h2>
+        <h2>Need equipment in Greensboro or Winston-Salem?</h2>
         <p className="lead">Call for pricing and availability. We will help you choose the right item.</p>
         <div className="btn-row">
           <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>

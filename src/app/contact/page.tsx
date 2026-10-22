@@ -1,7 +1,7 @@
 import { SITE } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or text CareLift Medical Equipment for North Carolina medical equipment rentals.", "/contact/");
+export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or text CareLift Medical Equipment for medical equipment rentals in Greensboro and Winston-Salem, NC.", "/contact/");
 
 export default function Contact() {
   return (

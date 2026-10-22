@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
   const { county } = await params;
   const c = COUNTIES.find((x) => x.slug === county);
   if (!c) return {};
-  return pageMeta(`Medical Equipment Rental in ${c.name} County, NC`, `Rent hospital beds, wheelchairs, lift chairs and more in ${c.name} County, North Carolina. Delivered and set up. Call for pricing.`, `/service-areas/${c.slug}/`);
+  return pageMeta(`Medical Equipment Rental in ${c.name} County, NC`, `Rent hospital beds, wheelchairs, lift chairs and more in ${c.name} County, North Carolina (${c.cities}). Delivered and set up. Call for pricing.`, `/service-areas/${c.slug}/`);
 }
 
 export default async function County({ params }: { params: Promise<Params> }) {
@@ -27,7 +27,7 @@ export default async function County({ params }: { params: Promise<Params> }) {
         <div className="wrap">
           <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <Link href="/service-areas/">Service areas</Link> / {c.name} County</nav>
           <h1>Medical equipment rental in {c.name} County, NC</h1>
-          <p className="lead">{SITE.name} delivers, sets up and collects rental equipment for homes, hospitals and care facilities in {c.name} County.</p>
+          <p className="lead">{SITE.name} delivers, sets up and collects rental equipment for homes, hospitals and care facilities in {c.name} County, including {c.cities}.</p>
           {/* TODO: add unique local copy per county (delivery times, nearby hospitals/rehab centres actually served). Avoid cloning text. */}
           <h2>Available to rent in {c.name} County</h2>
           <ul className="pills">
