@@ -1,19 +1,35 @@
-import { IMAGES } from "@/lib/images";
+import { IMAGES, type SitePhoto } from "@/lib/images";
 
-const RATIOS = { "4:3": [4, 3], "3:2": [3, 2], "16:9": [16, 9] } as const;
+const RATIOS = { "4:3": [4, 3], "3:2": [3, 2], "16:9": [16, 9], "1:1": [1, 1] } as const;
+export type Ratio = keyof typeof RATIOS;
 
-// Responsive Unsplash image with explicit dimensions (no layout shift). Renders nothing when no photo is configured.
-export function Photo({ id, ratio = "4:3", priority = false }: { id: string; ratio?: keyof typeof RATIOS; priority?: boolean }) {
-  const p = IMAGES[id];
+const DEFAULT_SIZES = "(min-width: 760px) 520px, calc(100vw - 40px)";
+
+// Responsive, lazy-loaded Unsplash image with explicit dimensions (no layout shift) and a colour placeholder.
+// Pass either `id` (key in IMAGES) or a `photo`. Renders nothing when no photo is configured.
+export function Photo({
+  id,
+  photo,
+  ratio = "4:3",
+  priority = false,
+  sizes = DEFAULT_SIZES,
+}: {
+  id?: string;
+  photo?: SitePhoto;
+  ratio?: Ratio;
+  priority?: boolean;
+  sizes?: string;
+}) {
+  const p = photo ?? (id ? IMAGES[id] : undefined);
   if (!p) return null;
   const [rw, rh] = RATIOS[ratio];
   const url = (w: number) => `${p.src}?auto=format&fit=crop&w=${w}&h=${Math.round((w * rh) / rw)}&q=70`;
   return (
-    <figure className="photo" style={{ aspectRatio: `${rw} / ${rh}` }}>
+    <figure className="photo" style={{ aspectRatio: `${rw} / ${rh}`, backgroundColor: p.color }}>
       <img
         src={url(800)}
-        srcSet={`${url(480)} 480w, ${url(800)} 800w, ${url(1200)} 1200w`}
-        sizes="(min-width: 760px) 520px, calc(100vw - 40px)"
+        srcSet={`${url(400)} 400w, ${url(640)} 640w, ${url(960)} 960w, ${url(1280)} 1280w`}
+        sizes={sizes}
         width={800}
         height={Math.round((800 * rh) / rw)}
         alt={p.alt}

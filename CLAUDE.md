@@ -25,8 +25,9 @@ traffic and the site supports it. Strategy and design kit: `docs/design-kit-and-
 
 ## Design and performance rules
 
-- Plain, editorial, restrained: ivory page, ink text, one teal accent, hairline dividers. No card grids with shadows, no uppercase eyebrow labels, no pill chips, no gradient placeholder boxes, no stat or trust badges we cannot back up.
+- Photo-led, calm and premium: ivory page, ink text, one teal accent, hairline dividers. Real photos do the selling (category tiles, audience tiles, hero, delivery, galleries). No card shadows, no uppercase eyebrow labels, no pill chips, no gradient placeholder boxes, no stat or trust badges we cannot back up.
+- Doodles: only the hand-drawn `Underline` (one or two per page) and the three step icons in `src/components/Doodles.tsx`. Inline SVG, teal line art. Do not add more without asking.
 - Fonts: Fraunces (latin, weight axis only) self-hosted via `next/font/local` for headings; system font stack for body. No other web fonts.
-- Photos: `Photo` renders nothing when no image is configured, so layouts must work without one. Always give width/height (it does), keep the hero image `priority`, everything else lazy.
+- Photos: manifest in `src/lib/images.ts` (with average colour shown while loading). `Photo` renders nothing when no image is configured. It always sets width/height and srcset; only the hero image is `priority`, everything else lazy-loads. Every photo used must be credited on /photo-credits/ (derived from the manifest) and registered via the Unsplash download endpoint.
 - Keep client JS minimal (only the mobile menu). No animation libraries, no analytics scripts without asking.
 - Target Lighthouse mobile 90+ on every page; check after adding sections or scripts.
