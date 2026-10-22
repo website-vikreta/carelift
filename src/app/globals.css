@@ -119,3 +119,33 @@ input, select, textarea { font: inherit; padding: 13px 14px; border: 1px solid #
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+/* image-led layout */
+.photo { position: relative; }
+.tiles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 14px; }
+.tile { display: block; text-decoration: none; color: var(--ink); }
+.tile .photo { margin-bottom: 12px; }
+.tile .photo img { transition: transform .5s ease; }
+.tile:hover .photo img { transform: scale(1.04); }
+.tile .name { display: block; font: 500 1.1rem var(--head); line-height: 1.25; }
+.tile .desc { display: block; font-size: .92rem; color: var(--muted); margin-top: 2px; }
+.tile:hover .name { color: var(--teal); }
+.split { display: grid; gap: 28px; align-items: center; }
+.gallery { display: grid; gap: 14px; grid-template-columns: 1fr; margin-top: 28px; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+.sec-head h2 { margin: 0; }
+.sec-head a { white-space: nowrap; font-size: .95rem; }
+.hero .photo { border-radius: 10px; }
+.u { position: relative; display: inline-block; white-space: nowrap; }
+.u svg { position: absolute; left: 0; bottom: -.12em; width: 100%; height: .32em; color: var(--teal); overflow: visible; }
+.doodle { width: 56px; height: 56px; color: var(--teal); margin-bottom: 10px; display: block; }
+
+@media (min-width: 760px) {
+  .tiles { grid-template-columns: repeat(3, 1fr); gap: 36px 24px; }
+  .tiles.four { grid-template-columns: repeat(4, 1fr); }
+  .tile .name { font-size: 1.25rem; }
+  .split { grid-template-columns: 1fr 1fr; gap: 64px; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery.three { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 760px) { .split .steps { grid-template-columns: 1fr; gap: 28px; } .split .steps li { display: grid; grid-template-columns: 56px 1fr; column-gap: 20px; } .split .steps .doodle { grid-row: span 2; margin: 0; } }

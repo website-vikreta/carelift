@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { AUDIENCES } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
 import { CtaBand } from "@/components/CtaBand";
+import { Tile } from "@/components/Tile";
 
 export const metadata = pageMeta("Who We Serve", "Medical equipment rental for families, post-surgery recovery, hospice care and facilities in Greensboro and Winston-Salem, NC.", "/who-we-serve/");
 
@@ -12,9 +12,9 @@ export default function Who() {
         <div className="wrap">
           <h1>Who we serve</h1>
           <p className="lead">One bed for a family member, or equipment for a care facility.</p>
-          <ul className="rows" style={{ marginTop: 28 }}>
+          <ul className="tiles" style={{ marginTop: 32 }}>
             {AUDIENCES.map((a) => (
-              <li key={a.slug}><Link href={`/who-we-serve/${a.slug}/`}><span className="name">{a.name}</span><span className="desc">{a.headline}</span></Link></li>
+              <Tile key={a.slug} href={`/who-we-serve/${a.slug}/`} photoId={`aud-${a.slug}`} name={a.name} desc={a.headline} />
             ))}
           </ul>
         </div>

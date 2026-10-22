@@ -6,6 +6,8 @@ import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 import { Photo } from "@/components/Photo";
+import { Tile } from "@/components/Tile";
+import { GALLERY } from "@/lib/images";
 
 type Params = { category: string };
 export const dynamicParams = false;
@@ -38,6 +40,14 @@ export default async function Category({ params }: { params: Promise<Params> }) 
         </div>
       </section>
 
+      {GALLERY[c.slug] && (
+        <div className="wrap" style={{ marginBottom: 56 }}>
+          <div className={`gallery${GALLERY[c.slug].length > 2 ? " three" : ""}`}>
+            {GALLERY[c.slug].map((p) => <Photo key={p.src} photo={p} ratio="3:2" sizes="(min-width: 760px) 50vw, 100vw" />)}
+          </div>
+        </div>
+      )}
+
       <section className="section">
         <div className="wrap cols">
           <div>
@@ -59,7 +69,7 @@ export default async function Category({ params }: { params: Promise<Params> }) 
       <section className="section">
         <div className="wrap">
           <h2>Other equipment</h2>
-          <ul className="links">{related.map((x) => <li key={x.slug}><Link href={`/rentals/${x.slug}/`}>{x.name}</Link></li>)}</ul>
+          <ul className="tiles">{related.slice(0, 6).map((x) => <Tile key={x.slug} href={`/rentals/${x.slug}/`} photoId={`cat-${x.slug}`} name={x.name} />)}</ul>
         </div>
       </section>
       <CtaBand />
