@@ -44,6 +44,9 @@ export default async function Category({ params }: { params: Promise<Params> }) 
           <ul className="list">{c.items.map((i) => <li key={i}>{i}</li>)}</ul>
           <h2 style={{ marginTop: 32 }}>Who it is for</h2>
           <p>{c.forWho}</p>
+          {c.sizing && (<><h2 style={{ marginTop: 32 }}>Which one fits?</h2><p>{c.sizing}</p></>)}
+          {c.included && (<><h2 style={{ marginTop: 32 }}>What is included</h2><ul className="list">{c.included.map((i) => <li key={i}>{i}</li>)}</ul></>)}
+          {c.note && <p><strong>Please note:</strong> {c.note}</p>}
           <h2 style={{ marginTop: 32 }}>Delivery across New Jersey</h2>
           <p>We deliver, set up and collect in every New Jersey county, including:</p>
           <ul className="pills">

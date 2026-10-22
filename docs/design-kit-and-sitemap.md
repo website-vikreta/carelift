@@ -102,13 +102,15 @@ description, breadcrumbs, and internal links to its siblings and parent.
 ```
 /                                         Home
 /rentals/                                 Rentals hub (category tiles)
-  /rentals/hospital-beds/
+  /rentals/hospital-beds/                 (incl. bariatric)
+  /rentals/seat-lift-chairs/
   /rentals/wheelchairs/
-  /rentals/mobility-aids/                 walkers, rollators, canes, knee scooters, transport chairs
-  /rentals/lift-chairs-and-patient-lifts/
-  /rentals/bathroom-safety/               commodes, shower chairs, raised seats
-  /rentals/post-surgery-recovery/
-  /rentals/bariatric/
+  /rentals/mobility-scooters/
+  /rentals/walking-aids/
+  /rentals/bathroom-safety/
+  /rentals/patient-lifts/
+  /rentals/cpm-machines/
+  /rentals/respiratory/
   /rentals/{category}/{product}/          individual product pages (spec, photos, FAQ, quote CTA)
 /who-we-serve/
   /who-we-serve/families-and-home-care/
@@ -175,6 +177,15 @@ guides, town pages, B2B page.
 For each of keystonemedicalrentals.com and mediplushomehealth.com note: nav items, whether prices are shown,
 quote vs. cart flow, how location is signalled, number/quality of location pages, trust signals above the fold,
 word count on category pages, and what feels dated. Then we adjust this plan.
+
+## 6b. Reference analysis (received 22 Oct 2026)
+
+Mediplus is a multi-category rent-and-sale catalogue (9 categories, size guides, "what's included", delivery logistics,
+sticky call bar). Keystone is a lean single-service local brand with a warm funnel. We adopted: Mediplus's nine
+categories, size-guidance and what's-included blocks, FAQ depth, sticky call bar. We deliberately did **not** adopt:
+published prices (policy is "call for pricing"), a cart/checkout, zoom-locking viewport, `#` social links, an empty blog,
+or duplicate category URLs. Their delivery-speed and service-contract claims are theirs; only make equivalent claims if true for CareLift.
+Compliance: oxygen and CPM pages carry a prescription note. Confirm NJ licensing/accreditation requirements for DME (respiratory especially) before launch.
 
 ## 7. Decisions confirmed
 
