@@ -5,10 +5,10 @@ import { SITE } from "@/lib/site";
 
 const LINKS = [
   ["/rentals/", "Rentals"],
+  ["/who-we-serve/", "Who we serve"],
   ["/service-areas/", "Service areas"],
   ["/how-renting-works/", "How it works"],
-  ["/faq/", "FAQ"],
-  ["/about/", "About"],
+  ["/guides/", "Guides"],
   ["/contact/", "Contact"],
 ] as const;
 

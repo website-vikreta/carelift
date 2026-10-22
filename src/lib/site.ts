@@ -132,3 +132,79 @@ export const FAQS = [
   { q: "Can you deliver to a hospital or facility?", a: "Yes. We supply hospitals, rehab centres and care facilities as well as private homes." },
   { q: "Is the equipment cleaned between rentals?", a: "Yes. Every item is inspected, cleaned and sanitised before it goes out." },
 ];
+
+export type Audience = { slug: string; name: string; headline: string; intro: string; points: string[]; categories: string[] };
+
+export const AUDIENCES: Audience[] = [
+  {
+    slug: "families-and-home-care",
+    name: "Families & Home Care",
+    headline: "Care at home, made simpler",
+    intro: "Caring for a parent, partner or relative at home is hard enough. We take the equipment side off your plate: you tell us what is needed, we deliver, set up and show you how it works.",
+    points: ["A single call to arrange delivery and set up", "Equipment matched to height, weight and the room it will go in", "Short- or long-term rental, with no purchase commitment", "Collection when you no longer need it"],
+    categories: ["hospital-beds", "seat-lift-chairs", "patient-lifts", "bathroom-safety"],
+  },
+  {
+    slug: "post-surgery-recovery",
+    name: "Post-Surgery Recovery",
+    headline: "Heal at home without buying equipment",
+    intro: "After knee, hip, back or other surgery you may only need equipment for a few weeks. Renting means you get what your surgeon recommends without paying for something that sits in the garage afterwards.",
+    points: ["Lift chairs, walkers, wheelchairs and CPM machines", "Short-term rental for the recovery period", "Delivery arranged before or right after you come home", "Follow your surgeon's and therapist's guidance on what you need"],
+    categories: ["seat-lift-chairs", "cpm-machines", "walking-aids", "wheelchairs"],
+  },
+  {
+    slug: "hospice-and-palliative-care",
+    name: "Hospice & Palliative Care",
+    headline: "Comfort and dignity at home",
+    intro: "When care happens at home, the right bed and equipment make a real difference. We work quickly and quietly, and we keep the process as gentle as possible for the family.",
+    points: ["Hospital beds, pressure-relief mattresses and lifts", "Prompt delivery and set up", "Clear, patient explanations for family caregivers", "Collection handled sensitively"],
+    categories: ["hospital-beds", "patient-lifts", "bathroom-safety", "wheelchairs"],
+  },
+  {
+    slug: "hospitals-and-facilities",
+    name: "Hospitals & Facilities",
+    headline: "Rental supply for care providers",
+    intro: "Hospitals, rehabilitation centres and care facilities can rent equipment from us to cover demand peaks and short-term needs. Call to discuss volumes, scheduling and invoicing.",
+    points: ["Beds, wheelchairs, lifts and mobility equipment", "Scheduled and on-demand delivery", "Cleaned and inspected between rentals", "One point of contact for your team"],
+    categories: ["hospital-beds", "wheelchairs", "patient-lifts", "walking-aids"],
+  },
+];
+
+export type Guide = { slug: string; title: string; description: string; body: { h: string; p: string }[] };
+
+// Draft informational copy; have it reviewed before launch. Generic guidance only, not medical advice.
+export const GUIDES: Guide[] = [
+  {
+    slug: "renting-vs-buying-medical-equipment",
+    title: "Renting vs. buying medical equipment: how to decide",
+    description: "When it makes sense to rent a hospital bed, lift chair or wheelchair, and when buying is the better choice.",
+    body: [
+      { h: "Start with how long you need it", p: "If the need is a few weeks or months, such as recovery after surgery, renting is usually simpler. If the need is permanent, buying may make more sense over time." },
+      { h: "Think about storage and upkeep", p: "Large items like hospital beds and lift chairs take up space and need maintenance. With a rental, delivery, set up and collection are handled for you." },
+      { h: "Check what your plan covers", p: "Insurance and Medicare coverage varies by item and plan. Ask your doctor and insurer before you decide, and call us if you want to talk through the options." },
+      { h: "Not sure yet? Start with a rental", p: "A rental lets you see what you really need before committing, and you can change or extend as things develop." },
+    ],
+  },
+  {
+    slug: "how-to-choose-a-lift-chair",
+    title: "How to choose a lift chair: size, fit and features",
+    description: "A plain-language guide to choosing the right size and type of lift chair for recovery or everyday use.",
+    body: [
+      { h: "Match the chair to your height and weight", p: "A chair that is too large or too small makes standing harder. Medium chairs generally suit average-height adults, while large chairs suit taller or heavier users." },
+      { h: "Consider the recline", p: "Some chairs recline further for resting or sleeping. If you plan to sleep in the chair during recovery, ask for a model with a deep recline." },
+      { h: "Check the room", p: "Measure the space and allow clearance from the wall for the recline. We can help you plan placement at delivery." },
+      { h: "Ask about the controls", p: "A simple, easy-to-hold remote matters. We demonstrate the controls when we set up." },
+    ],
+  },
+  {
+    slug: "preparing-your-home-for-a-hospital-bed",
+    title: "Preparing your home for a hospital bed",
+    description: "Practical tips for choosing the room, clearing space and getting ready for hospital bed delivery.",
+    body: [
+      { h: "Pick the right room", p: "Choose a room with space on both sides of the bed for caregivers, access to a bathroom, and a power outlet within reach." },
+      { h: "Measure the route", p: "Check doorways, hallways and stairs on the way to the room so the bed can be delivered and set up without trouble." },
+      { h: "Clear the floor", p: "Remove loose rugs and clutter to reduce the risk of falls, and keep walkways wide enough for a walker or wheelchair." },
+      { h: "Plan for comfort", p: "Think about lighting, a bedside table and a call system so the patient can reach what they need." },
+    ],
+  },
+];

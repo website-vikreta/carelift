@@ -11,7 +11,7 @@ export default function Home() {
         <div className="wrap hero-grid">
           <div>
             <p className="eyebrow">Greensboro & Winston-Salem medical equipment rental</p>
-            <h1>Home from hospital tomorrow? Equipment can be in the room tonight.</h1>
+            <h1>Coming home from hospital? We will get the right equipment ready.</h1>
             <p className="lead">
               Hospital beds, wheelchairs, lift chairs and more, delivered, set up and collected in Greensboro, Winston-Salem and nearby. Call for pricing.
             </p>
@@ -63,8 +63,8 @@ export default function Home() {
           <p className="eyebrow">Who we serve</p>
           <h2>For families, and for facilities</h2>
           <div className="grid c2">
-            <div><h3>Home and family</h3><p>Recovering after surgery, caring for a parent, or arranging hospice care at home. We keep it simple and walk you through it.</p></div>
-            <div><h3>Hospitals and facilities</h3><p>Reliable rental supply for hospitals, rehab centres and care providers. Call to discuss volume and scheduling.</p></div>
+            <Link href="/who-we-serve/families-and-home-care/" className="card"><div className="body"><h3>Home and family</h3><p>Recovering after surgery, caring for a parent, or arranging hospice care at home. We keep it simple and walk you through it.</p></div></Link>
+            <Link href="/who-we-serve/hospitals-and-facilities/" className="card"><div className="body"><h3>Hospitals and facilities</h3><p>Reliable rental supply for hospitals, rehab centres and care providers. Call to discuss volume and scheduling.</p></div></Link>
           </div>
         </div>
       </section>

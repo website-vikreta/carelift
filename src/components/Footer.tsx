@@ -26,7 +26,10 @@ export function Footer() {
           <div>
             <h3>Company</h3>
             <ul className="list" style={{ listStyle: "none", padding: 0 }}>
+              <li><Link href="/who-we-serve/">Who we serve</Link></li>
               <li><Link href="/service-areas/">Service areas</Link></li>
+              <li><Link href="/guides/">Guides</Link></li>
+              <li><Link href="/reviews/">Reviews</Link></li>
               <li><Link href="/how-renting-works/">How renting works</Link></li>
               <li><Link href="/faq/">FAQ</Link></li>
               <li><Link href="/about/">About</Link></li>
