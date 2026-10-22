@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/service-areas/", ...COUNTIES.map((c) => `/service-areas/${c.slug}/`),
     "/who-we-serve/", ...AUDIENCES.map((a) => `/who-we-serve/${a.slug}/`),
     "/guides/", ...GUIDES.map((g) => `/guides/${g.slug}/`), "/reviews/",
-    "/how-renting-works/", "/faq/", "/about/", "/contact/", "/get-a-quote/", "/privacy-policy/", "/terms-of-rental/",
+    "/how-renting-works/", "/faq/", "/about/", "/contact/", "/get-a-quote/", "/privacy-policy/", "/terms-of-rental/", "/photo-credits/",
   ];
   return paths.map((p) => ({ url: `${SITE.url}${p}` }));
 }

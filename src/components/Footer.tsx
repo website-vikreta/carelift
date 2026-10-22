@@ -42,6 +42,7 @@ export function Footer() {
             <ul className="list" style={{ listStyle: "none", padding: 0 }}>
               <li><Link href="/privacy-policy/">Privacy policy</Link></li>
               <li><Link href="/terms-of-rental/">Terms of rental</Link></li>
+              <li><Link href="/photo-credits/">Photo credits</Link></li>
             </ul>
           </div>
         </div>
