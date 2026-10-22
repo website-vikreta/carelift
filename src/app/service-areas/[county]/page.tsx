@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CATEGORIES, COUNTIES, SITE } from "@/lib/site";
 import { breadcrumbLd, pageMeta } from "@/lib/seo";
+import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -33,10 +34,7 @@ export default async function County({ params }: { params: Promise<Params> }) {
           <ul className="pills">
             {CATEGORIES.map((x) => <li key={x.slug}><Link href={`/rentals/${x.slug}/`}>{x.name}</Link></li>)}
           </ul>
-          <div className="btn-row">
-            <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
-            <Link className="btn secondary" href="/get-a-quote/">Request a quote</Link>
-          </div>
+          <ContactButtons topic={`equipment in ${c.name} County`} />
         </div>
       </section>
       <CtaBand />

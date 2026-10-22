@@ -1,5 +1,6 @@
+import { SITE, waLink } from "@/lib/site";
 import Link from "next/link";
-import { SITE } from "@/lib/site";
+import { WhatsAppIcon } from "./ContactButtons";
 
 export function CtaBand() {
   return (
@@ -9,8 +10,9 @@ export function CtaBand() {
         <p className="lead">Call for pricing and availability. We will help you choose the right item.</p>
         <div className="btn-row">
           <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
-          <Link className="btn secondary" href="/get-a-quote/">Request a quote</Link>
+          <a className="btn wa" href={waLink()} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> WhatsApp us</a>
         </div>
+        <p className="form-link">Prefer a form? <Link href="/get-a-quote/">Request a callback</Link></p>
       </div>
     </section>
   );

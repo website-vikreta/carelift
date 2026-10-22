@@ -3,7 +3,7 @@ export const SITE = {
   short: "CareLift",
   phone: "+1 (336) 653-4589",
   phoneHref: "tel:+13366534589",
-  smsHref: "sms:+13366534589",
+  whatsappNumber: "13366534589", // international format, digits only; confirm this number is on WhatsApp
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://careliftmedicalequipment.com",
   state: "North Carolina",
   stateAbbr: "NC",
@@ -15,6 +15,10 @@ export const SITE = {
   hours: "Mon–Sat 10am–6pm · Sunday closed" as null | string,
   gbpUrl: null as null | string,
 };
+
+export function waLink(message = "Hi CareLift, I'd like to ask about renting medical equipment.") {
+  return `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
 
 export type Category = {
   slug: string;

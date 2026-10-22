@@ -2,9 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AUDIENCES, CATEGORIES, SITE } from "@/lib/site";
 import { breadcrumbLd, pageMeta } from "@/lib/seo";
+import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
-import { Placeholder } from "@/components/Placeholder";
+import { Photo } from "@/components/Photo";
 
 type Params = { audience: string };
 export const dynamicParams = false;
@@ -31,12 +32,9 @@ export default async function Audience({ params }: { params: Promise<Params> }) 
             <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <Link href="/who-we-serve/">Who we serve</Link> / {a.name}</nav>
             <h1>{a.headline}</h1>
             <p className="lead">{a.intro}</p>
-            <div className="btn-row">
-              <a className="btn" href={SITE.phoneHref}>Call for pricing</a>
-              <Link className="btn secondary" href="/get-a-quote/">Request a quote</Link>
-            </div>
+            <ContactButtons topic={a.name} />
           </div>
-          <Placeholder label={a.name} />
+          <Photo id={`aud-${a.slug}`} label={a.name} priority />
         </div>
       </section>
       <section className="section alt">

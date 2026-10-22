@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CATEGORIES, FAQS, SITE } from "@/lib/site";
-import { Placeholder } from "@/components/Placeholder";
+import { Photo } from "@/components/Photo";
+import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -15,12 +16,9 @@ export default function Home() {
             <p className="lead">
               Hospital beds, wheelchairs, lift chairs and more, delivered, set up and collected in Greensboro, Winston-Salem and nearby. Call for pricing.
             </p>
-            <div className="btn-row">
-              <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
-              <Link className="btn secondary" href="/get-a-quote/">Request a quote</Link>
-            </div>
+            <ContactButtons />
           </div>
-          <Placeholder label="Hero: hospital bed in a bright home bedroom" />
+          <Photo id="hero" label="Hero: lift chair or hospital bed in a bright home" priority />
         </div>
       </section>
 
@@ -38,7 +36,7 @@ export default function Home() {
           <div className="grid c3">
             {CATEGORIES.map((c) => (
               <Link key={c.slug} href={`/rentals/${c.slug}/`} className="card">
-                <Placeholder label={c.name} wide />
+                <Photo id={`cat-${c.slug}`} label={c.name} wide />
                 <div className="body"><h3>{c.name}</h3><p>{c.tagline}</p></div>
               </Link>
             ))}

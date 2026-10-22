@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
-import { Placeholder } from "@/components/Placeholder";
+import { Photo } from "@/components/Photo";
 import { CtaBand } from "@/components/CtaBand";
 
 export const metadata = pageMeta("Medical Equipment Rentals in Greensboro & Winston-Salem, NC", "Browse hospital beds, wheelchairs, mobility aids, lift chairs and more available to rent in Greensboro, Winston-Salem and nearby. Call for pricing.", "/rentals/");
@@ -16,7 +16,7 @@ export default function Rentals() {
           <div className="grid c3" style={{ marginTop: 32 }}>
             {CATEGORIES.map((c) => (
               <Link key={c.slug} href={`/rentals/${c.slug}/`} className="card">
-                <Placeholder label={c.name} wide />
+                <Photo id={`cat-${c.slug}`} label={c.name} wide />
                 <div className="body"><h3>{c.name}</h3><p>{c.tagline}</p></div>
               </Link>
             ))}

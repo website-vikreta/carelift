@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CATEGORIES, COUNTIES, SITE } from "@/lib/site";
 import { breadcrumbLd, pageMeta } from "@/lib/seo";
-import { Placeholder } from "@/components/Placeholder";
+import { Photo } from "@/components/Photo";
+import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -30,12 +31,9 @@ export default async function Category({ params }: { params: Promise<Params> }) 
             <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / <Link href="/rentals/">Rentals</Link> / {c.name}</nav>
             <h1>{c.name} rental in Greensboro &amp; Winston-Salem</h1>
             <p className="lead">{c.intro}</p>
-            <div className="btn-row">
-              <a className="btn" href={SITE.phoneHref}>Call for pricing</a>
-              <Link className="btn secondary" href="/get-a-quote/">Request a quote</Link>
-            </div>
+            <ContactButtons topic={c.name} />
           </div>
-          <Placeholder label={c.name} />
+          <Photo id={`cat-${c.slug}`} label={c.name} priority />
         </div>
       </section>
       <section className="section alt">
