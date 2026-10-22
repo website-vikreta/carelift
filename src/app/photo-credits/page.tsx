@@ -1,10 +1,10 @@
-import { IMAGES } from "@/lib/images";
+import { GALLERY, IMAGES } from "@/lib/images";
 import { pageMeta } from "@/lib/seo";
 
 export const metadata = pageMeta("Photo Credits", "Photographers whose work appears on this site, via Unsplash.", "/photo-credits/");
 
 export default function Credits() {
-  const seen = new Map(Object.values(IMAGES).map((p) => [p.credit, p.creditUrl]));
+  const seen = new Map([...Object.values(IMAGES), ...Object.values(GALLERY).flat()].map((p) => [p.credit, p.creditUrl]));
   return (
     <section className="section">
       <div className="wrap">

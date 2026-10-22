@@ -1,6 +1,6 @@
 import { IMAGES, type SitePhoto } from "@/lib/images";
 
-const RATIOS = { "4:3": [4, 3], "3:2": [3, 2], "16:9": [16, 9], "1:1": [1, 1] } as const;
+const RATIOS = { "4:3": [4, 3], "3:2": [3, 2], "16:9": [16, 9], "1:1": [1, 1], "4:5": [4, 5] } as const;
 export type Ratio = keyof typeof RATIOS;
 
 const DEFAULT_SIZES = "(min-width: 760px) 520px, calc(100vw - 40px)";
