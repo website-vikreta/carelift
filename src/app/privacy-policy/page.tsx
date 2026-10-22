@@ -4,7 +4,7 @@ export const metadata = pageMeta("Privacy Policy", "Privacy Policy for CareLift 
 
 export default function Page() {
   return (
-    <section className="section">
+    <section className="section first">
       <div className="wrap">
         <h1>Privacy Policy</h1>
         {/* TODO: replace with reviewed legal text before launch. */}

@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { SITE } from "@/lib/site";
+import { SITE, waLink } from "@/lib/site";
+import { WhatsAppIcon } from "./ContactButtons";
 
 const LINKS = [
   ["/rentals/", "Rentals"],
-  ["/service-areas/", "Service areas"],
+  ["/service-areas/", "Where we deliver"],
   ["/how-renting-works/", "How it works"],
-  ["/faq/", "FAQ"],
-  ["/about/", "About"],
+  ["/guides/", "Guides"],
   ["/contact/", "Contact"],
 ] as const;
 
@@ -27,9 +27,10 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <a className="btn header-cta" href={SITE.phoneHref}>
-          Call {SITE.phone}
-        </a>
+        <div className="header-cta">
+          <a className="btn" href={SITE.phoneHref}>Call now</a>
+          <a className="btn wa" href={waLink()} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> WhatsApp</a>
+        </div>
         <button className="nav-toggle" aria-expanded={open} aria-label="Menu" onClick={() => setOpen(!open)}>
           {open ? "Close" : "Menu"}
         </button>

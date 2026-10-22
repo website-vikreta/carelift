@@ -1,26 +1,22 @@
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
-import { Placeholder } from "@/components/Placeholder";
 import { CtaBand } from "@/components/CtaBand";
 
-export const metadata = pageMeta("Medical Equipment Rentals in Greensboro & Winston-Salem, NC", "Browse hospital beds, wheelchairs, mobility aids, lift chairs and more available to rent in Greensboro, Winston-Salem and nearby. Call for pricing.", "/rentals/");
+export const metadata = pageMeta("Medical Equipment Rentals in Greensboro & Winston-Salem, NC", "Hospital beds, wheelchairs, lift chairs, scooters and more to rent in Greensboro, Winston-Salem and nearby. Call for pricing.", "/rentals/");
 
 export default function Rentals() {
   return (
     <>
-      <section className="section">
+      <section className="section first">
         <div className="wrap">
-          <h1>Medical equipment rentals in Greensboro & Winston-Salem</h1>
-          <p className="lead">Choose a category to see what we rent. Call us for pricing and availability.</p>
-          <div className="grid c3" style={{ marginTop: 32 }}>
+          <h1>Equipment rentals</h1>
+          <p className="lead">Choose a category. Call or message us for pricing and availability.</p>
+          <ul className="rows" style={{ marginTop: 28 }}>
             {CATEGORIES.map((c) => (
-              <Link key={c.slug} href={`/rentals/${c.slug}/`} className="card">
-                <Placeholder label={c.name} wide />
-                <div className="body"><h3>{c.name}</h3><p>{c.tagline}</p></div>
-              </Link>
+              <li key={c.slug}><Link href={`/rentals/${c.slug}/`}><span className="name">{c.name}</span><span className="desc">{c.tagline}</span></Link></li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
       <CtaBand />

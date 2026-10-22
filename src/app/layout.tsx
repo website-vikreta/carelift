@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/fraunces";
-import "@fontsource-variable/inter";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -8,6 +7,14 @@ import { StickyBar } from "@/components/StickyBar";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE } from "@/lib/site";
 import { localBusinessLd } from "@/lib/seo";
+
+const fraunces = localFont({
+  src: "./fonts/fraunces-latin-wght-normal.woff2",
+  weight: "400 700",
+  display: "swap",
+  variable: "--font-head",
+  adjustFontFallback: "Times New Roman",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -18,7 +25,10 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={fraunces.variable}>
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+      </head>
       <body>
         <a className="skip" href="#main">Skip to content</a>
         <Header />

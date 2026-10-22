@@ -8,7 +8,7 @@ export const metadata = pageMeta("Medical Equipment Rental FAQ", "Answers to com
 export default function Faq() {
   return (
     <>
-      <section className="section">
+      <section className="section first">
         <div className="wrap">
           <h1>Frequently asked questions</h1>
           {FAQS.map((f) => <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>)}
