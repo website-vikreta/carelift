@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { AUDIENCES, CATEGORIES, FAQS, SITE } from "@/lib/site";
+import { Cities } from "@/components/Cities";
 import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
-import { HomeCheckDoodle, PhoneDoodle, Underline, VanDoodle } from "@/components/Doodles";
+import { Deco } from "@/components/Deco";
 import { Photo } from "@/components/Photo";
+import { Steps } from "@/components/Steps";
 import { Tile } from "@/components/Tile";
 
 export default function Home() {
@@ -12,22 +14,35 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <h1>
-              Medical equipment rental in <Underline>Greensboro</Underline> and Winston-Salem
-            </h1>
-            <p className="lead">Hospital beds, lift chairs, wheelchairs and more. We deliver, set up and collect. Call us for pricing.</p>
+            <p className="kicker">Greensboro &amp; Winston-Salem, NC</p>
+            <h1>Medical equipment, delivered and set up at home</h1>
+            <p className="lead">Rent hospital beds, lift chairs, wheelchairs, walkers and more. We bring it, set it up and collect it when you are done.</p>
             <ContactButtons />
-            <p className="small hero-note">Serving {SITE.areaText}. Open {SITE.hours}.</p>
+            <ul className="facts">
+              <li>Delivered and set up in the room you choose</li>
+              <li>Short- and long-term rentals, no purchase needed</li>
+              <li>Open {SITE.hours}</li>
+            </ul>
           </div>
-          <Photo id="hero" ratio="4:3" priority />
+          <div className="media">
+            <Deco kind="blob" className="o-hero-blob" />
+            <Deco kind="ring" className="o-hero-ring" />
+            <Deco kind="dots" className="o-hero-dots" />
+            <Deco kind="spark" className="o-hero-spark" />
+            <Photo id="hero" ratio="4:5" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
+          </div>
         </div>
       </section>
 
       <section className="section">
+        <Deco kind="dots" className="o-sec-dots" />
         <div className="wrap">
           <div className="sec-head">
-            <h2>What we <Underline>rent</Underline></h2>
-            <Link href="/rentals/">All rentals</Link>
+            <div>
+              <h2>What we rent</h2>
+              <p className="small">Nine kinds of equipment, all delivered and set up. Call for pricing.</p>
+            </div>
+            <Link className="more" href="/rentals/">All rentals</Link>
           </div>
           <ul className="tiles">
             {CATEGORIES.map((c) => (
@@ -37,47 +52,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section deep">
+        <Deco kind="ring" className="o-deep-ring" />
+        <Deco kind="arc" className="o-deep-arc" />
         <div className="wrap">
           <div className="sec-head">
-            <h2>Who we help</h2>
-            <Link href="/who-we-serve/">See all</Link>
+            <div>
+              <p className="kicker" style={{ color: "var(--apricot)" }}>Simple from start to finish</p>
+              <h2>How renting works</h2>
+            </div>
+            <Link className="more" href="/how-renting-works/">More detail</Link>
           </div>
-          <ul className="tiles four">
+          <Steps />
+          <div style={{ marginTop: 40 }}><ContactButtons showForm={false} /></div>
+        </div>
+      </section>
+
+      <section className="section sand">
+        <div className="wrap">
+          <div className="sec-head">
+            <div>
+              <h2>Who we help</h2>
+              <p className="small">Families at home, people recovering from surgery, hospice care and care facilities.</p>
+            </div>
+            <Link className="more" href="/who-we-serve/">See all</Link>
+          </div>
+          <ul className="scroller">
             {AUDIENCES.map((a) => (
-              <Tile key={a.slug} href={`/who-we-serve/${a.slug}/`} photoId={`aud-${a.slug}`} name={a.name} desc={a.headline} />
+              <Tile key={a.slug} href={`/who-we-serve/${a.slug}/`} photoId={`aud-${a.slug}`} name={a.name} desc={a.headline} ratio="4:5" sizes="(min-width: 760px) 270px, 74vw" />
             ))}
           </ul>
         </div>
       </section>
 
       <section className="section">
-        <div className="wrap split">
-          <Photo id="delivery" ratio="3:2" />
-          <div>
-            <h2>How renting works</h2>
-            <ol className="steps">
-              <li><PhoneDoodle /><h3>Call or message us</h3><p>Tell us what you need, for how long, and where it is going.</p></li>
-              <li><VanDoodle /><h3>We deliver and set up</h3><p>We bring the equipment, set it up and show you how it works.</p></li>
-              <li><HomeCheckDoodle /><h3>We collect it</h3><p>When you are done, we pick it up. No long-term commitment.</p></li>
-            </ol>
+        <Deco kind="squiggle" className="o-sec-squiggle" />
+        <div className="wrap">
+          <div className="sec-head">
+            <div>
+              <h2>Local to the Triad</h2>
+              <p className="small">We deliver across Guilford and Forsyth County.</p>
+            </div>
+            <Link className="more" href="/service-areas/">Service areas</Link>
           </div>
+          <Cities />
         </div>
       </section>
 
-      <section className="section">
+      <section className="section sand">
         <div className="wrap cols">
           <div>
-            <h2>Where we deliver</h2>
-            <p>Guilford County, including Greensboro and High Point, and Forsyth County, including Winston-Salem.</p>
-            <p><Link href="/service-areas/">See service areas</Link></p>
+            <h2>Questions, answered</h2>
+            <p className="lead">Still deciding? These are the questions families ask us most.</p>
+            <p><Link className="more" href="/faq/">All questions</Link></p>
           </div>
           <div>
-            <h2>Common questions</h2>
-            {FAQS.slice(0, 3).map((f) => (
+            {FAQS.slice(0, 4).map((f) => (
               <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
             ))}
-            <p style={{ marginTop: 16 }}><Link href="/faq/">All questions</Link></p>
           </div>
         </div>
       </section>

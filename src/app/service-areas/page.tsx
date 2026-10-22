@@ -1,8 +1,7 @@
-import Link from "next/link";
-import { COUNTIES } from "@/lib/site";
 import { pageMeta } from "@/lib/seo";
+import { Cities } from "@/components/Cities";
 import { CtaBand } from "@/components/CtaBand";
-import { Photo } from "@/components/Photo";
+import { Deco } from "@/components/Deco";
 
 export const metadata = pageMeta("Medical Equipment Rental Service Areas: Greensboro & Winston-Salem, NC", "CareLift delivers medical equipment rentals in Guilford and Forsyth County, North Carolina.", "/service-areas/");
 
@@ -10,17 +9,11 @@ export default function Areas() {
   return (
     <>
       <section className="section first">
-        <div className="wrap split">
-          <div>
-            <h1>Where we deliver</h1>
-            <p className="lead">We deliver, set up and collect medical equipment in Guilford County and Forsyth County. More areas coming soon.</p>
-            <ul className="rows" style={{ marginTop: 28 }}>
-              {COUNTIES.map((c) => (
-                <li key={c.slug}><Link href={`/service-areas/${c.slug}/`}><span className="name">{c.name} County</span><span className="desc">{c.cities}</span></Link></li>
-              ))}
-            </ul>
-          </div>
-          <Photo id="delivery" ratio="3:2" priority />
+        <Deco kind="squiggle" className="o-sec-squiggle" />
+        <div className="wrap">
+          <h1>Where we deliver</h1>
+          <p className="lead">We deliver, set up and collect medical equipment across Guilford County and Forsyth County. More areas coming soon.</p>
+          <div style={{ marginTop: 32 }}><Cities /></div>
         </div>
       </section>
       <CtaBand />

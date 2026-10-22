@@ -25,9 +25,10 @@ traffic and the site supports it. Strategy and design kit: `docs/design-kit-and-
 
 ## Design and performance rules
 
-- Photo-led, calm and premium: ivory page, ink text, one teal accent, hairline dividers. Real photos do the selling (category tiles, audience tiles, hero, delivery, galleries). No card shadows, no uppercase eyebrow labels, no pill chips, no gradient placeholder boxes, no stat or trust badges we cannot back up.
-- Doodles: only the hand-drawn `Underline` (one or two per page) and the three step icons in `src/components/Doodles.tsx`. Inline SVG, teal line art. Do not add more without asking.
+- Photo-led, calm and premium, alternating paper / sand / deep-teal sections for contrast: ivory page, ink text, one teal accent, hairline dividers. Real photos do the selling (category tiles, audience tiles, hero, delivery, galleries). No card shadows, no uppercase eyebrow labels, no pill chips, no gradient placeholder boxes, no stat or trust badges we cannot back up.
+- Decorative shapes (`src/components/Deco.tsx`: blob, ring, dots, spark, squiggle, arc) sit in empty space around photos and section edges, positioned with `.o-*` classes. Never over text, never more than ~4 per section.
 - Fonts: Fraunces (latin, weight axis only) self-hosted via `next/font/local` for headings; system font stack for body. No other web fonts.
-- Photos: manifest in `src/lib/images.ts` (with average colour shown while loading). `Photo` renders nothing when no image is configured. It always sets width/height and srcset; only the hero image is `priority`, everything else lazy-loads. Every photo used must be credited on /photo-credits/ (derived from the manifest) and registered via the Unsplash download endpoint.
+- Photos: manifest in `src/lib/images.ts` (with average colour shown while loading). `Photo` renders nothing when no image is configured. It always sets width/height and srcset; only the hero image is `priority`, everything else lazy-loads. No photo may appear twice on the same page (check: no duplicate unsplash ids per built HTML page). Every photo used must be credited on /photo-credits/ (derived from the manifest) and registered via the Unsplash download endpoint.
 - Keep client JS minimal (only the mobile menu). No animation libraries, no analytics scripts without asking.
 - Target Lighthouse mobile 90+ on every page; check after adding sections or scripts.
+- Interlinking: every category, audience and county page links onward to related categories, audiences and both cities, and ends with `CtaBand`.

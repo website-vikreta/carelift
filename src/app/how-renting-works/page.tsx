@@ -1,7 +1,9 @@
+import Link from "next/link";
 import { pageMeta } from "@/lib/seo";
+import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
-import { HomeCheckDoodle, PhoneDoodle, VanDoodle } from "@/components/Doodles";
-import { Photo } from "@/components/Photo";
+import { Deco } from "@/components/Deco";
+import { Steps } from "@/components/Steps";
 
 export const metadata = pageMeta("How Renting Medical Equipment Works", "Call, we deliver and set up, and we collect when you are done. Simple medical equipment rental in Greensboro and Winston-Salem.", "/how-renting-works/");
 
@@ -9,21 +11,27 @@ export default function How() {
   return (
     <>
       <section className="section first">
-        <div className="wrap split">
-          <div>
-            <h1>How renting works</h1>
-            <p className="lead">Renting should be the easy part. Here is what to expect.</p>
-          </div>
-          <Photo id="delivery" ratio="3:2" priority />
+        <Deco kind="dots" className="o-sec-dots" />
+        <div className="wrap">
+          <h1>How renting works</h1>
+          <p className="lead">Three steps, one phone call. Here is what to expect.</p>
+          <ContactButtons />
         </div>
       </section>
-      <section className="section">
-        <div className="wrap">
-          <ol className="steps">
-            <li><PhoneDoodle /><h3>Call or message us</h3><p>Tell us what you need, how long, and your ZIP code. We will confirm availability and give you pricing.</p></li>
-            <li><VanDoodle /><h3>Delivery and set up</h3><p>We deliver to your home or facility, set the equipment up and show you how to use it safely.</p></li>
-            <li><HomeCheckDoodle /><h3>Collection</h3><p>When you no longer need it, call us and we will collect it. Every item is cleaned and sanitised before the next rental.</p></li>
-          </ol>
+      <section className="section deep">
+        <Deco kind="ring" className="o-deep-ring" />
+        <Deco kind="arc" className="o-deep-arc" />
+        <div className="wrap"><Steps /></div>
+      </section>
+      <section className="section sand">
+        <div className="wrap cols">
+          <div>
+            <h2>Good to know</h2>
+            <p>Pricing depends on the item and how long you need it, so we quote on the phone. There is no long-term commitment.</p>
+          </div>
+          <div>
+            <p>Not sure what to rent? Start with <Link href="/rentals/">our rentals</Link>, see <Link href="/who-we-serve/">who we help</Link>, or read <Link href="/faq/">common questions</Link>.</p>
+          </div>
         </div>
       </section>
       <CtaBand />
