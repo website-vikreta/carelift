@@ -4,7 +4,7 @@ export const SITE = {
   phone: "+1 (336) 653-4589",
   phoneHref: "tel:+13366534589",
   smsHref: "sms:+13366534589",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://carelift.example",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://careliftmedicalequipment.com",
   state: "North Carolina",
   stateAbbr: "NC",
   region: "Greensboro & Winston-Salem, NC",

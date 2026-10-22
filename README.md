@@ -16,7 +16,7 @@ npm run build    # static export to ./out
 `netlify.toml` is configured (build `npm run build`, publish `out`, Node 22, security and cache headers).
 
 1. Run `npm run build`, then drag the `out` folder into Netlify, or connect the repo and let Netlify build.
-2. Set `NEXT_PUBLIC_SITE_URL` (e.g. `https://www.yourdomain.com`) in Netlify environment variables.
+2. Set `NEXT_PUBLIC_SITE_URL` (defaults to `https://careliftmedicalequipment.com`; change when the domain changes) in Netlify environment variables.
    It drives canonical URLs, `sitemap.xml`, `robots.txt` and JSON-LD.
 3. Quote form uses **Netlify Forms** (`public/__forms.html` registers it). After the first deploy, enable
    email notifications under Forms in the Netlify dashboard. Note: a drag-and-drop deploy of `out` works with Forms too.
