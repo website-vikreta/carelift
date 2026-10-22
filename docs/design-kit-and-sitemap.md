@@ -176,12 +176,19 @@ For each of keystonemedicalrentals.com and mediplushomehealth.com note: nav item
 quote vs. cart flow, how location is signalled, number/quality of location pages, trust signals above the fold,
 word count on category pages, and what feels dated. Then we adjust this plan.
 
-## 7. Open questions
+## 7. Decisions confirmed
 
-1. Exact business name, address, phone, hours; is it storefront or service-area-only on GBP?
-2. Which NJ counties/towns do you really deliver to?
-3. Inventory list and which items you rent (oxygen? bariatric? facility contracts?).
-4. Pricing: publish "from" rates or "call for pricing"?
-5. Do you have your own product/delivery photography?
-6. Logo/brand colours already in use?
-7. Preferred stack, or happy with static + Vercel?
+- Business: **CareLift Medical Equipment**, phone +1 (336) 653-4589, serves **all of New Jersey**. Address and hours to follow.
+- Google Business Profile is the main traffic source; the site supports its authority.
+- **Call for pricing.** No prices shown anywhere.
+- Stock images at launch, replaced later. No existing logo or brand colours, so the palette in 2.1 stands.
+- Stack: Next.js static export, manually deployed to Netlify (config in `netlify.toml`).
+- Item list: taken from the reference sites. Current list in `src/lib/site.ts` is a draft pending those sites' real inventory.
+- Note: 336 is a North Carolina area code. For local SEO the number on the site should match the Google profile exactly; if you have an NJ number, consider using it as the primary.
+
+## 8. Remaining questions
+
+1. Street address and hours (and whether the GBP hides the address as service-area-only).
+2. The reference sites' product lists (see how to share them in the chat).
+3. Your GBP URL, for schema and the Contact page.
+4. Your domain name.
