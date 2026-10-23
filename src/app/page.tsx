@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { AUDIENCES, CATEGORIES, FAQS, SITE } from "@/lib/site";
-import { Cities } from "@/components/Cities";
+import { FAQS, PRODUCT, SITE } from "@/lib/site";
+import { Areas } from "@/components/Areas";
 import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
 import { Deco } from "@/components/Deco";
 import { Photo } from "@/components/Photo";
 import { Steps } from "@/components/Steps";
-import { Tile } from "@/components/Tile";
 
 export default function Home() {
   return (
@@ -14,13 +13,13 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <p className="kicker">Greensboro &amp; Winston-Salem, NC</p>
-            <h1>Medical equipment, delivered and set up at home</h1>
-            <p className="lead">Rent hospital beds, lift chairs, wheelchairs, walkers and more. We bring it, set it up and collect it when you are done.</p>
+            <p className="kicker">New York City &amp; New Jersey</p>
+            <h1>Lift chair rentals, delivered to your home</h1>
+            <p className="lead">Rent a power lift chair for recovery, comfort or easier everyday life. We deliver it, set it up and collect it when you are done.</p>
             <ContactButtons />
             <ul className="facts">
               <li>Delivered and set up in the room you choose</li>
-              <li>Short- and long-term rentals, no purchase needed</li>
+              <li>Private rentals, no purchase needed</li>
               <li>Open {SITE.hours}</li>
             </ul>
           </div>
@@ -36,19 +35,17 @@ export default function Home() {
 
       <section className="section">
         <Deco kind="dots" className="o-sec-dots" />
-        <div className="wrap">
-          <div className="sec-head">
-            <div>
-              <h2>What we rent</h2>
-              <p className="small">Nine kinds of equipment, all delivered and set up. Call for pricing.</p>
-            </div>
-            <Link className="more" href="/rentals/">All rentals</Link>
+        <div className="wrap split">
+          <div className="media">
+            <Deco kind="blob" className="o-media-blob" />
+            <Photo id="chair" ratio="4:3" />
           </div>
-          <ul className="tiles">
-            {CATEGORIES.map((c) => (
-              <Tile key={c.slug} href={`/rentals/${c.slug}/`} photoId={`cat-${c.slug}`} name={c.name} desc={c.tagline} />
-            ))}
-          </ul>
+          <div>
+            <h2>A chair that helps you stand</h2>
+            <p>{PRODUCT.intro}</p>
+            <ul className="list">{PRODUCT.benefits.map((b) => <li key={b}>{b}</li>)}</ul>
+            <p><Link className="more" href={`/${PRODUCT.slug}/`}>More about our lift chairs</Link></p>
+          </div>
         </div>
       </section>
 
@@ -61,27 +58,10 @@ export default function Home() {
               <p className="kicker" style={{ color: "var(--apricot)" }}>Simple from start to finish</p>
               <h2>How renting works</h2>
             </div>
-            <Link className="more" href="/how-renting-works/">More detail</Link>
+            <Link className="more" href="/how-it-works/">More detail</Link>
           </div>
           <Steps />
-          <div style={{ marginTop: 40 }}><ContactButtons showForm={false} /></div>
-        </div>
-      </section>
-
-      <section className="section sand">
-        <div className="wrap">
-          <div className="sec-head">
-            <div>
-              <h2>Who we help</h2>
-              <p className="small">Families at home, people recovering from surgery, hospice care and care facilities.</p>
-            </div>
-            <Link className="more" href="/who-we-serve/">See all</Link>
-          </div>
-          <ul className="scroller">
-            {AUDIENCES.map((a) => (
-              <Tile key={a.slug} href={`/who-we-serve/${a.slug}/`} photoId={`aud-${a.slug}`} name={a.name} desc={a.headline} ratio="4:5" sizes="(min-width: 760px) 270px, 74vw" />
-            ))}
-          </ul>
+          <div style={{ marginTop: 40 }}><ContactButtons /></div>
         </div>
       </section>
 
@@ -90,12 +70,12 @@ export default function Home() {
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <h2>Local to the Triad</h2>
-              <p className="small">We deliver across Guilford and Forsyth County.</p>
+              <h2>Where we deliver</h2>
+              <p className="small">New York City and New Jersey, plus some surrounding areas.</p>
             </div>
             <Link className="more" href="/service-areas/">Service areas</Link>
           </div>
-          <Cities />
+          <Areas />
         </div>
       </section>
 
@@ -103,11 +83,11 @@ export default function Home() {
         <div className="wrap cols">
           <div>
             <h2>Questions, answered</h2>
-            <p className="lead">Still deciding? These are the questions families ask us most.</p>
+            <p className="lead">The things people ask us most before renting.</p>
             <p><Link className="more" href="/faq/">All questions</Link></p>
           </div>
           <div>
-            {FAQS.slice(0, 4).map((f) => (
+            {FAQS.slice(0, 5).map((f) => (
               <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
             ))}
           </div>

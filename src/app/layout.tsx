@@ -18,8 +18,8 @@ const fraunces = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
-  title: { default: `Medical Equipment Rental in Greensboro & Winston-Salem, NC | ${SITE.name}`, template: `%s | ${SITE.name}` },
-  description: "Rent hospital beds, wheelchairs, lift chairs and more in Greensboro, Winston-Salem and nearby. Delivered, set up and collected. Call for pricing.",
+  title: { default: `Lift Chair Rental in New York City & New Jersey | ${SITE.name}`, template: `%s | ${SITE.name}` },
+  description: "Rent a power lift chair for your home in New York City and New Jersey. Delivered, set up and collected. Call for pricing.",
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#faf7f2" };
 

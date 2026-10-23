@@ -11,12 +11,12 @@ export function CtaBand() {
       <div className="wrap split">
         <div>
           <p className="kicker">Talk to a real person</p>
-          <h2>Call or message us. We will help you choose.</h2>
-          <p>Tell us what you need and your ZIP code. We confirm availability and pricing straight away. {SITE.hours}.</p>
+          <h2>Call or message us. We will help you choose a chair.</h2>
+          <p>Tell us how long you need it and where it is going. We confirm availability and pricing. {SITE.hours}.</p>
           <ContactButtons />
         </div>
         <div className="media">
-          <Photo id="contact" ratio="4:3" />
+          <Photo id="cta" ratio="4:3" />
           <Deco kind="dots" className="o-media-dots" />
         </div>
       </div>

@@ -1,9 +1,9 @@
 import { Photo } from "./Photo";
 
 const STEPS = [
-  { title: "Call or message us", text: "Tell us what you need, for how long, and your ZIP code. We confirm availability and pricing on the spot." },
-  { title: "We deliver and set up", text: "We bring the equipment to your home or facility, set it up in the right room and show you how it works." },
-  { title: "We collect it", text: "When you are finished, we pick it up. No long-term commitment, and every item is cleaned before its next rental." },
+  { title: "Call or message us", text: "Tell us how long you need a chair and where it is going. We confirm availability and pricing." },
+  { title: "We deliver and set up", text: "We bring the lift chair to your home, set it up in the room you choose and show you how the remote works." },
+  { title: "We collect it", text: "When your rental ends, we pick the chair up. Nothing to return or ship." },
 ];
 
 // The three-step rental process, each step with its own photo. Used on the deep (dark) band.
