@@ -1,4 +1,4 @@
-import { validate, usDigits, formatUsPhone, toUsPhoneE164Display } from "../src/lib/validation.ts";
+import { validate, usDigits, formatUsPhone, toUsPhoneE164Display, spamCheck } from "../src/lib/validation.ts";
 import { isRealValue, templateParams } from "../src/lib/emailjs.ts";
 let fail = 0;
 const t = (name, ok) => { if (!ok) { fail++; console.log("FAIL", name); } };
@@ -31,5 +31,10 @@ t("template phone formatted", tp.contact === "+1 (212) 555-0123");
 t("template empty message", tp.message === "(no message)");
 t("placeholder env value not configured", !isRealValue("your_service_id") && !isRealValue("") && !isRealValue(undefined));
 t("real env value configured", isRealValue("service_abc123"));
+t("honeypot empty is ok", spamCheck("", 500) === "ok");
+t("honeypot filled instantly is dropped", spamCheck("Acme Inc", 800) === "drop");
+t("honeypot autofilled by a person is sent, flagged", spamCheck("Acme Inc", 45000) === "flag");
+t("flagged subject", templateParams(good, true).title.startsWith("[check: possible spam] "));
+t("normal subject", templateParams(good).title.startsWith("Lift chair rental: "));
 console.log(fail ? `${fail} failed` : "all validation tests passed");
 process.exit(fail ? 1 : 0);

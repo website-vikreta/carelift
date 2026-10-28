@@ -16,11 +16,11 @@ export const emailConfigured = [SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY].every(isRea
 export type SendResult = { ok: true } | { ok: false; reason: "not-configured" | "rate-limited" | "failed" };
 
 /** The exact params the client's EmailJS template expects. Kept separate so it can be tested. */
-export function templateParams(v: FormValues) {
+export function templateParams(v: FormValues, flagged = false) {
   const name = v.name.trim();
   const zipCode = v.zipCode.trim();
   return {
-    title: `Lift chair rental: ${name}, ${zipCode}, ${v.duration}`,
+    title: `${flagged ? "[check: possible spam] " : ""}Lift chair rental: ${name}, ${zipCode}, ${v.duration}`,
     name,
     email: v.email.trim(),
     contact: toUsPhoneE164Display(v.contact) ?? v.contact,
@@ -30,7 +30,7 @@ export function templateParams(v: FormValues) {
   };
 }
 
-export async function sendEnquiry(v: FormValues): Promise<SendResult> {
+export async function sendEnquiry(v: FormValues, flagged = false): Promise<SendResult> {
   if (!emailConfigured) {
     console.error("EmailJS is not configured: set the NEXT_PUBLIC_EMAILJS_* environment variables, then rebuild.");
     return { ok: false, reason: "not-configured" };
@@ -39,7 +39,7 @@ export async function sendEnquiry(v: FormValues): Promise<SendResult> {
     const res = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ service_id: SERVICE_ID, template_id: TEMPLATE_ID, user_id: PUBLIC_KEY, template_params: templateParams(v) }),
+      body: JSON.stringify({ service_id: SERVICE_ID, template_id: TEMPLATE_ID, user_id: PUBLIC_KEY, template_params: templateParams(v, flagged) }),
     });
     if (res.ok) return { ok: true };
     // EmailJS explains failures in plain text (bad ID, origin not allowed, quota). Log it for whoever is debugging.
