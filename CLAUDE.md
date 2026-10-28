@@ -33,7 +33,7 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 ## Contact form (EmailJS)
 
 - `src/components/ContactForm.tsx` + `src/lib/emailjs.ts` + `src/lib/validation.ts`. Calls EmailJS' REST API from the browser; no extra dependency.
-- Env vars (inlined at build, so rebuild after changing): `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` in the committed `.env` (not secrets: EmailJS runs in the browser). `your_...` placeholders count as not configured. Netlify env vars override `.env` only when Netlify runs the build; manual uploads of `out/` use `.env`.
+- Env vars (inlined at build, so rebuild after changing): `NEXT_PUBLIC_EMAILJS_SERVICE_ID`, `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`, `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY` set in Netlify (production) and in the Claude environment settings (cloud sessions); `.env.local` for local dev. **Never commit env values**: `.env` and `.env*.local` are gitignored, `.env.example` is the template. Empty or `your_...` values count as not configured. A local build uploaded by hand only has the values if they are in `.env.local` on that machine.
 - "Check availability" buttons link to `/contact/`; rental option cards add `?period=<duration>` to preselect the form. Failures log EmailJS' error text to the console.
 - Template params are fixed by the client's EmailJS template: `title, name, email, contact, zipCode, duration, message`. Do not rename them.
 - US phone only (+1, NANP rules), 5-digit ZIP, valid email, honeypot field. Add a test in `scripts/test-validation.mjs` when changing rules.

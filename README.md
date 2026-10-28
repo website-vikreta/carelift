@@ -7,7 +7,7 @@ Scope, sitemap and design notes: [`docs/design-kit-and-sitemap.md`](docs/design-
 
 ```bash
 npm install
-# fill in the EmailJS values in .env first
+cp .env.example .env.local   # then fill in the EmailJS values (never commit them)
 npm run dev                  # http://localhost:3000
 npm test                     # contact form validation tests
 npm run lint                 # type-check
@@ -16,11 +16,9 @@ npm run build                # static export to ./out
 
 ## Environment variables
 
-They live in the committed **`.env`** file (replace the `your_...` placeholders). They are inlined at build time, so
-**rebuild after changing them**. They are not secrets: EmailJS runs in the visitor's browser, so these IDs are public by design.
-
-Important for manual deploys: if you build on your computer and drag `out/` into Netlify, Netlify's own environment variables
-are **never used**; only `.env` is. Netlify's variables only apply when Netlify itself runs the build (connected repo).
+Set these in Netlify (Site configuration > Environment variables) and redeploy; they are inlined at build time.
+For local development put them in `.env.local` (gitignored). **Never commit real values**; `.env.example` is the template.
+If you build on your own computer and drag `out/` into Netlify, the build only has the values that are in your `.env.local`.
 
 | Variable | Purpose |
 |---|---|

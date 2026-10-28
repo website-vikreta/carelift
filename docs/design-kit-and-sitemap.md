@@ -38,7 +38,7 @@ Footer: Download liability form (PDF), address, phone, hours
 
 1. Google Business Profile link. (Address is set: 363 E Milton Ave, Rahway, NJ 07065.)
 2. The real New York phone number; the liability form PDF; the final domain.
-3. EmailJS values: fill in `.env` (service ID, template ID, public key), rebuild, redeploy; add the live domain under EmailJS > Account > Security > allowed origins if restricted.
+3. EmailJS values: set in Netlify environment variables (never committed), rebuild, redeploy; add the live domain under EmailJS > Account > Security > allowed origins if restricted.
 4. ~~Chair photos~~ Client supplied manufacturer/retail lift chair photos (28 Oct 2026) and asked for them to be used; replace with photos of their own chairs when available.
 5. Rental terms: minimum period, deposit, delivery fee, cancellation, damage. Terms of rental and privacy policy need real text.
 6. Delivery claims on the site must be true: delivery, set-up and remote demonstration, pickup at the end, no purchase needed.
