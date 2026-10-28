@@ -41,7 +41,7 @@ export default function LiftChairRental() {
         <div className="wrap">
           <h2>Styles vary with availability</h2>
           <div className="styles">
-            {STYLES.map((p) => <Photo key={p.file} photo={p} ratio="1:1" sizes="(min-width: 760px) 360px, calc(100vw - 40px)" />)}
+            {STYLES.map((p) => <Photo key={p.file} photo={p} ratio="1:1" sizes="(min-width: 760px) 270px, calc(50vw - 26px)" />)}
           </div>
         </div>
       </section>

@@ -93,12 +93,12 @@ img { max-width: 100%; height: auto; display: block; }
 .options p { color: var(--muted); flex: 1; }
 .options .btn { margin-top: 4px; }
 .options .price { font-weight: 600; font-size: .95rem; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; margin-top: 6px; }
-.styles { display: grid; gap: 16px; margin-top: 24px; }
+.styles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
 .map { margin-top: 24px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--sand); aspect-ratio: 4 / 3; }
 .map iframe { display: block; width: 100%; height: 100%; border: 0; }
 .owner { display: grid; gap: 28px; align-items: center; }
 .owner img { width: 100%; max-width: 320px; aspect-ratio: 1; object-fit: cover; border-radius: 14px; background: #d9d9d6; }
-.owner-name { font: 500 1.1rem var(--head); color: var(--copper); }
+.owner-name { font: 500 1.1rem var(--head); color: #3a6b22; }
 .areas { display: grid; gap: 8px 32px; margin-top: 20px; }
 
 /* lists, faq, forms */
@@ -146,7 +146,8 @@ input, select, textarea { font: inherit; padding: 13px 14px; border: 1px solid #
   .hero-grid { grid-template-columns: 1.05fr .95fr; align-items: center; gap: 72px; }
   .split { grid-template-columns: 1fr 1fr; gap: 72px; }
   .cols { grid-template-columns: 1fr 1fr; gap: 72px; }
-  .steps, .options, .styles { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .steps, .options { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .styles { grid-template-columns: repeat(4, 1fr); gap: 20px; }
   .areas { grid-template-columns: 1fr 1fr; }
   .owner { grid-template-columns: 320px 1fr; gap: 56px; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }

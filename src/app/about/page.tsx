@@ -24,7 +24,7 @@ export default function About() {
             <p>We rent one thing, power lift chairs, to private customers in New York City and New Jersey. We deliver, set up and pick up, so you never have to buy a chair for a short-term need.</p>
             <p>Our aim is simple: make recovery and getting around at home easier and safer.</p>
           </div>
-          <Photo id="about" ratio="4:5" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
+          <Photo id="about" ratio="1:1" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
         </div>
       </section>
 
