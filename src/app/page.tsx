@@ -49,45 +49,42 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section deep">
+      <section className="section deep" id="how-it-works">
         <Deco kind="ring" className="o-deep-ring" />
         <Deco kind="arc" className="o-deep-arc" />
         <div className="wrap">
           <div className="sec-head">
             <div>
-              <p className="kicker" style={{ color: "var(--apricot)" }}>Simple from start to finish</p>
+              <p className="kicker kicker-light">Simple from start to finish</p>
               <h2>How renting works</h2>
             </div>
-            <Link className="more" href="/how-it-works/">More detail</Link>
           </div>
           <Steps />
           <div style={{ marginTop: 40 }}><ContactButtons /></div>
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" id="areas">
         <Deco kind="squiggle" className="o-sec-squiggle" />
         <div className="wrap">
           <div className="sec-head">
             <div>
               <h2>Where we deliver</h2>
-              <p className="small">New York City and New Jersey, plus some surrounding areas.</p>
+              <p className="small">New York City and New Jersey, plus some surrounding areas. Call with your address and we will confirm.</p>
             </div>
-            <Link className="more" href="/service-areas/">Service areas</Link>
           </div>
           <Areas />
         </div>
       </section>
 
-      <section className="section sand">
+      <section className="section sand" id="faq">
         <div className="wrap cols">
           <div>
             <h2>Questions, answered</h2>
             <p className="lead">The things people ask us most before renting.</p>
-            <p><Link className="more" href="/faq/">All questions</Link></p>
           </div>
           <div>
-            {FAQS.slice(0, 5).map((f) => (
+            {FAQS.map((f) => (
               <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
             ))}
           </div>

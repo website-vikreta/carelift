@@ -13,36 +13,29 @@ Updated 23 Oct 2026 after the scope reduction. Older drafts (multi-equipment, Ne
 - **Phone:** current number is temporary; a New York number will replace it.
 - **Purpose of the site:** supports the Google Business Profile, which brings most of the traffic.
 
-## 2. Sitemap
+## 2. Sitemap (Keystone-style: very small)
 
 ```
-/                                  Home
-/lift-chair-rental/                The product: what it is, who it is for, what is included
-/how-it-works/                     Three steps, liability form note
-/service-areas/                    Hub
-  /service-areas/new-york-city/
-  /service-areas/new-jersey/
-/faq/
-/contact/                          Call + EmailJS form
-/thank-you/                        After form submit (noindex)
+/                       Home: hero, the chair, how it works (#how-it-works), where we deliver, FAQ (#faq), call/message block
+/lift-chair-rental/     The product: benefits, who it is for, which chair fits, what is included, steps, areas
+/contact/               Call, address, hours, EmailJS form
+/thank-you/             After form submit (noindex)
 /terms-of-rental/  /privacy-policy/  /photo-credits/
-Footer: Download liability form (PDF)
+Footer: Download liability form (PDF), address, phone, hours
 ```
-
-Home order: hero (call + message) → the chair → how it works (dark band) → where we deliver (NYC, NJ photos) → FAQ → call/message block.
 
 ## 3. Design notes
 
-- Palette: ivory page, ink text, deep teal accent, sand and deep-teal section bands, apricot and copper accents for small details.
-- Type: Fraunces (headings, self-hosted subset) + system font stack (body). Base 17px, line-height 1.65.
-- Photo-led: every page has its own photos, lazy-loaded with a colour placeholder; hero is the only eager image.
-- Decorative shapes (blob, ring, dots, spark, squiggle, arc) live in empty space, never on text.
+- Brand: taken from the logo (tree with figure, blue "Care", green "Lift"). Blue `#0a5898`, green `#447d29` for text / `#599a38` for graphics, deep navy bands `#0b2f52`, soft green and sand tints.
+- Logo: traced to transparent SVG (horizontal lockup in the header, white version in the footer, tree icon as favicon).
+- Type: Fraunces (headings, self-hosted subset) + system font stack (body). Base 17px.
+- Photo-led and lazy-loaded; hero is the only eager image. Decorative shapes in empty space, never on text.
 - Mobile first: sticky bottom bar with Call now / Message us; 48px+ tap targets.
-- SEO: unique title and description per page, canonical URLs, sitemap, LocalBusiness + Breadcrumb + FAQ structured data, one product page plus one page per area.
+- SEO: unique title and description per page, canonical URLs, sitemap, LocalBusiness (with the Rahway address) + Breadcrumb structured data.
 
 ## 4. Open questions for the client
 
-1. Street address and Google Business Profile link (address is hidden until provided).
+1. Google Business Profile link. (Address is set: 363 E Milton Ave, Rahway, NJ 07065.)
 2. The real New York phone number; the liability form PDF; the final domain.
 3. EmailJS values in Netlify (service ID, template ID, public key) and allowed origins.
 4. Which chairs and sizes they actually have; photos of their own chairs. The two lift chair photos supplied in chat look like manufacturer or retail images, so they were not published; confirm usage rights or send their own.
@@ -51,3 +44,5 @@ Home order: hero (call + message) → the chair → how it works (dark band) →
 7. Exact coverage in NYC and NJ and "surrounding areas"; unique local copy per area page.
 8. About/owner story is intentionally omitted from the simple sitemap; add later if wanted. Same for guides and reviews.
 9. Analytics or call tracking (not set up).
+10. Does CareLift offer weekly / 6-week / long-term rental periods like the Keystone reference site? Not added; the form has a general "how long" field and pricing stays "call us".
+11. Is the logo available as an original vector file? The current SVGs were traced from the PNG.

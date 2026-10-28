@@ -8,8 +8,8 @@ export const SITE = {
   region: "New York City & New Jersey",
   areaText: "New York City and New Jersey",
   hours: "Mon–Sat 10am–6pm · Sunday closed",
-  // TODO: add street address once provided. null keeps it off the site and out of structured data.
-  address: null as null | { street: string; city: string; state: string; zip: string },
+  address: { street: "363 E Milton Ave", city: "Rahway", state: "NJ", zip: "07065" } as null | { street: string; city: string; state: string; zip: string },
+  mapsHref: "https://www.google.com/maps/search/?api=1&query=363+E+Milton+Ave+Rahway+NJ+07065",
   gbpUrl: null as null | string,
   // Drop the real PDF at public/downloads/carelift-liability-form.pdf (same filename). The current file is a placeholder.
   liabilityFormHref: "/downloads/carelift-liability-form.pdf",
@@ -33,18 +33,8 @@ export const PRODUCT = {
 };
 
 export const AREAS = [
-  {
-    name: "New York City",
-    slug: "new-york-city",
-    places: "Manhattan, Brooklyn, Queens, the Bronx and Staten Island",
-    blurb: "We deliver lift chair rentals across New York City.",
-  },
-  {
-    name: "New Jersey",
-    slug: "new-jersey",
-    places: "New Jersey and surrounding areas",
-    blurb: "We deliver lift chair rentals across New Jersey and surrounding areas.",
-  },
+  { name: "New York City", slug: "new-york-city", places: "Manhattan, Brooklyn, Queens, the Bronx and Staten Island" },
+  { name: "New Jersey", slug: "new-jersey", places: "New Jersey and surrounding areas" },
 ];
 
 export const FAQS = [

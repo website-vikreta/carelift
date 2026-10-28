@@ -2,27 +2,27 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 export function Footer() {
+  const a = SITE.address;
   return (
     <footer className="footer">
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <h3>{SITE.name}</h3>
+            <img className="footer-logo" src="/logo-horizontal.svg" alt="CareLift Medical Equipment Rentals" width={170} height={51} loading="lazy" decoding="async" />
             <p>Lift chair rentals delivered to your home in {SITE.areaText}.</p>
             <p>
               <a href={SITE.phoneHref}>{SITE.phone}</a>
               <br />
               {SITE.hours}
-              {SITE.address && (<><br />{SITE.address.street}, {SITE.address.city}, {SITE.address.state} {SITE.address.zip}</>)}
+              {a && (<><br /><a href={SITE.mapsHref}>{a.street}, {a.city}, {a.state} {a.zip}</a></>)}
             </p>
           </div>
           <div>
             <h3>Explore</h3>
             <ul>
               <li><Link href="/lift-chair-rental/">Lift chair rental</Link></li>
-              <li><Link href="/how-it-works/">How it works</Link></li>
-              <li><Link href="/service-areas/">Where we deliver</Link></li>
-              <li><Link href="/faq/">FAQ</Link></li>
+              <li><Link href="/#how-it-works">How it works</Link></li>
+              <li><Link href="/#faq">FAQ</Link></li>
               <li><Link href="/contact/">Contact</Link></li>
             </ul>
           </div>

@@ -4,9 +4,10 @@ import { Deco } from "@/components/Deco";
 import { Photo } from "@/components/Photo";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or send a message to rent a lift chair in New York City or New Jersey.", "/contact/");
+export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or send a message to rent a lift chair in New York City or New Jersey. Based in Rahway, NJ.", "/contact/");
 
 export default function Contact() {
+  const a = SITE.address;
   return (
     <section className="hero">
       <div className="wrap hero-grid">
@@ -14,7 +15,10 @@ export default function Contact() {
           <h1>Contact us</h1>
           <p className="lead">The fastest way is to call. Or send a message and we will call you back.</p>
           <div className="btn-row"><a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a></div>
-          <p className="small hero-note">{SITE.hours}</p>
+          <ul className="facts">
+            <li>{SITE.hours}</li>
+            {a && <li><a href={SITE.mapsHref}>{a.street}, {a.city}, {a.state} {a.zip}</a></li>}
+          </ul>
           <h2 style={{ marginTop: 40 }}>Send a message</h2>
           <ContactForm />
         </div>

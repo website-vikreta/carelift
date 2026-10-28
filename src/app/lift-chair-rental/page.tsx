@@ -59,14 +59,14 @@ export default function LiftChairs() {
       <section className="section deep">
         <Deco kind="ring" className="o-deep-ring" />
         <div className="wrap">
-          <div className="sec-head"><h2>How renting works</h2><Link className="more" href="/how-it-works/">More detail</Link></div>
+          <div className="sec-head"><h2>How renting works</h2></div>
           <Steps />
         </div>
       </section>
 
       <section className="section">
         <div className="wrap">
-          <div className="sec-head"><h2>Where we deliver</h2><Link className="more" href="/service-areas/">Service areas</Link></div>
+          <div className="sec-head"><h2>Where we deliver</h2></div>
           <Areas />
         </div>
       </section>

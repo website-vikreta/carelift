@@ -5,9 +5,8 @@ import { SITE } from "@/lib/site";
 
 const LINKS = [
   ["/lift-chair-rental/", "Lift chairs"],
-  ["/how-it-works/", "How it works"],
-  ["/service-areas/", "Where we deliver"],
-  ["/faq/", "FAQ"],
+  ["/#how-it-works", "How it works"],
+  ["/#faq", "FAQ"],
   ["/contact/", "Contact"],
 ] as const;
 
@@ -16,8 +15,8 @@ export function Header() {
   return (
     <header className="header">
       <div className="wrap">
-        <Link href="/" className="logo" onClick={() => setOpen(false)}>
-          Care<span>Lift</span>
+        <Link href="/" className="logo" aria-label="CareLift Medical Equipment Rentals, home" onClick={() => setOpen(false)}>
+          <img src="/logo-horizontal.svg" alt="CareLift" width={140} height={42} decoding="async" />
         </Link>
         <nav className={`nav${open ? " open" : ""}`} aria-label="Primary">
           {LINKS.map(([href, label]) => (
