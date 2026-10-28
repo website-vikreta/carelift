@@ -4,9 +4,9 @@ import { useState } from "react";
 import { SITE } from "@/lib/site";
 
 const LINKS = [
-  ["/lift-chair-rental/", "Lift chairs"],
-  ["/#how-it-works", "How it works"],
+  ["/lift-chair-rental/", "Rental options"],
   ["/#faq", "FAQ"],
+  ["/about/", "About"],
   ["/contact/", "Contact"],
 ] as const;
 

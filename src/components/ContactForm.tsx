@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SITE } from "@/lib/site";
 import { sendEnquiry } from "@/lib/emailjs";
@@ -12,6 +12,11 @@ export function ContactForm() {
   const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
   const [values, setValues] = useState<FormValues>(EMPTY);
+  // "Check availability" on a rental option links here with ?period=<duration>; preselect it.
+  useEffect(() => {
+    const period = new URLSearchParams(window.location.search).get("period");
+    if (period && (DURATIONS as readonly string[]).includes(period)) setValues((s) => ({ ...s, duration: period }));
+  }, []);
   const [errors, setErrors] = useState<FormErrors>({});
   const [sending, setSending] = useState(false);
   const [failure, setFailure] = useState<string | null>(null);

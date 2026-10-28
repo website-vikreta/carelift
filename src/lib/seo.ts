@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AREAS, SITE } from "./site";
+import { AREAS, FAQS, OWNER, SITE } from "./site";
 
 export function pageMeta(title: string, description: string, path: string): Metadata {
   return {
@@ -17,6 +17,7 @@ export function localBusinessLd() {
     name: SITE.name,
     url: SITE.url,
     telephone: SITE.phone,
+    founder: { "@type": "Person", name: OWNER.name },
     areaServed: AREAS.map((a) => ({ "@type": "AdministrativeArea", name: a.name })),
     openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "10:00", closes: "18:00" }],
     ...(SITE.address && {
@@ -31,5 +32,17 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: `${SITE.url}${it.path}` })),
+  };
+}
+
+export function faqLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.list ? `${f.a} ${f.list.join(", ")}.` : f.a },
+    })),
   };
 }

@@ -5,8 +5,8 @@ export type Ratio = keyof typeof RATIOS;
 
 const DEFAULT_SIZES = "(min-width: 760px) 520px, calc(100vw - 40px)";
 
-// Responsive, lazy-loaded Unsplash image with explicit dimensions (no layout shift) and a colour placeholder.
-// Pass either `id` (key in IMAGES) or a `photo`. Renders nothing when no photo is configured.
+// Responsive, lazy-loaded image with explicit dimensions (no layout shift) and a colour placeholder.
+// The frame sets the aspect ratio; the image is cropped to it with object-fit. Renders nothing when no photo is configured.
 export function Photo({
   id,
   photo,
@@ -23,16 +23,18 @@ export function Photo({
   const p = photo ?? (id ? IMAGES[id] : undefined);
   if (!p) return null;
   const [rw, rh] = RATIOS[ratio];
-  const url = (w: number) => `${p.src}?auto=format&fit=crop&w=${w}&h=${Math.round((w * rh) / rw)}&q=70`;
+  const url = (w: number) => `${p.file}-${w}.webp`;
+  const mid = p.widths.find((w) => w >= 640) ?? p.widths[p.widths.length - 1];
   return (
     <figure className="photo" style={{ aspectRatio: `${rw} / ${rh}`, backgroundColor: p.color }}>
       <img
-        src={url(800)}
-        srcSet={`${url(400)} 400w, ${url(640)} 640w, ${url(960)} 960w, ${url(1280)} 1280w`}
+        src={url(mid)}
+        srcSet={p.widths.map((w) => `${url(w)} ${w}w`).join(", ")}
         sizes={sizes}
         width={800}
         height={Math.round((800 * rh) / rw)}
         alt={p.alt}
+        style={p.position ? { objectPosition: p.position } : undefined}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         decoding="async"
