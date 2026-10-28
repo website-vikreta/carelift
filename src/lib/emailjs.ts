@@ -1,7 +1,7 @@
 import { toUsPhoneE164Display, type FormValues } from "./validation.ts";
 
 // EmailJS is called straight from the browser through its REST API (no extra dependency).
-// Values come from .env (committed placeholders; Netlify env vars override them on Netlify builds) and are
+// Values come from environment variables (Netlify in production, .env.local for local dev; never committed) and are
 // inlined at build time, so rebuild after changing them:
 //   NEXT_PUBLIC_EMAILJS_SERVICE_ID, NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
 // The EmailJS template must use these variables: {{title}} {{name}} {{email}} {{contact}} {{zipCode}} {{duration}} {{message}}
@@ -9,7 +9,7 @@ const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
-/** Empty values and the `your_...` placeholders in .env count as not configured. */
+/** Empty values and `your_...` placeholders count as not configured. */
 export const isRealValue = (v: string | undefined) => Boolean(v && v.trim() && !v.startsWith("your_"));
 export const emailConfigured = [SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY].every(isRealValue);
 
@@ -32,7 +32,7 @@ export function templateParams(v: FormValues) {
 
 export async function sendEnquiry(v: FormValues): Promise<SendResult> {
   if (!emailConfigured) {
-    console.error("EmailJS is not configured: set the NEXT_PUBLIC_EMAILJS_* values in .env, then rebuild.");
+    console.error("EmailJS is not configured: set the NEXT_PUBLIC_EMAILJS_* environment variables, then rebuild.");
     return { ok: false, reason: "not-configured" };
   }
   try {
