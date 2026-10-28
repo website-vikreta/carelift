@@ -52,3 +52,14 @@ export function validate(v: FormValues): FormErrors {
   if (v.message.trim().length > 1000) e.message = "Please keep your message under 1,000 characters.";
   return e;
 }
+
+/** Name of the hidden anti-spam field. Deliberately meaningless so browser autofill and password managers skip it
+ *  (a field called "company" got autofilled from people's saved addresses, and their enquiries were dropped). */
+export const HONEYPOT = "hp_check_7";
+
+/** Bots fill every field and submit almost instantly. A person whose browser autofilled the hidden field is slower,
+ *  so their enquiry is still sent (flagged), never silently dropped. */
+export function spamCheck(honeypot: string, msSinceLoad: number): "ok" | "flag" | "drop" {
+  if (!honeypot.trim()) return "ok";
+  return msSinceLoad < 3000 ? "drop" : "flag";
+}

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SITE } from "@/lib/site";
 import { sendEnquiry } from "@/lib/emailjs";
-import { DURATIONS, formatUsPhone, validate, type FormErrors, type FormValues } from "@/lib/validation";
+import { DURATIONS, HONEYPOT, formatUsPhone, spamCheck, validate, type FormErrors, type FormValues } from "@/lib/validation";
 
 const EMPTY: FormValues = { name: "", email: "", contact: "", zipCode: "", duration: "", message: "" };
 const ORDER: (keyof FormValues)[] = ["name", "email", "contact", "zipCode", "duration", "message"];
@@ -12,6 +12,7 @@ export function ContactForm() {
   const router = useRouter();
   const formRef = useRef<HTMLFormElement>(null);
   const [values, setValues] = useState<FormValues>(EMPTY);
+  const loadedAt = useRef(Date.now());
   // "Check availability" on a rental option links here with ?period=<duration>; preselect it.
   useEffect(() => {
     const period = new URLSearchParams(window.location.search).get("period");
@@ -41,11 +42,12 @@ export function ContactForm() {
       formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
       return;
     }
-    // Honeypot: real people never fill this hidden field. Pretend success so bots learn nothing.
-    if ((new FormData(e.currentTarget).get("company") as string)?.length) return router.push("/thank-you/");
+    // Honeypot: bots that fill it and submit instantly get a fake success; anyone else is sent, flagged.
+    const spam = spamCheck(String(new FormData(e.currentTarget).get(HONEYPOT) ?? ""), Date.now() - loadedAt.current);
+    if (spam === "drop") return router.push("/thank-you/");
 
     setSending(true);
-    const result = await sendEnquiry(values);
+    const result = await sendEnquiry(values, spam === "flag");
     setSending(false);
     if (result.ok) return router.push("/thank-you/");
     setFailure(
@@ -105,7 +107,9 @@ export function ContactForm() {
         <textarea {...field("message")} rows={3} maxLength={1000} onChange={(e) => set("message", e.target.value)} />
         {err("message")}
       </div>
-      <div className="hp" aria-hidden="true"><label>Company<input name="company" tabIndex={-1} autoComplete="off" /></label></div>
+      <div className="hp" aria-hidden="true">
+        <label>Leave this empty<input name={HONEYPOT} tabIndex={-1} autoComplete="off" data-1p-ignore data-lpignore="true" data-bwignore data-form-type="other" /></label>
+      </div>
       {failure && <p className="form-status" role="alert">{failure}</p>}
       <button className="btn" type="submit" disabled={sending}>{sending ? "Sending…" : "Send message"}</button>
       <p className="small" style={{ marginTop: 12 }}>We only use your details to reply to your enquiry.</p>
