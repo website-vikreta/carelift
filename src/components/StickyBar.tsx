@@ -1,11 +1,11 @@
-import { SITE, waLink } from "@/lib/site";
-import { WhatsAppIcon } from "./ContactButtons";
+import Link from "next/link";
+import { SITE } from "@/lib/site";
 
 export function StickyBar() {
   return (
     <div className="sticky-bar">
       <a className="btn" href={SITE.phoneHref}>Call now</a>
-      <a className="btn wa" href={waLink()} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> WhatsApp</a>
+      <Link className="btn ghost" href="/contact/">Message us</Link>
     </div>
   );
 }

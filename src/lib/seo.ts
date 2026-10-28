@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { COUNTIES, SITE } from "./site";
+import { AREAS, SITE } from "./site";
 
 export function pageMeta(title: string, description: string, path: string): Metadata {
   return {
@@ -17,10 +17,10 @@ export function localBusinessLd() {
     name: SITE.name,
     url: SITE.url,
     telephone: SITE.phone,
-    areaServed: COUNTIES.map((c) => ({ "@type": "AdministrativeArea", name: `${c.name} County, NC` })),
+    areaServed: AREAS.map((a) => ({ "@type": "AdministrativeArea", name: a.name })),
     openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "10:00", closes: "18:00" }],
-    ...(SITE.address && SITE.addressConfirmed && {
-      address: { "@type": "PostalAddress", streetAddress: SITE.address.street, addressLocality: SITE.address.city, addressRegion: "NC", postalCode: SITE.address.zip, addressCountry: "US" },
+    ...(SITE.address && {
+      address: { "@type": "PostalAddress", streetAddress: SITE.address.street, addressLocality: SITE.address.city, addressRegion: SITE.address.state, postalCode: SITE.address.zip, addressCountry: "US" },
     }),
     ...(SITE.gbpUrl && { sameAs: [SITE.gbpUrl] }),
   };

@@ -1,14 +1,12 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { SITE, waLink } from "@/lib/site";
-import { WhatsAppIcon } from "./ContactButtons";
+import { SITE } from "@/lib/site";
 
 const LINKS = [
-  ["/rentals/", "Rentals"],
-  ["/service-areas/", "Where we deliver"],
-  ["/how-renting-works/", "How it works"],
-  ["/guides/", "Guides"],
+  ["/lift-chair-rental/", "Lift chairs"],
+  ["/#how-it-works", "How it works"],
+  ["/#faq", "FAQ"],
   ["/contact/", "Contact"],
 ] as const;
 
@@ -17,8 +15,8 @@ export function Header() {
   return (
     <header className="header">
       <div className="wrap">
-        <Link href="/" className="logo" onClick={() => setOpen(false)}>
-          Care<span>Lift</span>
+        <Link href="/" className="logo" aria-label="CareLift Medical Equipment Rentals, home" onClick={() => setOpen(false)}>
+          <img src="/logo-horizontal.svg" alt="CareLift" width={140} height={42} decoding="async" />
         </Link>
         <nav className={`nav${open ? " open" : ""}`} aria-label="Primary">
           {LINKS.map(([href, label]) => (
@@ -28,8 +26,7 @@ export function Header() {
           ))}
         </nav>
         <div className="header-cta">
-          <a className="btn" href={SITE.phoneHref}>Call now</a>
-          <a className="btn wa" href={waLink()} target="_blank" rel="noopener noreferrer"><WhatsAppIcon /> WhatsApp</a>
+          <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
         </div>
         <button className="nav-toggle" aria-expanded={open} aria-label="Menu" onClick={() => setOpen(!open)}>
           {open ? "Close" : "Menu"}

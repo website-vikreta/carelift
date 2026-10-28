@@ -1,205 +1,48 @@
-# CareLift — Design Kit & Sitemap Proposal
+# CareLift: scope, sitemap and design notes
 
-Medical equipment rental, North Carolina. Households and hospitals/facilities. Audience 20–60.
+Updated 23 Oct 2026 after the scope reduction. Older drafts (multi-equipment, New Jersey/North Carolina variants) are superseded.
 
-> **Research caveat.** keystonemedicalrentals.com and mediplushomehealth.com could not be fetched from the
-> build environment (network blocked), so nothing below is claimed about them. Review both by hand against
-> the "Reference checklist" at the end. The rest is based on standard local-SEO practice and the
-> structure typical of rental sites.
+## 1. Scope (client decisions)
 
-## 1. Strategy
+- **Product:** power lift chairs only (lift recliners). Private rentals.
+- **Not offered:** hospitals/facilities, insurance or Medicare billing, any other equipment.
+- **Areas:** New York City and New Jersey, plus some surrounding areas (confirm by phone).
+- **Contact:** phone call or contact form (EmailJS). No WhatsApp or SMS.
+- **Pricing:** never shown; "call for pricing".
+- **Paperwork:** downloadable liability form (PDF) in the footer. PDF to be supplied by the client.
+- **Phone:** current number is temporary; a New York number will replace it.
+- **Purpose of the site:** supports the Google Business Profile, which brings most of the traffic.
 
-**Role of the site:** Google Business Profile (GBP) wins the click; the website wins the *decision*. A
-visitor arriving from GBP has about five seconds to confirm three things: *they are local, they have my
-item, I can call right now.*
-
-| Principle | What it means in the build |
-|---|---|
-| GBP-first | Home page mirrors the GBP: same name, address, phone (NAP), hours, categories, service area, and review count. Embedded map + reviews on Home, Contact, and every location page. |
-| Call-first conversion | Sticky mobile bar: **Call** · **Text** · **Get a quote**. No cart or checkout. Rentals are quote-led. |
-| Images sell, text ranks | Large product photography carries the persuasion. Each page also has 300–600 words of real, specific copy for search. |
-| Mobile-first | Design at 360px, then enhance. Thumb-reachable actions, 48px tap targets. |
-| Premium, calm, not clinical | Warm neutrals + deep teal, serif headlines, generous whitespace, restrained motion. |
-
-## 2. Design Kit
-
-### 2.1 Colour
-
-| Token | Hex | Use |
-|---|---|---|
-| `--ink` | `#14232B` | Body text, headings |
-| `--teal-700` | `#0F5C5C` | Primary brand, primary buttons (white text 7.9:1) |
-| `--teal-100` | `#DCEBE8` | Tints, badges, hover surfaces |
-| `--ivory` | `#FAF7F2` | Page background |
-| `--sand` | `#EFE8DC` | Alternate section background, cards |
-| `--sage` | `#A9C1B0` | Dividers, icons, subtle accents |
-| `--copper-600` | `#A35A2E` | Secondary accent / highlights (white text 5.1:1) |
-| `--line` | `#D9D2C5` | Borders |
-| `--success` / `--error` | `#2E7D5B` / `#B3372F` | Form states only |
-
-Dark mode is out of scope for v1. Every text/background pair must pass WCAG AA (4.5:1); the older end of
-the audience makes this non-negotiable.
-
-### 2.2 Typography
-
-- **Headings:** Fraunces (variable serif, 600). Gives the premium, human tone.
-- **Body / UI:** Inter (400/500/600).
-- Self-host, `font-display: swap`, subset to Latin.
-- Mobile scale (base **18px**, line-height 1.65, measure 60–70ch):
-  H1 34/1.15 · H2 26/1.25 · H3 21/1.3 · body 18 · small 15 (never below 15).
-- Desktop scale: H1 52 · H2 36 · H3 24 · body 18.
-
-### 2.3 Layout & spacing
-
-- 4px base unit: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 72 · 96.
-- Mobile gutter 20px. Max content width 1200px; reading width 68ch.
-- Section rhythm: 56px vertical on mobile, 96px on desktop; alternate `ivory` / `sand`.
-- Radius: 14px cards, 999px pills/buttons. Shadows: one soft elevation only (`0 8px 30px rgb(20 35 43 / .08)`).
-
-### 2.4 Imagery (primary selling tool)
-
-- Product shots on warm neutral/ivory seamless backdrop, consistent angle and crop (4:5 on cards, 3:2 hero).
-- One **in-use lifestyle** image per category (equipment in a real home, not a stock hospital).
-- Delivered as AVIF/WebP with explicit width/height, `srcset`, lazy-loaded below the fold; hero image
-  preloaded. Descriptive filenames and alt text with product + use ("electric hospital bed, home rental NC").
-- Real photos of your own inventory and delivery van outrank stock for trust and for Google image/GBP consistency.
-
-### 2.5 Components
-
-1. **Sticky action bar** (mobile): Call / Text / Quote. Desktop: phone + Quote in header.
-2. **Product card:** image, name, 1-line use case, "from $X/week" (or "Call for rate"), **Request quote** button.
-3. **Category tile:** large image, label, item count.
-4. **Trust strip:** ★ GBP rating + review count, "Same-day delivery in [counties]", "Insurance-friendly paperwork", "Sanitised after every rental". Only claims that are true.
-5. **How it works:** 3 steps (Choose → We deliver & set up → We pick up).
-6. **Quote form:** name, phone, ZIP, item, rental length, hospital/home toggle. 5 fields max; phone-number-first.
-7. **FAQ accordion** (with FAQPage schema where content is genuinely Q&A).
-8. **Review cards** pulled from GBP (manually curated to start).
-9. **Location block:** map, address, hours, service-area list.
-10. **Breadcrumbs** on all inner pages.
-11. **Facility/B2B banner** linking to the hospitals page.
-
-### 2.6 Buttons & motion
-
-- Primary: teal fill, white text, 52px high. Secondary: outlined teal. Call button always visible and *never* only an icon.
-- Motion: 150–250ms fades/translate on hover and accordion only. Respect `prefers-reduced-motion`.
-
-### 2.7 Voice
-
-Plain, reassuring, specific. No jargon, no fear-selling. Lead with the outcome ("Home from hospital
-tomorrow? A bed can be in the room tonight.") then facts: sizes, weight capacity, delivery area, rental
-terms.
-
-### 2.8 Performance & accessibility targets
-
-LCP < 2.0s on 4G mobile, CLS < 0.05, total JS < 100KB on content pages (static site, no framework runtime
-where avoidable). WCAG 2.2 AA, visible focus states, form labels, `lang`, skip link.
-
-## 3. Sitemap
-
-URL pattern is flat, keyword-descriptive, lowercase. Every page has one H1, a unique title and meta
-description, breadcrumbs, and internal links to its siblings and parent.
+## 2. Sitemap (Keystone-style: very small)
 
 ```
-/                                         Home
-/rentals/                                 Rentals hub (category tiles)
-  /rentals/hospital-beds/                 (incl. bariatric)
-  /rentals/seat-lift-chairs/
-  /rentals/wheelchairs/
-  /rentals/mobility-scooters/
-  /rentals/walking-aids/
-  /rentals/bathroom-safety/
-  /rentals/patient-lifts/
-  /rentals/cpm-machines/
-  /rentals/respiratory/
-  /rentals/{category}/{product}/          individual product pages (spec, photos, FAQ, quote CTA)
-/who-we-serve/
-  /who-we-serve/families-and-home-care/
-  /who-we-serve/post-surgery-recovery/
-  /who-we-serve/hospice-and-palliative/
-  /who-we-serve/hospitals-and-facilities/ B2B: volume, contracts, invoicing
-/service-areas/                           NC coverage hub + map
-  /service-areas/{county}-county-nc/      one per county actually served
-    /service-areas/{town}-nc/             only for towns with real local detail (optional, phase 2)
-/how-renting-works/                       steps, delivery, pickup, deposit, sanitation
-/pricing-and-insurance/                   rate guidance, Medicare/insurance honest explainer
-/faq/
-/guides/                                  blog: "Hospital bed vs. adjustable bed", "What size wheelchair…" etc.
-  /guides/{article}/
-/reviews/                                 curated GBP reviews + link to leave one
-/about/
-/contact/                                 NAP, map, hours, form, click-to-call
-/get-a-quote/                             primary conversion page
-/privacy-policy/  /terms-of-rental/  /accessibility-statement/
-/sitemap.xml  /robots.txt  /llms.txt (optional)
+/                       Home: hero, the chair, how it works (#how-it-works), where we deliver, FAQ (#faq), call/message block
+/lift-chair-rental/     The product: benefits, who it is for, which chair fits, what is included, steps, areas
+/contact/               Call, address, hours, EmailJS form
+/thank-you/             After form submit (noindex)
+/terms-of-rental/  /privacy-policy/  /photo-credits/
+Footer: Download liability form (PDF), address, phone, hours
 ```
 
-**Primary nav (mobile menu, ≤6 items):** Rentals · Who we serve · Service areas · How it works · Reviews · Contact,
-with a persistent **Call** button.
-**Footer:** NAP, hours, category links, county links, legal, GBP link.
+## 3. Design notes
 
-### Home page section order
+- Brand: taken from the logo (tree with figure, blue "Care", green "Lift"). Blue `#0a5898`, green `#447d29` for text / `#599a38` for graphics, deep navy bands `#0b2f52`, soft green and sand tints.
+- Logo: traced to transparent SVG (horizontal lockup in the header, white version in the footer, tree icon as favicon).
+- Type: Fraunces (headings, self-hosted subset) + system font stack (body). Base 17px.
+- Photo-led and lazy-loaded; hero is the only eager image. Decorative shapes in empty space, never on text.
+- Mobile first: sticky bottom bar with Call now / Message us; 48px+ tap targets.
+- SEO: unique title and description per page, canonical URLs, sitemap, LocalBusiness (with the Rahway address) + Breadcrumb structured data.
 
-1. Hero: one-line promise + hero image + Call / Get quote.
-2. Trust strip (rating, delivery area, hours).
-3. Category tiles (image-led).
-4. How renting works (3 steps).
-5. Featured products (6 cards).
-6. Who we serve (home vs. facilities).
-7. Reviews.
-8. Service-area list + map.
-9. Short FAQ (4–5 Qs).
-10. Final CTA band.
+## 4. Open questions for the client
 
-### Page template (category / product)
-
-H1 with keyword + "Rental in North Carolina" → hero image → 2–3 sentence summary + CTA → product grid or spec table →
-who it's for / how to choose (200–300 words) → delivery & rental terms → FAQ → related categories → nearby counties → CTA.
-
-## 4. SEO & GBP alignment
-
-- **Schema:** `LocalBusiness` (sub-type `MedicalBusiness` / `HealthAndBeautyBusiness` as appropriate) on Home and Contact with identical NAP, hours, `areaServed`, `sameAs` → GBP URL; `Product`/`Offer` on product pages; `FAQPage`; `BreadcrumbList`.
-- **NAP consistency** across site, GBP, and citations is the single biggest trust signal; use one source of truth in code.
-- **Location pages:** one per county actually served, each with unique content (delivery times, local hospitals/rehab centres you really serve, local FAQs). Do not template-clone; duplicated copy dilutes relevance.
-- **GBP loop:** GBP "Website" link → Home; products/services in GBP link to matching category pages; add UTM tags to measure GBP clicks; mirror GBP categories in page titles.
-- **Core keywords per category:** "{item} rental {county/town} NC", "rent a {item} near me", "short-term {item} rental".
-- **Technical:** static HTML, canonical URLs, XML sitemap, clean 301 map, image sitemap, `hreflang` not needed.
-- **Compliance flags:** confirm what you can state about Medicare/insurance and any item (e.g. oxygen) needing a prescription or state licensing before publishing copy.
-
-## 5. Suggested build approach
-
-Static, content-driven site (Astro or similar) deployed on Vercel, content in Markdown/JSON so adding a product
-or county is one file. Quote form posts to email/CRM with spam protection. Phase 1: Home, Rentals hub +
-top 4 categories, How it works, Service areas hub + served counties, Contact, Get a quote, legal. Phase 2: products,
-guides, town pages, B2B page.
-
-## 6. Reference checklist (to do by hand on the two sites)
-
-For each of keystonemedicalrentals.com and mediplushomehealth.com note: nav items, whether prices are shown,
-quote vs. cart flow, how location is signalled, number/quality of location pages, trust signals above the fold,
-word count on category pages, and what feels dated. Then we adjust this plan.
-
-## 6b. Reference analysis (received 22 Oct 2026)
-
-Mediplus is a multi-category rent-and-sale catalogue (9 categories, size guides, "what's included", delivery logistics,
-sticky call bar). Keystone is a lean single-service local brand with a warm funnel. We adopted: Mediplus's nine
-categories, size-guidance and what's-included blocks, FAQ depth, sticky call bar. We deliberately did **not** adopt:
-published prices (policy is "call for pricing"), a cart/checkout, zoom-locking viewport, `#` social links, an empty blog,
-or duplicate category URLs. Their delivery-speed and service-contract claims are theirs; only make equivalent claims if true for CareLift.
-Compliance: oxygen and CPM pages carry a prescription note. Confirm NC licensing/accreditation requirements for DME (respiratory especially) before launch.
-
-## 7. Decisions confirmed
-
-- Business: **CareLift Medical Equipment**, phone +1 (336) 653-4589, is based in **North Carolina** and launches serving **Guilford and Forsyth County** (Greensboro, Winston-Salem). More counties are added in `COUNTIES` in `src/lib/site.ts` as coverage grows; each gets a page automatically. Hours: Mon–Sat 10am–6pm, Sunday closed. Address is a placeholder until confirmed.
-- Google Business Profile is the main traffic source; the site supports its authority.
-- **Call for pricing.** No prices shown anywhere.
-- Stock images at launch, replaced later. No existing logo or brand colours, so the palette in 2.1 stands.
-- Stack: Next.js static export, manually deployed to Netlify (config in `netlify.toml`).
-- Item list: taken from the reference sites. Current list in `src/lib/site.ts` is a draft pending those sites' real inventory.
-- The 336 area code (Piedmont Triad) fits an NC base; the number on the site must still match the Google profile exactly.
-
-## 8. Remaining questions
-
-1. Street address and hours (and whether the GBP hides the address as service-area-only).
-2. The reference sites' product lists (see how to share them in the chat).
-3. Your GBP URL, for schema and the Contact page.
-4. Your domain name.
+1. Google Business Profile link. (Address is set: 363 E Milton Ave, Rahway, NJ 07065.)
+2. The real New York phone number; the liability form PDF; the final domain.
+3. EmailJS values in Netlify (service ID, template ID, public key) and allowed origins.
+4. Which chairs and sizes they actually have; photos of their own chairs. The two lift chair photos supplied in chat look like manufacturer or retail images, so they were not published; confirm usage rights or send their own.
+5. Rental terms: minimum period, deposit, delivery fee, cancellation, damage. Terms of rental and privacy policy need real text.
+6. Delivery claims on the site must be true: delivery, set-up and remote demonstration, pickup at the end, no purchase needed.
+7. Exact coverage in NYC and NJ and "surrounding areas"; unique local copy per area page.
+8. About/owner story is intentionally omitted from the simple sitemap; add later if wanted. Same for guides and reviews.
+9. Analytics or call tracking (not set up).
+10. Does CareLift offer weekly / 6-week / long-term rental periods like the Keystone reference site? Not added; the form has a general "how long" field and pricing stays "call us".
+11. Is the logo available as an original vector file? The current SVGs were traced from the PNG.
