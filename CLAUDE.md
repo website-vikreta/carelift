@@ -40,7 +40,8 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 ## Content and data
 
 - Business data, product copy, areas and FAQs live in `src/lib/site.ts`; pages are data-driven (areas via `AREAS`).
-- Placeholders awaiting real data: Google Business Profile URL (`SITE.gbpUrl`), photos of real chairs (`src/lib/images.ts`, currently Unsplash recliner stand-ins), owner story for About, legal pages.
+- Placeholders awaiting real data: Google Business Profile URL (`SITE.gbpUrl`), photos of real chairs (`src/lib/images.ts`, currently Unsplash recliner stand-ins), legal pages. Owner (Arvind Dhankhad) photo and story are real (`OWNER` in `site.ts`).
+- Never use photos from keystonemedicalrentals.com or other competitors, even of the same chair models: they are copyrighted.
 - Keep copy original; do not copy text from reference sites. Do not publish the client's reference photos of lift chairs (rights unknown) unless they confirm usage rights.
 
 ## Design and performance rules

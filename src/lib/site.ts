@@ -62,3 +62,12 @@ export const FAQS: Faq[] = [
   { q: "Do you take insurance or Medicare?", a: "No. Private rentals only." },
   { q: "Is there any paperwork?", a: "A short liability form, linked in the footer." },
 ];
+
+// Shown on /about/. Photo supplied by the client.
+export const OWNER = {
+  name: "Arvind Dhankhad",
+  role: "Owner",
+  photo: "/images/arvind-dhankhad.webp",
+  story:
+    "Arvind runs the customer experience and community side of CareLift. He believes the relationship matters as much as the result, and that the people whose homes we work in should feel respected throughout the whole process, not just at the end.",
+};

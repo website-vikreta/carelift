@@ -92,6 +92,9 @@ img { max-width: 100%; height: auto; display: block; }
 .options li { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; }
 .options p { color: var(--muted); flex: 1; }
 .options .price { font-weight: 600; text-decoration: none; min-height: 32px; display: inline-flex; align-items: center; }
+.owner { display: grid; gap: 28px; align-items: center; }
+.owner img { width: 100%; max-width: 320px; aspect-ratio: 1; object-fit: cover; border-radius: 14px; background: #d9d9d6; }
+.owner-name { font: 500 1.1rem var(--head); color: var(--copper); }
 .areas { display: grid; gap: 8px 32px; margin-top: 20px; }
 
 /* lists, faq, forms */
@@ -141,6 +144,7 @@ input, select, textarea { font: inherit; padding: 13px 14px; border: 1px solid #
   .cols { grid-template-columns: 1fr 1fr; gap: 72px; }
   .steps, .options { grid-template-columns: repeat(3, 1fr); gap: 32px; }
   .areas { grid-template-columns: 1fr 1fr; }
+  .owner { grid-template-columns: 320px 1fr; gap: 56px; }
   .footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
