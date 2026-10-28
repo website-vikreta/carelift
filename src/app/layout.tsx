@@ -19,7 +19,7 @@ const fraunces = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: { default: `Lift Chair Rental in New York City & New Jersey | ${SITE.name}`, template: `%s | ${SITE.name}` },
-  description: "Rent a power lift chair for your home in New York City and New Jersey. Delivered, set up and collected. Call for pricing.",
+  description: "Power lift chair rentals in New York City and New Jersey: weekly, 6-week and long-term. Delivered, set up and picked up for free. Call for pricing.",
 };
 export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#faf7f2" };
 

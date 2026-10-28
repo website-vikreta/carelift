@@ -13,11 +13,12 @@ Updated 23 Oct 2026 after the scope reduction. Older drafts (multi-equipment, Ne
 - **Phone:** current number is temporary; a New York number will replace it.
 - **Purpose of the site:** supports the Google Business Profile, which brings most of the traffic.
 
-## 2. Sitemap (Keystone-style: very small)
+## 2. Sitemap (mirrors Keystone: Home, About, Rates, Contact)
 
 ```
-/                       Home: hero, the chair, how it works (#how-it-works), where we deliver, FAQ (#faq), call/message block
-/lift-chair-rental/     The product: benefits, who it is for, which chair fits, what is included, steps, areas
+/                       Home: hero, the chair, how it works (#how-it-works), rental options, where we deliver, FAQ (#faq), call/message block
+/lift-chair-rental/     Rental options: weekly (2-week min), 6-week, long-term; what is included; often rented after
+/about/                 Short company intro (owner section to add when supplied)
 /contact/               Call, address, hours, EmailJS form
 /thank-you/             After form submit (noindex)
 /terms-of-rental/  /privacy-policy/  /photo-credits/
@@ -29,7 +30,7 @@ Footer: Download liability form (PDF), address, phone, hours
 - Brand: taken from the logo (tree with figure, blue "Care", green "Lift"). Blue `#0a5898`, green `#447d29` for text / `#599a38` for graphics, deep navy bands `#0b2f52`, soft green and sand tints.
 - Logo: traced to transparent SVG (horizontal lockup in the header, white version in the footer, tree icon as favicon).
 - Type: Fraunces (headings, self-hosted subset) + system font stack (body). Base 17px.
-- Photo-led and lazy-loaded; hero is the only eager image. Decorative shapes in empty space, never on text.
+- Minimal and not texty: chair photos only (Unsplash recliner stand-ins until real photos arrive), no decorative shapes. Hero is the only eager image.
 - Mobile first: sticky bottom bar with Call now / Message us; 48px+ tap targets.
 - SEO: unique title and description per page, canonical URLs, sitemap, LocalBusiness (with the Rahway address) + Breadcrumb structured data.
 
@@ -44,5 +45,6 @@ Footer: Download liability form (PDF), address, phone, hours
 7. Exact coverage in NYC and NJ and "surrounding areas"; unique local copy per area page.
 8. About/owner story is intentionally omitted from the simple sitemap; add later if wanted. Same for guides and reviews.
 9. Analytics or call tracking (not set up).
-10. Does CareLift offer weekly / 6-week / long-term rental periods like the Keystone reference site? Not added; the form has a general "how long" field and pricing stays "call us".
+10. ~~Rental periods~~ Confirmed: weekly (2-week minimum), 6-week, long-term. Also confirmed: every chair lifts and reclines, same/next-day delivery may be available, styles vary, free pickup.
+12. About page: owner name, photo and short story for a "Meet the owner" section (Keystone has one).
 11. Is the logo available as an original vector file? The current SVGs were traced from the PNG.

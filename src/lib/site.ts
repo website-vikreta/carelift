@@ -18,31 +18,47 @@ export const SITE = {
 // The only product: power lift chairs (lift recliners). Private rentals only.
 export const PRODUCT = {
   slug: "lift-chair-rental",
-  name: "Lift Chairs",
-  intro:
-    "Rent a power lift recliner for recovery, limited mobility or everyday comfort. A lift chair gently tilts forward to help you stand up, then reclines back for rest. We deliver it and set it up at your home.",
-  benefits: [
-    "Helps you stand up with less strain on knees, hips and back",
-    "Reclines for resting, reading or sleeping",
-    "Simple handheld remote, easy to use",
-    "A comfortable armchair that fits in a living room",
-  ],
-  forWho: "People recovering from knee, hip, back or other surgery, people with arthritis or limited strength, older adults, and family members who want safer, easier seating at home.",
-  sizing: "Chairs differ in size, style and fabric. Tell us your height and weight and a little about the room, and we will match a chair from what is available.",
-  included: ["Delivery and set up at your home", "A walkthrough of the remote and recline", "Pickup when your rental ends"],
+  intro: "A power lift chair that helps you stand up and sit down, then reclines for rest.",
+  benefits: ["Stand up with less strain", "Rest at a raised angle", "Simple handheld remote", "Fits like a regular armchair"],
+  included: ["Delivery and set up", "Quick walkthrough of the remote", "Free pickup at the end"],
 };
 
-export const AREAS = [
-  { name: "New York City", slug: "new-york-city", places: "Manhattan, Brooklyn, Queens, the Bronx and Staten Island" },
-  { name: "New Jersey", slug: "new-jersey", places: "New Jersey and surrounding areas" },
+// Rental periods offered. Prices are never shown: "call for pricing".
+export const RENTALS = [
+  {
+    name: "Weekly rental",
+    text: "Two-week minimum, then week by week.",
+  },
+  {
+    name: "6-week rental",
+    text: "One booking for a longer recovery.",
+  },
+  {
+    name: "Long-term rental",
+    text: "Ongoing support, no need to buy.",
+  },
 ];
 
-export const FAQS = [
-  { q: "How does renting a lift chair work?", a: "Call or send us a message. We confirm which chair suits you and when it can be delivered, then we deliver it, set it up and show you the remote. When you are done, we collect it." },
-  { q: "How much does it cost?", a: "Pricing depends on the chair and how long you need it. Call us for pricing and we will give you a clear quote." },
-  { q: "Where do you deliver?", a: "We deliver in New York City and New Jersey, and some surrounding areas. Call us with your address and we will confirm." },
-  { q: "How long can I rent a chair for?", a: "Tell us how long you need it and we will quote that rental period." },
-  { q: "Do you take insurance or Medicare?", a: "No. We only do private rentals, so rentals are not billed to insurance or Medicare." },
-  { q: "Will a lift chair fit in my home?", a: "Tell us about the room, the doorways and any stairs or elevator when you call, and we will advise before delivery." },
-  { q: "Is there any paperwork?", a: "We use a liability form for rentals. You can download a copy from the footer of any page." },
+export const STEPS = [
+  { title: "Call or message us", text: "Tell us where and for how long." },
+  { title: "We deliver and set up", text: "In the room you choose." },
+  { title: "We pick it up", text: "Free, when you are done." },
+];
+
+export const AREAS = [
+  { name: "New York City", places: "Manhattan, Brooklyn, Queens, the Bronx, Staten Island" },
+  { name: "New Jersey", places: "Statewide, from our base in Rahway" },
+];
+
+export const SURGERIES = ["Knee or hip replacement", "Back or shoulder surgery", "Heart or abdominal surgery"];
+
+export type Faq = { q: string; a: string; list?: string[] };
+export const FAQS: Faq[] = [
+  { q: "How much does it cost?", a: "It depends on the rental period and address. Call us for a quote." },
+  { q: "How fast can you deliver?", a: "Same-day or next-day delivery may be available. Call to check." },
+  { q: "Does every chair lift and recline?", a: "Yes, every chair has both." },
+  { q: "Who rents a lift chair?", a: "Most often people recovering from:", list: SURGERIES },
+  { q: "Can I choose the colour or style?", a: "Styles vary with availability. We match a chair to your height and weight." },
+  { q: "Do you take insurance or Medicare?", a: "No. Private rentals only." },
+  { q: "Is there any paperwork?", a: "A short liability form, linked in the footer." },
 ];

@@ -3,7 +3,7 @@
 export type FormValues = { name: string; email: string; contact: string; zipCode: string; duration: string; message: string };
 export type FormErrors = Partial<Record<keyof FormValues, string>>;
 
-export const DURATIONS = ["A few weeks", "1–3 months", "Longer / not sure"] as const;
+export const DURATIONS = ["Weekly (2-week minimum)", "6 weeks", "Long-term", "Not sure yet"] as const;
 
 /** Digits only, capped at 10. A leading 1 is the US country code (area codes never start with 1), so it is dropped. */
 export function usDigits(input: string): string {

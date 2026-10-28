@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AREAS, SITE } from "./site";
+import { AREAS, FAQS, SITE } from "./site";
 
 export function pageMeta(title: string, description: string, path: string): Metadata {
   return {
@@ -31,5 +31,17 @@ export function breadcrumbLd(items: { name: string; path: string }[]) {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: `${SITE.url}${it.path}` })),
+  };
+}
+
+export function faqLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.list ? `${f.a} ${f.list.join(", ")}.` : f.a },
+    })),
   };
 }

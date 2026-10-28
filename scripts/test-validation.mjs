@@ -1,7 +1,7 @@
 import { validate, usDigits, formatUsPhone, toUsPhoneE164Display } from "../src/lib/validation.ts";
 let fail = 0;
 const t = (name, ok) => { if (!ok) { fail++; console.log("FAIL", name); } };
-const good = { name: "Jane O'Neil-Smith", email: "jane@example.com", contact: "(212) 555-0123", zipCode: "10001", duration: "1–3 months", message: "" };
+const good = { name: "Jane O'Neil-Smith", email: "jane@example.com", contact: "(212) 555-0123", zipCode: "10001", duration: "6 weeks", message: "" };
 t("good form passes", Object.keys(validate(good)).length === 0);
 t("empty name", !!validate({ ...good, name: "" }).name);
 t("digits in name", !!validate({ ...good, name: "J4ne" }).name);
@@ -21,6 +21,7 @@ t("e164 display", toUsPhoneE164Display("212-555-0123") === "+1 (212) 555-0123");
 t("letters in phone", !!validate({ ...good, contact: "abcdefghij" }).contact);
 t("zip 4 digits", !!validate({ ...good, zipCode: "1000" }).zipCode);
 t("zip letters", !!validate({ ...good, zipCode: "1000A" }).zipCode);
+t("duration unknown option", !!validate({ ...good, duration: "1–3 months" }).duration);
 t("duration empty", !!validate({ ...good, duration: "" }).duration);
 t("message too long", !!validate({ ...good, message: "x".repeat(1001) }).message);
 console.log(fail ? `${fail} failed` : "all validation tests passed");

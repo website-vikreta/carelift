@@ -1,93 +1,78 @@
 import Link from "next/link";
-import { FAQS, PRODUCT, SITE } from "@/lib/site";
-import { Areas } from "@/components/Areas";
+import { AREAS, PRODUCT } from "@/lib/site";
+import { faqLd } from "@/lib/seo";
 import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
-import { Deco } from "@/components/Deco";
+import { Faq } from "@/components/Faq";
+import { JsonLd } from "@/components/JsonLd";
 import { Photo } from "@/components/Photo";
+import { Rentals } from "@/components/Rentals";
 import { Steps } from "@/components/Steps";
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqLd()} />
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <p className="kicker">New York City &amp; New Jersey</p>
-            <h1>Lift chair rentals, delivered to your home</h1>
-            <p className="lead">Rent a power lift chair for recovery, comfort or easier everyday life. We deliver it, set it up and collect it when you are done.</p>
+            <h1>Lift chair rentals in New York City &amp; New Jersey</h1>
+            <p className="lead">Delivered, set up and picked up. Weekly, 6-week or long-term.</p>
             <ContactButtons />
             <ul className="facts">
-              <li>Delivered and set up in the room you choose</li>
-              <li>Private rentals, no purchase needed</li>
-              <li>Open {SITE.hours}</li>
+              <li>Every chair lifts and reclines</li>
+              <li>Same or next-day delivery may be available</li>
             </ul>
           </div>
-          <div className="media">
-            <Deco kind="blob" className="o-hero-blob" />
-            <Deco kind="ring" className="o-hero-ring" />
-            <Deco kind="dots" className="o-hero-dots" />
-            <Deco kind="spark" className="o-hero-spark" />
-            <Photo id="hero" ratio="4:5" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
-          </div>
+          <Photo id="hero" ratio="4:5" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
         </div>
       </section>
 
-      <section className="section">
-        <Deco kind="dots" className="o-sec-dots" />
+      <section className="section sand">
         <div className="wrap split">
-          <div className="media">
-            <Deco kind="blob" className="o-media-blob" />
-            <Photo id="chair" ratio="4:3" />
-          </div>
+          <Photo id="chair" ratio="4:3" />
           <div>
-            <h2>A chair that helps you stand</h2>
+            <h2>Comfort at home, when you need it most</h2>
             <p>{PRODUCT.intro}</p>
             <ul className="list">{PRODUCT.benefits.map((b) => <li key={b}>{b}</li>)}</ul>
-            <p><Link className="more" href={`/${PRODUCT.slug}/`}>More about our lift chairs</Link></p>
           </div>
         </div>
       </section>
 
-      <section className="section deep" id="how-it-works">
-        <Deco kind="ring" className="o-deep-ring" />
-        <Deco kind="arc" className="o-deep-arc" />
+      <section className="section" id="how-it-works">
         <div className="wrap">
-          <div className="sec-head">
-            <div>
-              <p className="kicker kicker-light">Simple from start to finish</p>
-              <h2>How renting works</h2>
-            </div>
-          </div>
+          <h2>How it works</h2>
           <Steps />
-          <div style={{ marginTop: 40 }}><ContactButtons /></div>
+        </div>
+      </section>
+
+      <section className="section sand" id="rental-options">
+        <div className="wrap">
+          <h2>Rental options</h2>
+          <Rentals />
+          <p style={{ marginTop: 24 }}><Link className="more" href={`/${PRODUCT.slug}/`}>Rental details</Link></p>
         </div>
       </section>
 
       <section className="section" id="areas">
-        <Deco kind="squiggle" className="o-sec-squiggle" />
         <div className="wrap">
-          <div className="sec-head">
-            <div>
-              <h2>Where we deliver</h2>
-              <p className="small">New York City and New Jersey, plus some surrounding areas. Call with your address and we will confirm.</p>
-            </div>
+          <h2>Where we deliver</h2>
+          <div className="areas">
+            {AREAS.map((a) => (
+              <div key={a.name}>
+                <h3>{a.name}</h3>
+                <p>{a.places}</p>
+              </div>
+            ))}
           </div>
-          <Areas />
+          <p className="small">Some surrounding areas too. Call to confirm.</p>
         </div>
       </section>
 
       <section className="section sand" id="faq">
         <div className="wrap cols">
-          <div>
-            <h2>Questions, answered</h2>
-            <p className="lead">The things people ask us most before renting.</p>
-          </div>
-          <div>
-            {FAQS.map((f) => (
-              <details key={f.q}><summary>{f.q}</summary><p>{f.a}</p></details>
-            ))}
-          </div>
+          <h2>Questions</h2>
+          <Faq />
         </div>
       </section>
 
