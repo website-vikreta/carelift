@@ -1,25 +1,22 @@
-// Unsplash photos (free Unsplash License), hot-linked from the Unsplash CDN with responsive sizes.
-// Rule: no photo appears twice on the same page. `color` is the average colour shown while the image lazy-loads.
-// These are recliner product photos standing in for CareLift's own chairs; replace with photos of the real
-// rental chairs in /public/images when available.
-export type SitePhoto = { src: string; alt: string; credit: string; creditUrl: string; color: string };
+// Lift chair photos supplied by the client (Oct 2026), stored as resized WebP files in /public/images/chairs:
+// `<file>-<width>.webp` for each width in `widths`. Rule: no photo appears twice on the same page.
+// `color` is the average colour shown while the image lazy-loads; `position` is the CSS object-position for crops.
+export type SitePhoto = { file: string; widths: number[]; alt: string; color: string; position?: string };
 
-const photo = (id: string, alt: string, credit: string, user: string, color: string): SitePhoto => ({
-  src: `https://images.unsplash.com/photo-${id}`,
-  alt,
-  credit,
-  creditUrl: `https://unsplash.com/@${user}?utm_source=carelift&utm_medium=referral`,
-  color,
-});
+const chair = (file: string, widths: number[], alt: string, color: string, position?: string): SitePhoto => ({ file: `/images/chairs/${file}`, widths, alt, color, position });
 
-const ROOM = photo("1757969687802-82493a29047a", "Beige recliner chair beside small side tables in a bright room", "Costa Live", "vendedorescostalive", "#ececea");
-const FRONT = photo("1759722666941-a90d5a15b1d7", "Front view of a beige upholstered recliner chair", "Costa Live", "vendedorescostalive", "#ececea");
-const ANGLE = photo("1759722666961-8068c5ad61ab", "Beige recliner chair seen from the side, next to a small table", "Costa Live", "vendedorescostalive", "#ececea");
-const CLOSE = photo("1759722666919-14db39a6f347", "Close view of a padded recliner chair with a side table", "Costa Live", "vendedorescostalive", "#ececea");
+const STANDING_UP = chair("lift-chair-rental-standing-up", [400, 640, 960, 1280], "Woman standing up with help from a dark brown power lift chair in her living room", "#8b8380", "52% 50%");
+const GREY_RAISED = chair("power-lift-chair-grey-raised", [400, 640, 960, 1280], "Grey power lift recliner in the raised position with its handheld remote", "#b1acac");
+const BEIGE = chair("lift-recliner-beige", [400, 640, 894], "Beige fabric power lift recliner chair in a living room", "#a0928a");
+const WHITE = chair("lift-recliner-white-leather", [400, 640, 800], "Cream leather power lift recliner chair", "#ab9e8c");
+const ASSIST = chair("lift-chair-grey-standing-assist", [400, 640, 960, 1024], "Woman getting up from a grey lift chair tilted forward", "#a1a2a3", "46% 50%");
 
 export const IMAGES: Record<string, SitePhoto> = {
-  hero: ROOM,
-  chair: FRONT,
-  "rental-page": ANGLE,
-  about: CLOSE,
+  hero: STANDING_UP,
+  chair: GREY_RAISED,
+  "rental-page": ASSIST,
+  about: BEIGE,
 };
+
+// "Styles vary" row on the rental options page (never that page's own hero photo).
+export const STYLES: SitePhoto[] = [BEIGE, WHITE, GREY_RAISED];

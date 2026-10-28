@@ -1,4 +1,5 @@
 import { validate, usDigits, formatUsPhone, toUsPhoneE164Display } from "../src/lib/validation.ts";
+import { isRealValue, templateParams } from "../src/lib/emailjs.ts";
 let fail = 0;
 const t = (name, ok) => { if (!ok) { fail++; console.log("FAIL", name); } };
 const good = { name: "Jane O'Neil-Smith", email: "jane@example.com", contact: "(212) 555-0123", zipCode: "10001", duration: "6 weeks", message: "" };
@@ -24,5 +25,11 @@ t("zip letters", !!validate({ ...good, zipCode: "1000A" }).zipCode);
 t("duration unknown option", !!validate({ ...good, duration: "1–3 months" }).duration);
 t("duration empty", !!validate({ ...good, duration: "" }).duration);
 t("message too long", !!validate({ ...good, message: "x".repeat(1001) }).message);
+const tp = templateParams({ ...good, message: "  " });
+t("template params match the EmailJS template", JSON.stringify(Object.keys(tp)) === JSON.stringify(["title", "name", "email", "contact", "zipCode", "duration", "message"]));
+t("template phone formatted", tp.contact === "+1 (212) 555-0123");
+t("template empty message", tp.message === "(no message)");
+t("placeholder env value not configured", !isRealValue("your_service_id") && !isRealValue("") && !isRealValue(undefined));
+t("real env value configured", isRealValue("service_abc123"));
 console.log(fail ? `${fail} failed` : "all validation tests passed");
 process.exit(fail ? 1 : 0);

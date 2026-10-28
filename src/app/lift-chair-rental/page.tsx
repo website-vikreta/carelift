@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PRODUCT, SITE, SURGERIES } from "@/lib/site";
+import { STYLES } from "@/lib/images";
 import { breadcrumbLd, pageMeta } from "@/lib/seo";
 import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
@@ -37,11 +38,20 @@ export default function LiftChairRental() {
       </section>
 
       <section className="section">
+        <div className="wrap">
+          <h2>Styles vary with availability</h2>
+          <div className="styles">
+            {STYLES.map((p) => <Photo key={p.file} photo={p} ratio="1:1" sizes="(min-width: 760px) 360px, calc(100vw - 40px)" />)}
+          </div>
+        </div>
+      </section>
+
+      <section className="section sand">
         <div className="wrap cols">
           <div>
             <h2>Every rental includes</h2>
             <ul className="list">{PRODUCT.included.map((i) => <li key={i}>{i}</li>)}</ul>
-            <p className="small">Every chair lifts and reclines. Styles vary with availability.</p>
+            <p className="small">Every chair lifts and reclines.</p>
           </div>
           <div>
             <h2>Often rented after</h2>

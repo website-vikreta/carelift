@@ -5,7 +5,7 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# Environment variables (set in Netlify, see .env.example): NEXT_PUBLIC_SITE_URL and the three NEXT_PUBLIC_EMAILJS_* values.
+# Environment variables: defaults in .env (committed). Values set in Netlify override them when Netlify builds: NEXT_PUBLIC_SITE_URL and the three NEXT_PUBLIC_EMAILJS_* values.
 
 [[headers]]
   for = "/*"

@@ -10,6 +10,7 @@ export const SITE = {
   hours: "Mon–Sat 10am–6pm · Sunday closed",
   address: { street: "363 E Milton Ave", city: "Rahway", state: "NJ", zip: "07065" } as null | { street: string; city: string; state: string; zip: string },
   mapsHref: "https://www.google.com/maps/search/?api=1&query=363+E+Milton+Ave+Rahway+NJ+07065",
+  mapEmbed: "https://maps.google.com/maps?q=363+E+Milton+Ave,+Rahway,+NJ+07065&z=14&output=embed",
   gbpUrl: null as null | string,
   // Drop the real PDF at public/downloads/carelift-liability-form.pdf (same filename). The current file is a placeholder.
   liabilityFormHref: "/downloads/carelift-liability-form.pdf",
@@ -28,14 +29,17 @@ export const RENTALS = [
   {
     name: "Weekly rental",
     text: "Two-week minimum, then week by week.",
+    duration: "Weekly (2-week minimum)",
   },
   {
     name: "6-week rental",
     text: "One booking for a longer recovery.",
+    duration: "6 weeks",
   },
   {
     name: "Long-term rental",
     text: "Ongoing support, no need to buy.",
+    duration: "Long-term",
   },
 ];
 

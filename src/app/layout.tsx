@@ -26,9 +26,6 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={fraunces.variable}>
-      <head>
-        <link rel="preconnect" href="https://images.unsplash.com" />
-      </head>
       <body>
         <a className="skip" href="#main">Skip to content</a>
         <Header />

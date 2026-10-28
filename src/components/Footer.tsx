@@ -33,7 +33,6 @@ export function Footer() {
               <li><a href={SITE.liabilityFormHref} download>Download liability form (PDF)</a></li>
               <li><Link href="/terms-of-rental/">Terms of rental</Link></li>
               <li><Link href="/privacy-policy/">Privacy policy</Link></li>
-              <li><Link href="/photo-credits/">Photo credits</Link></li>
             </ul>
           </div>
         </div>
