@@ -73,5 +73,5 @@ export const OWNER = {
   role: "Owner",
   photo: "/images/arvind-dhankhad.webp",
   story:
-    "Arvind runs the customer experience and community side of CareLift. He believes the relationship matters as much as the result, and that the people whose homes we work in should feel respected throughout the whole process, not just at the end.",
+    "“Comfort, dignity and peace of mind should never be out of reach. I started CareLift so getting the equipment you need is simple, convenient and stress-free — from delivery and setup to pickup. Thank you for trusting us: your comfort is our commitment.”",
 };

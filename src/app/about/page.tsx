@@ -7,7 +7,7 @@ import { Photo } from "@/components/Photo";
 
 export const metadata = pageMeta(
   "About CareLift: Local Lift Chair Rentals",
-  "CareLift Medical Equipment is a local lift chair rental service based in Rahway, NJ, delivering to homes in New York City and New Jersey.",
+  "Reliable lift chair rentals for comfort, safety and independence at home. Based in Rahway, NJ, delivering to New York City and New Jersey.",
   "/about/",
 );
 
@@ -20,9 +20,8 @@ export default function About() {
           <div>
             <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / About</nav>
             <h1>About CareLift</h1>
-            <p className="lead">A local lift chair rental service based in Rahway, NJ.</p>
-            <p>We rent one thing, power lift chairs, to private customers in New York City and New Jersey. We deliver, set up and pick up, so you never have to buy a chair for a short-term need.</p>
-            <p>Our aim is simple: make recovery and getting around at home easier and safer.</p>
+            <p className="lead">Reliable lift chair rentals for comfort, safety and independence at home.</p>
+            <p>Whether it&rsquo;s recovery, daily assistance or temporary support for a loved one, we keep renting simple: quality chairs, friendly service and dependable options, delivered, set up and picked up, so families have peace of mind.</p>
           </div>
           <Photo id="about" ratio="1:1" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
         </div>
