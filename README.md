@@ -1,6 +1,6 @@
 # CareLift Medical Equipment
 
-Simple, mobile-first Next.js static site (App Router, `output: "export"`) for CareLift: **private lift chair rentals based in New Jersey**, with delivery to New York City and other surrounding areas (based in Rahway, NJ).
+Simple, mobile-first Next.js static site (App Router, `output: "export"`) for CareLift: **private lift chair rentals based in New Jersey**, with delivery to New York City and other surrounding areas. No street address is published on the site.
 Scope, sitemap and design notes: [`docs/design-kit-and-sitemap.md`](docs/design-kit-and-sitemap.md).
 
 ## Develop
@@ -41,7 +41,7 @@ Run `npm run build` and drag the `out` folder into Netlify, or connect the repo 
 
 - **Phone number:** one place, `SITE.phone` / `SITE.phoneHref` in `src/lib/site.ts` (real New Jersey number).
 - **Liability form:** replace `public/downloads/carelift-liability-form.pdf` with the real PDF (same filename). The current file is a placeholder.
-- **Google Business Profile URL:** `SITE.gbpUrl` in `src/lib/site.ts`. The address (363 E Milton Ave, Rahway, NJ 07065) is `SITE.address`.
+- **Google Business Profile URL:** `SITE.gbpUrl` in `src/lib/site.ts`. `SITE.address` is `null` (no street address published); set it to bring the address and map back.
 - **Logo files:** `public/logo-horizontal.svg`, `public/logo.svg`, `src/app/icon.svg` (favicon). Replace with the vector master if the designer has one.
 - **Photos:** `public/images/chairs/` + `src/lib/images.ts` (client-supplied lift chair photos; swap in photos of your own chairs when available).
 - **Legal pages:** `/terms-of-rental/` and `/privacy-policy/` are drafts pending real text.

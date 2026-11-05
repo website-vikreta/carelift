@@ -2,7 +2,6 @@ import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 export function Footer() {
-  const a = SITE.address;
   return (
     <footer className="footer">
       <div className="wrap">
@@ -14,7 +13,6 @@ export function Footer() {
               <a href={SITE.phoneHref}>{SITE.phone}</a>
               <br />
               {SITE.hours}
-              {a && (<><br /><a href={SITE.mapsHref}>{a.street}, {a.city}, {a.state} {a.zip}</a></>)}
               {SITE.gbpUrl && (<><br /><a href={SITE.gbpUrl} target="_blank" rel="noopener noreferrer">Find us on Google</a></>)}
             </p>
           </div>

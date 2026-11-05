@@ -7,7 +7,7 @@ import { Photo } from "@/components/Photo";
 
 export const metadata = pageMeta(
   "About CareLift: Local Lift Chair Rentals",
-  "Reliable lift chair rentals for comfort, safety and independence at home. Based in Rahway, NJ, delivering across New Jersey and surrounding areas, including New York City.",
+  "Reliable lift chair rentals for comfort, safety and independence at home. Delivering across New Jersey and surrounding areas, including New York City.",
   "/about/",
 );
 

@@ -5,7 +5,6 @@ import { ContactButtons } from "@/components/ContactButtons";
 import { CtaBand } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
-import { MapEmbed } from "@/components/MapEmbed";
 import { Photo } from "@/components/Photo";
 import { Rentals } from "@/components/Rentals";
 import { Steps } from "@/components/Steps";
@@ -56,18 +55,17 @@ export default function Home() {
       </section>
 
       <section className="section" id="areas">
-        <div className="wrap cols">
-          <div>
-            <h2>Where we deliver</h2>
+        <div className="wrap">
+          <h2>Where we deliver</h2>
+          <div className="areas">
             {AREAS.map((a) => (
               <div key={a.name}>
                 <h3>{a.name}</h3>
                 <p>{a.places}</p>
               </div>
             ))}
-            <p className="small">Plus other surrounding areas. Call to confirm.</p>
           </div>
-          <MapEmbed />
+          <p className="small">Plus other surrounding areas. Call to confirm.</p>
         </div>
       </section>
 

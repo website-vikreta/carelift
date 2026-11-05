@@ -32,11 +32,11 @@ Footer: Download liability form (PDF), address, phone, hours
 - Type: Fraunces (headings, self-hosted subset) + system font stack (body). Base 17px.
 - Minimal and not texty: lift chair photos only (client-supplied), no decorative shapes. Hero is the only eager image.
 - Mobile first: sticky bottom bar with Call now / Message us; 48px+ tap targets.
-- SEO: unique title and description per page, canonical URLs, sitemap, LocalBusiness (with the Rahway address) + Breadcrumb structured data.
+- SEO: unique title and description per page, canonical URLs, sitemap, LocalBusiness + Breadcrumb structured data. No street address published (client decision, Nov 2026).
 
 ## 4. Open questions for the client
 
-1. ~~Google Business Profile link~~ Done: `SITE.gbpUrl` (CareLift Medical Equipment Rentals on Google Maps). (Address is set: 363 E Milton Ave, Rahway, NJ 07065.)
+1. ~~Google Business Profile link~~ Done: `SITE.gbpUrl` (CareLift Medical Equipment Rentals on Google Maps). Street address removed from the website by client request (Nov 2026); `SITE.address` is `null`.
 2. ~~Phone number~~ Done: `+1 (848) 385-8415` (New Jersey). Still open: the liability form PDF; the final domain.
 3. EmailJS values: set in Netlify environment variables (never committed), rebuild, redeploy; add the live domain under EmailJS > Account > Security > allowed origins if restricted.
 4. ~~Chair photos~~ Client supplied manufacturer/retail lift chair photos (28 Oct 2026) and asked for them to be used; replace with photos of their own chairs when available.

@@ -8,9 +8,8 @@ export const SITE = {
   region: "New Jersey",
   areaText: "New Jersey, with delivery to New York City and other surrounding areas",
   hours: "Open every day, 7am–10pm",
-  address: { street: "363 E Milton Ave", city: "Rahway", state: "NJ", zip: "07065" } as null | { street: string; city: string; state: string; zip: string },
-  mapsHref: "https://www.google.com/maps/search/?api=1&query=363+E+Milton+Ave+Rahway+NJ+07065",
-  mapEmbed: "https://maps.google.com/maps?q=363+E+Milton+Ave,+Rahway,+NJ+07065&z=14&output=embed",
+  // Client decision (Nov 2026): no street address published on the website. Phone and the contact form only.
+  address: null as null | { street: string; city: string; state: string; zip: string },
   gbpUrl: "https://share.google/7p3PC4SFOV8MOFxQP" as null | string,
   // Drop the real PDF at public/downloads/carelift-liability-form.pdf (same filename). The current file is a placeholder.
   liabilityFormHref: "/downloads/carelift-liability-form.pdf",
@@ -50,7 +49,7 @@ export const STEPS = [
 ];
 
 export const AREAS = [
-  { name: "New Jersey", places: "Statewide, from our base in Rahway" },
+  { name: "New Jersey", places: "Statewide" },
   { name: "New York City", places: "Manhattan, Brooklyn, Queens, the Bronx, Staten Island" },
 ];
 

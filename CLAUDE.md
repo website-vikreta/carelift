@@ -26,7 +26,7 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 - **Rental periods (client confirmed, Oct 2026):** weekly (2-week minimum, then week by week), 6-week, long-term (`RENTALS` in `site.ts`). Confirmed true and OK to state: every chair lifts and reclines; same-day or next-day delivery *may* be available; styles/colours vary with availability; **delivery, set-up and pickup are included in the rental price (not a separate free add-on — say "included", never "free").**
 - Keystone is the structural reference only: never copy its text or photos (copyright, and duplicate content hurts SEO).
 - **Liability form:** downloadable PDF linked in the footer (and on How it works). File: `public/downloads/carelift-liability-form.pdf` (placeholder until the client supplies the real one).
-- **Address:** 363 E Milton Ave, Rahway, NJ 07065 (`SITE.address`; shown in footer and Contact, used in structured data, links to Google Maps).
+- **Address:** not published on the website (client decision, Nov 2026). `SITE.address` is `null`; phone call or the contact form only, no street address, no map. If the client supplies one later, setting `SITE.address` brings back the footer/Contact display and the structured data automatically.
 - The phone number is a real New Jersey number (`+1 (848) 385-8415`); it lives only in `SITE` in `src/lib/site.ts`.
 - Do not invent reviews, statistics, credentials or delivery-speed claims. Only state what is true for CareLift.
 
@@ -50,7 +50,6 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 
 - **Minimal, not texty (client request, Oct 2026):** short headings, one-line descriptions, bullet lists over paragraphs, FAQ answers in one or two sentences. Alternating paper / sand sections, deep-navy closing CTA band, ink text, brand blue accent, hairline dividers. No decorative shapes, no card shadows, no uppercase eyebrow labels, no pill chips, no gradient placeholder boxes, no stat or trust badges we cannot back up.
 - Photos show lift chairs (with or without someone using them) only: no generic stock of people, cities or unrelated scenes.
-- Google Map of the Rahway address (`MapEmbed`, lazy iframe, `SITE.mapEmbed`) on Home (Where we deliver) and Contact.
 - **Logo:** traced from the client's PNG into transparent SVGs: `public/logo-horizontal.svg` (header, footer in white via CSS filter), `public/logo.svg` (stacked with tagline), `src/app/icon.svg` (favicon). Brand colours come from the logo: blue `#0a5898`, green `#447d29` (text) / `#599a38`. Keep new colours in that family.
 - Design tokens are CSS variables in `src/app/globals.css`. Mobile-first; tap targets at least 48px; body text 17px+; keep contrast AA.
 - Fonts: Manrope (latin, weight axis only) self-hosted via `next/font/local` for both headings and body (`--font-sans`, `src/app/fonts/manrope-latin-wght-normal.woff2`). Headings are weight 700. No other web fonts.

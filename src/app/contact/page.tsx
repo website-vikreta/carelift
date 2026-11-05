@@ -1,12 +1,10 @@
 import { SITE } from "@/lib/site";
 import { ContactForm } from "@/components/ContactForm";
-import { MapEmbed } from "@/components/MapEmbed";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or send a message to rent a lift chair in New Jersey and surrounding areas, including New York City. Based in Rahway, NJ.", "/contact/");
+export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or send a message to rent a lift chair in New Jersey and surrounding areas, including New York City.", "/contact/");
 
 export default function Contact() {
-  const a = SITE.address;
   return (
     <section className="hero">
       <div className="wrap cols">
@@ -16,11 +14,9 @@ export default function Contact() {
           <div className="btn-row"><a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a></div>
           <ul className="facts">
             <li>{SITE.hours}</li>
-            {a && <li><a href={SITE.mapsHref}>{a.street}, {a.city}, {a.state} {a.zip}</a></li>}
             <li>Delivering across {SITE.areaText}</li>
             {SITE.gbpUrl && <li><a href={SITE.gbpUrl} target="_blank" rel="noopener noreferrer">View on Google</a></li>}
           </ul>
-          <MapEmbed />
         </div>
         <div>
           <h2>Check availability</h2>
