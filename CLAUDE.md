@@ -41,7 +41,8 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 ## Content and data
 
 - Business data, product copy, areas and FAQs live in `src/lib/site.ts`; pages are data-driven (areas via `AREAS`).
-- Placeholders awaiting real data: Google Business Profile URL (`SITE.gbpUrl`), legal pages. Owner (Arvind Dhankhad) photo and story are real (`OWNER` in `site.ts`).
+- Placeholders awaiting real data: legal pages. Google Business Profile (`SITE.gbpUrl`), owner (Arvind Dhankhad) photo and story are real.
+- `SITE.gbpUrl` feeds the LocalBusiness `sameAs` structured data and shows as "View on Google" / "Find us on Google" on Contact and in the footer, linking back to the profile that brings most of the site's traffic.
 - Chair photos: supplied by the client on 28 Oct 2026 with an explicit instruction to use them (manufacturer/retailer product photos; the client owns the rights question). Stored in `public/images/chairs/` as `<name>-<width>.webp`. Replace with photos of CareLift's own chairs when available. Do not take further photos from keystonemedicalrentals.com or other competitors.
 - Keep copy original; do not copy text from reference sites.
 
