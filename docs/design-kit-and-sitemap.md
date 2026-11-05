@@ -45,6 +45,6 @@ Footer: Download liability form (PDF), address, phone, hours
 7. Exact coverage in NYC and NJ and "surrounding areas"; unique local copy per area page.
 8. About/owner story is intentionally omitted from the simple sitemap; add later if wanted. Same for guides and reviews.
 9. Analytics or call tracking (not set up).
-10. ~~Rental periods~~ Confirmed: weekly (2-week minimum), 6-week, long-term. Also confirmed: every chair lifts and reclines, same/next-day delivery may be available, styles vary, free pickup.
+10. ~~Rental periods~~ Confirmed: weekly (2-week minimum), 6-week, long-term. Also confirmed: every chair lifts and reclines, same/next-day delivery may be available, styles vary, delivery/set-up/pickup included in the price (not free; say "included").
 12. ~~About page owner~~ Done: Arvind Dhankhad, photo and story supplied.
 11. Is the logo available as an original vector file? The current SVGs were traced from the PNG.

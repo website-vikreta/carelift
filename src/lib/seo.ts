@@ -19,7 +19,7 @@ export function localBusinessLd() {
     telephone: SITE.phone,
     founder: { "@type": "Person", name: OWNER.name },
     areaServed: AREAS.map((a) => ({ "@type": "AdministrativeArea", name: a.name })),
-    openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "10:00", closes: "18:00" }],
+    openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "07:00", closes: "22:00" }],
     ...(SITE.address && {
       address: { "@type": "PostalAddress", streetAddress: SITE.address.street, addressLocality: SITE.address.city, addressRegion: SITE.address.state, postalCode: SITE.address.zip, addressCountry: "US" },
     }),

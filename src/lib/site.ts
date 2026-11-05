@@ -7,7 +7,7 @@ export const SITE = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://careliftmedicalequipment.com",
   region: "New Jersey",
   areaText: "New Jersey, with delivery to New York City and other surrounding areas",
-  hours: "Mon–Sat 10am–6pm · Sunday closed",
+  hours: "Open every day, 7am–10pm",
   address: { street: "363 E Milton Ave", city: "Rahway", state: "NJ", zip: "07065" } as null | { street: string; city: string; state: string; zip: string },
   mapsHref: "https://www.google.com/maps/search/?api=1&query=363+E+Milton+Ave+Rahway+NJ+07065",
   mapEmbed: "https://maps.google.com/maps?q=363+E+Milton+Ave,+Rahway,+NJ+07065&z=14&output=embed",
@@ -21,7 +21,7 @@ export const PRODUCT = {
   slug: "lift-chair-rental",
   intro: "A power lift chair that helps you stand up and sit down, then reclines for rest.",
   benefits: ["Stand up with less strain", "Rest at a raised angle", "Simple handheld remote", "Fits like a regular armchair"],
-  included: ["Delivery and set up", "Quick walkthrough of the remote", "Free pickup at the end"],
+  included: ["Delivery and set up", "Quick walkthrough of the remote", "Pickup at the end"],
 };
 
 // Rental periods offered. Prices are never shown: "call for pricing".
@@ -46,7 +46,7 @@ export const RENTALS = [
 export const STEPS = [
   { title: "Call or message us", text: "Tell us where and for how long." },
   { title: "We deliver and set up", text: "In the room you choose." },
-  { title: "We pick it up", text: "Free, when you are done." },
+  { title: "We pick it up", text: "All included, when you are done." },
 ];
 
 export const AREAS = [
@@ -58,7 +58,7 @@ export const SURGERIES = ["Knee or hip replacement", "Back or shoulder surgery",
 
 export type Faq = { q: string; a: string; list?: string[] };
 export const FAQS: Faq[] = [
-  { q: "How much does it cost?", a: "It depends on the rental period and address. Call us for a quote." },
+  { q: "How much does it cost?", a: "It depends on the rental period and address. Delivery, set-up and pickup are included. Call us for a quote." },
   { q: "How fast can you deliver?", a: "Same-day or next-day delivery may be available. Call to check." },
   { q: "Does every chair lift and recline?", a: "Yes, every chair has both." },
   { q: "Who rents a lift chair?", a: "Most often people recovering from:", list: SURGERIES },
