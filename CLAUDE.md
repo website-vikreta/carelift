@@ -23,7 +23,7 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 - **Contact is call or the contact form only. No WhatsApp, no SMS.**
 - **Never show prices.** "Call for pricing".
 - **Very small sitemap (mirrors Keystone: Home, About, Rates, Contact):** Home (hero, the chair, how it works, rental options, where we deliver, FAQ, call/message block), Rental options (`/lift-chair-rental/`), About, Contact, plus Terms, Privacy and Thank-you. How it works, areas and FAQ are sections on Home, not pages. Do not add pages or sections without asking.
-- **Rental periods (client confirmed, Oct 2026):** weekly (2-week minimum, then week by week), 6-week, long-term (`RENTALS` in `site.ts`). Confirmed true and OK to state: every chair lifts and reclines; same-day or next-day delivery *may* be available; styles/colours vary with availability; pickup is free.
+- **Rental periods (client confirmed, Oct 2026):** weekly (2-week minimum, then week by week), 6-week, long-term (`RENTALS` in `site.ts`). Confirmed true and OK to state: every chair lifts and reclines; same-day or next-day delivery *may* be available; styles/colours vary with availability; **delivery, set-up and pickup are included in the rental price (not a separate free add-on — say "included", never "free").**
 - Keystone is the structural reference only: never copy its text or photos (copyright, and duplicate content hurts SEO).
 - **Liability form:** downloadable PDF linked in the footer (and on How it works). File: `public/downloads/carelift-liability-form.pdf` (placeholder until the client supplies the real one).
 - **Address:** 363 E Milton Ave, Rahway, NJ 07065 (`SITE.address`; shown in footer and Contact, used in structured data, links to Google Maps).
@@ -53,7 +53,7 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 - Google Map of the Rahway address (`MapEmbed`, lazy iframe, `SITE.mapEmbed`) on Home (Where we deliver) and Contact.
 - **Logo:** traced from the client's PNG into transparent SVGs: `public/logo-horizontal.svg` (header, footer in white via CSS filter), `public/logo.svg` (stacked with tagline), `src/app/icon.svg` (favicon). Brand colours come from the logo: blue `#0a5898`, green `#447d29` (text) / `#599a38`. Keep new colours in that family.
 - Design tokens are CSS variables in `src/app/globals.css`. Mobile-first; tap targets at least 48px; body text 17px+; keep contrast AA.
-- Fonts: Fraunces (latin, weight axis only) self-hosted via `next/font/local` for headings; system font stack for body. No other web fonts.
+- Fonts: Manrope (latin, weight axis only) self-hosted via `next/font/local` for both headings and body (`--font-sans`, `src/app/fonts/manrope-latin-wght-normal.woff2`). Headings are weight 700. No other web fonts.
 - Photos: manifest in `src/lib/images.ts` (average colour shown while loading, optional `position` for crops). `Photo` renders nothing when no image is configured. It always sets width/height and srcset; only the hero image is `priority`, everything else lazy-loads. No photo may appear twice on the same page.
 - Keep client JS minimal (mobile menu and contact form only). No animation libraries, no analytics scripts without asking.
 - Target Lighthouse mobile 90+ on every page; check after adding sections or scripts.
