@@ -3,7 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { MapEmbed } from "@/components/MapEmbed";
 import { pageMeta } from "@/lib/seo";
 
-export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or send a message to rent a lift chair in New York City or New Jersey. Based in Rahway, NJ.", "/contact/");
+export const metadata = pageMeta("Contact CareLift Medical Equipment", "Call or send a message to rent a lift chair in New Jersey and surrounding areas, including New York City. Based in Rahway, NJ.", "/contact/");
 
 export default function Contact() {
   const a = SITE.address;

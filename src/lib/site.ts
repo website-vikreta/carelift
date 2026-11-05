@@ -1,12 +1,12 @@
 export const SITE = {
   name: "CareLift Medical Equipment",
   short: "CareLift",
-  // Placeholder number: will be replaced with a New York number. Change it here only.
-  phone: "+1 (336) 653-4589",
-  phoneHref: "tel:+13366534589",
+  // Real New Jersey number. Change it here only.
+  phone: "+1 (848) 385-8415",
+  phoneHref: "tel:+18483858415",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://careliftmedicalequipment.com",
-  region: "New York City & New Jersey",
-  areaText: "New York City and New Jersey",
+  region: "New Jersey",
+  areaText: "New Jersey, with delivery to New York City and other surrounding areas",
   hours: "Mon–Sat 10am–6pm · Sunday closed",
   address: { street: "363 E Milton Ave", city: "Rahway", state: "NJ", zip: "07065" } as null | { street: string; city: string; state: string; zip: string },
   mapsHref: "https://www.google.com/maps/search/?api=1&query=363+E+Milton+Ave+Rahway+NJ+07065",
@@ -50,8 +50,8 @@ export const STEPS = [
 ];
 
 export const AREAS = [
-  { name: "New York City", places: "Manhattan, Brooklyn, Queens, the Bronx, Staten Island" },
   { name: "New Jersey", places: "Statewide, from our base in Rahway" },
+  { name: "New York City", places: "Manhattan, Brooklyn, Queens, the Bronx, Staten Island" },
 ];
 
 export const SURGERIES = ["Knee or hip replacement", "Back or shoulder surgery", "Heart or abdominal surgery"];
