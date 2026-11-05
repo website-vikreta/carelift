@@ -6,11 +6,11 @@ Updated 23 Oct 2026 after the scope reduction. Older drafts (multi-equipment, Ne
 
 - **Product:** power lift chairs only (lift recliners). Private rentals.
 - **Not offered:** hospitals/facilities, insurance or Medicare billing, any other equipment.
-- **Areas:** New York City and New Jersey, plus some surrounding areas (confirm by phone).
+- **Areas:** New Jersey (primary), plus New York City and other surrounding areas (confirm by phone).
 - **Contact:** phone call or contact form (EmailJS). No WhatsApp or SMS.
 - **Pricing:** never shown; "call for pricing".
 - **Paperwork:** downloadable liability form (PDF) in the footer. PDF to be supplied by the client.
-- **Phone:** current number is temporary; a New York number will replace it.
+- **Phone:** real New Jersey number, `+1 (848) 385-8415`.
 - **Purpose of the site:** supports the Google Business Profile, which brings most of the traffic.
 
 ## 2. Sitemap (mirrors Keystone: Home, About, Rates, Contact)
@@ -37,7 +37,7 @@ Footer: Download liability form (PDF), address, phone, hours
 ## 4. Open questions for the client
 
 1. Google Business Profile link. (Address is set: 363 E Milton Ave, Rahway, NJ 07065.)
-2. The real New York phone number; the liability form PDF; the final domain.
+2. ~~Phone number~~ Done: `+1 (848) 385-8415` (New Jersey). Still open: the liability form PDF; the final domain.
 3. EmailJS values: set in Netlify environment variables (never committed), rebuild, redeploy; add the live domain under EmailJS > Account > Security > allowed origins if restricted.
 4. ~~Chair photos~~ Client supplied manufacturer/retail lift chair photos (28 Oct 2026) and asked for them to be used; replace with photos of their own chairs when available.
 5. Rental terms: minimum period, deposit, delivery fee, cancellation, damage. Terms of rental and privacy policy need real text.

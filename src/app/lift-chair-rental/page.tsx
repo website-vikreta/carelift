@@ -10,7 +10,7 @@ import { Rentals } from "@/components/Rentals";
 
 export const metadata = pageMeta(
   "Lift Chair Rental Options: Weekly, 6-Week & Long-Term",
-  `Rent a power lift chair in New York City or New Jersey: weekly (2-week minimum), 6-week or long-term. Delivered, set up and picked up for free. Call ${SITE.phone} for pricing.`,
+  `Rent a power lift chair in New Jersey and surrounding areas, including New York City: weekly (2-week minimum), 6-week or long-term. Delivered, set up and picked up for free. Call ${SITE.phone} for pricing.`,
   `/${PRODUCT.slug}/`,
 );
 

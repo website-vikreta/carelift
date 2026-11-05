@@ -17,7 +17,7 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <h1>Lift chair rentals in New York City &amp; New Jersey</h1>
+            <h1>Lift chair rentals in New Jersey &amp; surrounding areas</h1>
             <p className="lead">Delivered, set up and picked up. Weekly, 6-week or long-term.</p>
             <ContactButtons />
             <ul className="facts">
@@ -65,7 +65,7 @@ export default function Home() {
                 <p>{a.places}</p>
               </div>
             ))}
-            <p className="small">Some surrounding areas too. Call to confirm.</p>
+            <p className="small">Plus other surrounding areas. Call to confirm.</p>
           </div>
           <MapEmbed />
         </div>

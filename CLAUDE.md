@@ -5,7 +5,7 @@ Guidance for Claude Code when working in this repository.
 ## Project
 
 CareLift Medical Equipment: simple, mobile-first, SEO-focused static site (Next.js App Router, `output: "export"`),
-deployed manually to Netlify. **Private lift chair rentals only, in New York City and New Jersey (and some surrounding areas).**
+deployed manually to Netlify. **Private lift chair rentals only, based in New Jersey (primary market), with delivery to New York City and other surrounding areas.**
 Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope and structure. Scope, sitemap and open questions: `docs/design-kit-and-sitemap.md`.
 
 ## Commands
@@ -19,7 +19,7 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 
 - **One product: power lift chairs.** No other equipment (no beds, wheelchairs, walkers, scooters, oxygen, etc.).
 - **Private rentals only.** No hospitals, facilities or B2B. **No insurance or Medicare** (the FAQ says so).
-- **Areas:** New York City and New Jersey (plus "some surrounding areas, call to confirm"). Not North Carolina.
+- **Areas:** New Jersey is the primary market (`SITE.region`, `AREAS` lists it first); New York City and other surrounding areas are also served (call to confirm). Not North Carolina.
 - **Contact is call or the contact form only. No WhatsApp, no SMS.**
 - **Never show prices.** "Call for pricing".
 - **Very small sitemap (mirrors Keystone: Home, About, Rates, Contact):** Home (hero, the chair, how it works, rental options, where we deliver, FAQ, call/message block), Rental options (`/lift-chair-rental/`), About, Contact, plus Terms, Privacy and Thank-you. How it works, areas and FAQ are sections on Home, not pages. Do not add pages or sections without asking.
@@ -27,7 +27,7 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 - Keystone is the structural reference only: never copy its text or photos (copyright, and duplicate content hurts SEO).
 - **Liability form:** downloadable PDF linked in the footer (and on How it works). File: `public/downloads/carelift-liability-form.pdf` (placeholder until the client supplies the real one).
 - **Address:** 363 E Milton Ave, Rahway, NJ 07065 (`SITE.address`; shown in footer and Contact, used in structured data, links to Google Maps).
-- The phone number is a temporary placeholder; it lives only in `SITE` in `src/lib/site.ts` and will be replaced with a New York number.
+- The phone number is a real New Jersey number (`+1 (848) 385-8415`); it lives only in `SITE` in `src/lib/site.ts`.
 - Do not invent reviews, statistics, credentials or delivery-speed claims. Only state what is true for CareLift.
 
 ## Contact form (EmailJS)
