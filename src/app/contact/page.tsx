@@ -18,6 +18,7 @@ export default function Contact() {
             <li>{SITE.hours}</li>
             {a && <li><a href={SITE.mapsHref}>{a.street}, {a.city}, {a.state} {a.zip}</a></li>}
             <li>Delivering across {SITE.areaText}</li>
+            {SITE.gbpUrl && <li><a href={SITE.gbpUrl} target="_blank" rel="noopener noreferrer">View on Google</a></li>}
           </ul>
           <MapEmbed />
         </div>

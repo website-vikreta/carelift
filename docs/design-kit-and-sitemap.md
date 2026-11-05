@@ -36,7 +36,7 @@ Footer: Download liability form (PDF), address, phone, hours
 
 ## 4. Open questions for the client
 
-1. Google Business Profile link. (Address is set: 363 E Milton Ave, Rahway, NJ 07065.)
+1. ~~Google Business Profile link~~ Done: `SITE.gbpUrl` (CareLift Medical Equipment Rentals on Google Maps). (Address is set: 363 E Milton Ave, Rahway, NJ 07065.)
 2. ~~Phone number~~ Done: `+1 (848) 385-8415` (New Jersey). Still open: the liability form PDF; the final domain.
 3. EmailJS values: set in Netlify environment variables (never committed), rebuild, redeploy; add the live domain under EmailJS > Account > Security > allowed origins if restricted.
 4. ~~Chair photos~~ Client supplied manufacturer/retail lift chair photos (28 Oct 2026) and asked for them to be used; replace with photos of their own chairs when available.
