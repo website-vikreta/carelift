@@ -9,7 +9,7 @@ export default function Contact() {
     <section className="hero">
       <div className="wrap cols">
         <div>
-          <h1>Contact us</h1>
+          <h1>Contact Us</h1>
           <p className="lead">Call us, or check availability below and we will call you back.</p>
           <div className="btn-row"><a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a></div>
           <ul className="facts">

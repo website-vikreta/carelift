@@ -22,7 +22,7 @@ export default function LiftChairRental() {
         <div className="wrap hero-grid">
           <div>
             <nav className="crumbs" aria-label="Breadcrumb"><Link href="/">Home</Link> / Rental options</nav>
-            <h1>Lift chair rental options</h1>
+            <h1>Lift Chair Rental Options</h1>
             <p className="lead">{PRODUCT.intro}</p>
             <ContactButtons />
           </div>
