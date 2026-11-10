@@ -49,7 +49,7 @@ export const STEPS = [
 ];
 
 export const AREAS = [
-  { name: "New Jersey", places: ["Princeton", "Old Bridge", "Morristown", "Freehold"] },
+  { name: "New Jersey", places: ["Princeton", "Old Bridge", "Morristown", "Freehold"], note: "We cover all surrounding areas, South and North Jersey." },
   { name: "New York City", places: ["Staten Island"] },
 ];
 

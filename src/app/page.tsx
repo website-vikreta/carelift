@@ -16,7 +16,7 @@ export default function Home() {
       <section className="hero">
         <div className="wrap hero-grid">
           <div>
-            <h1>Lift chair rentals in New Jersey &amp; surrounding areas</h1>
+            <h1>Lift Chair Rentals in New Jersey &amp; Surrounding Areas</h1>
             <p className="lead">Delivered, set up and picked up. Weekly, 6-week or long-term.</p>
             <ContactButtons />
             <ul className="facts">
@@ -62,6 +62,7 @@ export default function Home() {
               <div key={a.name}>
                 <h3>{a.name}</h3>
                 <ul className="list">{a.places.map((p) => <li key={p}>{p}</li>)}</ul>
+                {"note" in a && <p className="small">{a.note}</p>}
               </div>
             ))}
           </div>
