@@ -5,7 +5,7 @@ export type Ratio = keyof typeof RATIOS;
 
 const DEFAULT_SIZES = "(min-width: 760px) 520px, calc(100vw - 40px)";
 
-// Responsive, lazy-loaded image with explicit dimensions (no layout shift) and a colour placeholder.
+// Responsive, lazy-loaded image with explicit dimensions (no layout shift) and a color placeholder.
 // The frame sets the aspect ratio; the image is cropped to it with object-fit. Renders nothing when no photo is configured.
 export function Photo({
   id,

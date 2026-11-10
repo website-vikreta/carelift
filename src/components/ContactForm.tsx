@@ -112,7 +112,7 @@ export function ContactForm() {
       </div>
       {failure && <p className="form-status" role="alert">{failure}</p>}
       <button className="btn" type="submit" disabled={sending}>{sending ? "Sending…" : "Send message"}</button>
-      <p className="small" style={{ marginTop: 12 }}>We only use your details to reply to your enquiry.</p>
+      <p className="small" style={{ marginTop: 12 }}>We only use your details to reply to your inquiry.</p>
     </form>
   );
 }

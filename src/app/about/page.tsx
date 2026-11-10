@@ -23,7 +23,7 @@ export default function About() {
             <p className="lead">Reliable lift chair rentals for comfort, safety and independence at home.</p>
             <p>Whether it&rsquo;s recovery, daily assistance or temporary support for a loved one, we keep renting simple: quality chairs, friendly service and dependable options, delivered, set up and picked up, so families have peace of mind.</p>
           </div>
-          <Photo id="about" ratio="1:1" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
+          <Photo id="about" ratio="4:5" priority sizes="(min-width: 760px) 500px, calc(100vw - 40px)" />
         </div>
       </section>
 
