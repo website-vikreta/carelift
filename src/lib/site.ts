@@ -49,8 +49,8 @@ export const STEPS = [
 ];
 
 export const AREAS = [
-  { name: "New Jersey", places: "Princeton, Old Bridge, Morristown, Freehold and other surrounding towns" },
-  { name: "New York City", places: "Staten Island" },
+  { name: "New Jersey", places: ["Princeton", "Old Bridge", "Morristown", "Freehold"] },
+  { name: "New York City", places: ["Staten Island"] },
 ];
 
 export const SURGERIES = ["Knee or hip replacement", "Back or shoulder surgery", "Heart or abdominal surgery"];

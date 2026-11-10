@@ -61,7 +61,7 @@ export default function Home() {
             {AREAS.map((a) => (
               <div key={a.name}>
                 <h3>{a.name}</h3>
-                <p>{a.places}</p>
+                <ul className="list">{a.places.map((p) => <li key={p}>{p}</li>)}</ul>
               </div>
             ))}
           </div>

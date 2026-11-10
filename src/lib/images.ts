@@ -3,7 +3,7 @@
 // `color` is the average color shown while the image lazy-loads; `position` is the CSS object-position for crops.
 // RECLINER_DETAIL and RECLINED_SMALL are cropped from a product infographic the client sent (Nov 2026), with the
 // overlaid text/graphics and the other staged chair removed; their source crop is small, so widths stop early.
-export type SitePhoto = { file: string; widths: number[]; alt: string; color: string; position?: string };
+export type SitePhoto = { file: string; widths: number[]; alt: string; color: string; position?: string; fit?: "cover" | "contain" };
 
 const chair = (file: string, widths: number[], alt: string, color: string, position?: string): SitePhoto => ({ file: `/images/chairs/${file}`, widths, alt, color, position });
 
@@ -12,7 +12,8 @@ const RECLINED = chair("lift-chair-reclined", [400, 640, 960, 1024], "Man relaxi
 const MAN_STANDING = chair("lift-chair-man-standing-up", [400, 640, 732], "Man standing up from a tan lift chair raised in the lift position", "#988c7e", "45% 50%");
 const RECLINER_DETAIL = chair("lift-chair-recliner-detail", [250, 340, 460], "Brown power lift recliner chair, side view, upright", "#beb3b0");
 const GREY_RAISED = chair("power-lift-chair-grey-raised", [400, 640, 960, 1280], "Gray power lift recliner in the raised position with its handheld remote", "#b1acac");
-const RECLINED_SMALL = chair("lift-chair-recliner-reclined-small", [265, 360], "Brown power lift recliner chair fully reclined", "#b7aca9");
+// "contain" (not "cover"): this crop is small and not square, so the whole chair shows instead of being zoomed into.
+const RECLINED_SMALL: SitePhoto = { ...chair("lift-chair-recliner-reclined-small", [265, 360], "Brown power lift recliner chair fully reclined", "#f1efee"), fit: "contain" };
 const DARK_LEATHER = chair("lift-chair-dark-brown-leather", [400, 640, 960, 1280], "Dark brown leather power lift chair raised on its lift base", "#756e67");
 
 export const IMAGES: Record<string, SitePhoto> = {
