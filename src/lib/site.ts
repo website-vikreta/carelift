@@ -43,27 +43,26 @@ export const RENTALS = [
 ];
 
 export const STEPS = [
-  { title: "Call or message us", text: "Tell us where and for how long." },
+  { title: "Call or message us", text: "Tell us where and how long you are looking for the reclining chair." },
   { title: "We deliver and set up", text: "In the room you choose." },
   { title: "We pick it up", text: "All included, when you are done." },
 ];
 
 export const AREAS = [
-  { name: "New Jersey", places: "Statewide" },
-  { name: "New York City", places: "Manhattan, Brooklyn, Queens, the Bronx, Staten Island" },
+  { name: "New Jersey", places: "Princeton, Old Bridge, Morristown, Freehold and other surrounding towns" },
+  { name: "New York City", places: "Staten Island" },
 ];
 
 export const SURGERIES = ["Knee or hip replacement", "Back or shoulder surgery", "Heart or abdominal surgery"];
 
 export type Faq = { q: string; a: string; list?: string[] };
 export const FAQS: Faq[] = [
-  { q: "How much does it cost?", a: "It depends on the rental period and address. Delivery, set-up and pickup are included. Call us for a quote." },
-  { q: "How fast can you deliver?", a: "Same-day or next-day delivery may be available. Call to check." },
-  { q: "Does every chair lift and recline?", a: "Yes, every chair has both." },
-  { q: "Who rents a lift chair?", a: "Most often people recovering from:", list: SURGERIES },
-  { q: "Can I choose the colour or style?", a: "Styles vary with availability. We match a chair to your height and weight." },
-  { q: "Do you take insurance or Medicare?", a: "No. Private rentals only." },
-  { q: "Is there any paperwork?", a: "A short liability form, linked in the footer." },
+  { q: "How much does it cost?", a: "It depends on the rental period and address. Lift chair delivery, set-up and pickup are included in the price. Call us for a quote." },
+  { q: "How fast can you deliver a lift chair?", a: "Same-day or next-day lift chair delivery may be available. Call to check." },
+  { q: "Does every lift chair both lift and recline?", a: "Yes, every reclining chair we rent lifts to help you stand and reclines for rest." },
+  { q: "Who rents a lift chair for surgery recovery?", a: "Most often people need a lift chair for surgery recovery from:", list: SURGERIES },
+  { q: "Can I choose the color or style of the reclining chair?", a: "Lift chair styles and colors vary with availability. We match a reclining chair to your height and weight." },
+  { q: "Do you take insurance or Medicare?", a: "No. Private lift chair rentals only." },
 ];
 
 // Shown on /about/. Photo supplied by the client.
@@ -72,5 +71,5 @@ export const OWNER = {
   role: "Owner",
   photo: "/images/arvind-dhankhad.webp",
   story:
-    "“Comfort, dignity and peace of mind should never be out of reach. I started CareLift so getting the equipment you need is simple, convenient and stress-free — from delivery and setup to pickup. Thank you for trusting us: your comfort is our commitment.”",
+    "“Comfort, dignity and peace of mind should never be out of reach. I started CareLift so getting the equipment you need is simple, convenient and stress-free, from delivery and setup to pickup. Thank you for trusting us: your comfort is our commitment.”",
 };
