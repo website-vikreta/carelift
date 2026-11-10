@@ -34,7 +34,7 @@ export function Photo({
         width={800}
         height={Math.round((800 * rh) / rw)}
         alt={p.alt}
-        style={p.position ? { objectPosition: p.position } : undefined}
+        style={{ objectFit: p.fit ?? "cover", ...(p.position ? { objectPosition: p.position } : null) }}
         loading={priority ? "eager" : "lazy"}
         fetchPriority={priority ? "high" : "auto"}
         decoding="async"
