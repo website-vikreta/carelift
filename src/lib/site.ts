@@ -11,6 +11,8 @@ export const SITE = {
   // Client decision (Nov 2026): no street address published on the website. Phone and the contact form only.
   address: null as null | { street: string; city: string; state: string; zip: string },
   gbpUrl: "https://share.google/7p3PC4SFOV8MOFxQP" as null | string,
+  // Google Tag Manager container ID (client supplied, Nov 2026). Set to null to remove GTM from the site.
+  gtmId: "GTM-MG23HWMQ" as null | string,
   // Drop the real PDF at public/downloads/carelift-liability-form.pdf (same filename). The current file is a placeholder.
   liabilityFormHref: "/downloads/carelift-liability-form.pdf",
 };

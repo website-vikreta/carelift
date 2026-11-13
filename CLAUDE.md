@@ -54,6 +54,7 @@ Modelled on keystonemedicalrentals.com (a lean lift-chair rental site) in scope 
 - Design tokens are CSS variables in `src/app/globals.css`. Mobile-first; tap targets at least 48px; body text 17px+; keep contrast AA.
 - Fonts: Manrope (latin, weight axis only) self-hosted via `next/font/local` for both headings and body (`--font-sans`, `src/app/fonts/manrope-latin-wght-normal.woff2`). Headings are weight 700. No other web fonts.
 - Photos: manifest in `src/lib/images.ts` (average colour shown while loading, optional `position` for crops). `Photo` renders nothing when no image is configured. It always sets width/height and srcset; only the hero image is `priority`, everything else lazy-loads. No photo may appear twice on the same page.
-- Keep client JS minimal (mobile menu and contact form only). No animation libraries, no analytics scripts without asking.
+- Keep client JS minimal (mobile menu and contact form only, plus Google Tag Manager below). No animation libraries, no other analytics scripts without asking.
+- Google Tag Manager (`SITE.gtmId`, `GoogleTagManager`/`GoogleTagManagerNoScript` in `src/components/GoogleTagManager.tsx`), added at the client's request (Nov 2026). Set `gtmId` to `null` to remove it. No cookie-consent banner is implemented; add one if the tags configured inside GTM need it.
 - Target Lighthouse mobile 90+ on every page; check after adding sections or scripts.
 - Every page ends with a call-to-action block (`CtaBand` or the contact form): Call + Check availability. Nav: Rental options, FAQ (`/#faq`), About, Contact. Home has FAQPage structured data.
