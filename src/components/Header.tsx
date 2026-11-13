@@ -26,7 +26,7 @@ export function Header() {
           ))}
         </nav>
         <div className="header-cta">
-          <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
+          <a className="btn" href={SITE.phoneHref} data-gtm-event="call" data-gtm-label="header">Call {SITE.phone}</a>
         </div>
         <button className="nav-toggle" aria-expanded={open} aria-label="Menu" onClick={() => setOpen(!open)}>
           {open ? "Close" : "Menu"}

@@ -11,11 +11,11 @@ export default function Contact() {
         <div>
           <h1>Contact Us</h1>
           <p className="lead">Call us, or check availability below and we will call you back.</p>
-          <div className="btn-row"><a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a></div>
+          <div className="btn-row"><a className="btn" href={SITE.phoneHref} data-gtm-event="call" data-gtm-label="contact_page">Call {SITE.phone}</a></div>
           <ul className="facts">
             <li>{SITE.hours}</li>
             <li>Delivering across {SITE.areaText}</li>
-            {SITE.gbpUrl && <li><a href={SITE.gbpUrl} target="_blank" rel="noopener noreferrer">View on Google</a></li>}
+            {SITE.gbpUrl && <li><a href={SITE.gbpUrl} target="_blank" rel="noopener noreferrer" data-gtm-event="view_on_google" data-gtm-label="contact_page">View on Google</a></li>}
           </ul>
         </div>
         <div>

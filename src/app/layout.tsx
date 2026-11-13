@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { StickyBar } from "@/components/StickyBar";
 import { JsonLd } from "@/components/JsonLd";
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
+import { CtaTracking } from "@/components/CtaTracking";
 import { SITE } from "@/lib/site";
 import { localBusinessLd } from "@/lib/seo";
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <GoogleTagManager />
         <GoogleTagManagerNoScript />
+        <CtaTracking />
         <a className="skip" href="#main">Skip to content</a>
         <Header />
         <main id="main">{children}</main>

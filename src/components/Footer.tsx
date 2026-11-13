@@ -10,10 +10,10 @@ export function Footer() {
             <img className="footer-logo" src="/logo-horizontal.svg" alt="CareLift Medical Equipment Rentals" width={170} height={51} loading="lazy" decoding="async" />
             <p>Lift chair rentals delivered to your home in {SITE.areaText}.</p>
             <p>
-              <a href={SITE.phoneHref}>{SITE.phone}</a>
+              <a href={SITE.phoneHref} data-gtm-event="call" data-gtm-label="footer">{SITE.phone}</a>
               <br />
               {SITE.hours}
-              {SITE.gbpUrl && (<><br /><a href={SITE.gbpUrl} target="_blank" rel="noopener noreferrer">Find us on Google</a></>)}
+              {SITE.gbpUrl && (<><br /><a href={SITE.gbpUrl} target="_blank" rel="noopener noreferrer" data-gtm-event="view_on_google" data-gtm-label="footer">Find us on Google</a></>)}
             </p>
           </div>
           <div>
@@ -29,7 +29,7 @@ export function Footer() {
           <div>
             <h3>Rental paperwork</h3>
             <ul>
-              <li><a href={SITE.liabilityFormHref} download>Download liability form (PDF)</a></li>
+              <li><a href={SITE.liabilityFormHref} download data-gtm-event="download_liability_form" data-gtm-label="footer">Download liability form (PDF)</a></li>
               <li><Link href="/terms-of-rental/">Terms of rental</Link></li>
               <li><Link href="/privacy-policy/">Privacy policy</Link></li>
             </ul>
