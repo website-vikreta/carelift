@@ -5,8 +5,8 @@ import { SITE } from "@/lib/site";
 export function ContactButtons() {
   return (
     <div className="btn-row">
-      <a className="btn" href={SITE.phoneHref}>Call {SITE.phone}</a>
-      <Link className="btn ghost" href="/contact/">Check availability</Link>
+      <a className="btn" href={SITE.phoneHref} data-gtm-event="call" data-gtm-label="contact_buttons">Call {SITE.phone}</a>
+      <Link className="btn ghost" href="/contact/" data-gtm-event="check_availability" data-gtm-label="contact_buttons">Check availability</Link>
     </div>
   );
 }

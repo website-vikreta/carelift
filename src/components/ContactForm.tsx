@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { SITE } from "@/lib/site";
 import { sendEnquiry } from "@/lib/emailjs";
+import { pushDataLayerEvent } from "@/lib/gtm";
 import { DURATIONS, HONEYPOT, formatUsPhone, spamCheck, validate, type FormErrors, type FormValues } from "@/lib/validation";
 
 const EMPTY: FormValues = { name: "", email: "", contact: "", zipCode: "", duration: "", message: "" };
@@ -49,7 +50,11 @@ export function ContactForm() {
     setSending(true);
     const result = await sendEnquiry(values, spam === "flag");
     setSending(false);
-    if (result.ok) return router.push("/thank-you/");
+    if (result.ok) {
+      // Key event for GTM/GA4: a real contact form submission (the honeypot "drop" case above never reaches here).
+      pushDataLayerEvent("generate_lead", { form_name: "contact", duration: values.duration });
+      return router.push("/thank-you/");
+    }
     setFailure(
       result.reason === "not-configured"
         ? `The message form is not available yet. Please call us on ${SITE.phone}.`

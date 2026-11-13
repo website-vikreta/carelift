@@ -9,8 +9,8 @@ export function Rentals() {
         <li key={r.name}>
           <h3>{r.name}</h3>
           <p>{r.text}</p>
-          <Link className="btn" href={`/contact/?period=${encodeURIComponent(r.duration)}`}>Check availability</Link>
-          <a className="price" href={SITE.phoneHref}>Or call for pricing</a>
+          <Link className="btn" href={`/contact/?period=${encodeURIComponent(r.duration)}`} data-gtm-event="check_availability" data-gtm-label={r.duration}>Check availability</Link>
+          <a className="price" href={SITE.phoneHref} data-gtm-event="call" data-gtm-label={r.duration}>Or call for pricing</a>
         </li>
       ))}
     </ul>
